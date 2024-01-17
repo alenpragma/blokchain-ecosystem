@@ -25,7 +25,7 @@ const NavItem = (
 );
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(true);
+  const [menu, setMenu] = useState(false);
   const handleToggleMenu = () => {
     setMenu((prev) => !prev);
   };
