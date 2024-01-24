@@ -63,7 +63,7 @@ const Navbar = () => {
               menu
                 ? "transition duration-300 ease-in-out transform translate-x-0"
                 : "transition duration-300 ease-in-out transform translate-x-full"
-            } fixed top-16 right-0 w-full h-full p-4 flex flex-col items-center bg-[#2F76DE]`}
+            } fixed top-16 right-0 w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
           >
             <div>
               <ul className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
