@@ -3,10 +3,10 @@ import rightArrow from "../assets/icon/arrow-small-right.svg";
 import microsoft from "../assets/icon/microsoft_logo.svg";
 
 const InvolvedName = [
-  "Join Our Wallet",
-  "Apply For Grant",
-  "Join Our Wallet",
-  "Apply For Grant",
+  { title: "Join Our", point: "true" },
+  { title: "Apply For", point: "false" },
+  { title: "Join Our", point: "true" },
+  { title: "Apply For", point: "false" },
 ];
 
 const Involved = () => {
@@ -29,7 +29,12 @@ const Involved = () => {
                 }}
               >
                 <img src={microsoft} alt="" />
-                <p>{data}</p>
+                <p className="text-[#434343] font-medium text-[20px]">
+                  {data.title}
+                  <span className="border-b-4 border-[#2F76DE] ml-1 px-1">
+                    {data.point == "true" ? "Wallet" : "Grant"}
+                  </span>
+                </p>
                 <div className="size-10 rounded-full border-2 border-[#2F76DE]">
                   <img className="w-full" src={rightArrow} alt="" />
                 </div>
