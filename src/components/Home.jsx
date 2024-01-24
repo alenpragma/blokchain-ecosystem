@@ -3,6 +3,7 @@ import Hero from './Hero';
 import BlockChainTrust from './BlockChainTrust';
 import Freedom from './Freedom';
 import Involved from './Involved';
+import WhyChooseUs from './WhyChooseUs';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <BlockChainTrust />
             <Freedom />
             <Involved />
+            <WhyChooseUs />
         </div>
     );
 };
