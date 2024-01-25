@@ -6,7 +6,7 @@ import analysis from "../assets/icon/analysis.png";
 
 const Features = () => {
   return (
-    <div className="w-full bg-[#FFF] my-20 px-5">
+    <div className="w-full bg-[#F3F3F3] pt-10 pb-20 lg:px-0 px-5">
       <Container>
         <div className="lg:flex md:flex justify-center items-center gap-20">
           <div className="flex-1 flex flex-col justify-between gap-10">

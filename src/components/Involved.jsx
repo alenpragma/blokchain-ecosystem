@@ -11,10 +11,10 @@ const InvolvedName = [
 
 const Involved = () => {
   return (
-    <div className="w-full bg-[#F3F3F3] py-20 px-5">
+    <div className="w-full bg-[#F3F3F3] pt-10 pb-20 lg:px-0 px-5">
       <Container>
         <div className="w-full">
-          <div className="py-10 text-center">
+          <div className="pb-10 text-center">
             <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px]">
               Get involved
             </h2>

@@ -1,7 +1,9 @@
+import Main from "./layouts/Main";
+
 function App() {
   return (
     <>
-      <h2>simple react ap</h2>
+      <Main />
     </>
   );
 }

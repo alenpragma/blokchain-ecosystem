@@ -26,14 +26,14 @@ const WhyChooseUsData = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="w-full bg-[#F3F3F3] py-20 px-5">
+    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
       <Container>
         <div className="w-full">
-          <div className="py-10 lg:w-[50%] md:w-full w-full">
-            <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px]">
+          <div className="mb-20 lg:w-[50%] md:w-full w-full">
+            <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px] mb-4">
               Why Choose BIZ Token?
             </h2>
-            <p>
+            <p className="font-light">
               BIZ Token develop under Binance Smart Chain that a Strong Network
               in the Crypto World and makes it Easily usable P2P System.
             </p>
@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
             {WhyChooseUsData.map((data, i) => (
               <div
                 key={i}
-                className="bg-[#F3FAFF] rounded-2xl"
+                className="bg-[#F3FAFF] rounded-2xl pb-12"
                 style={{
                   boxShadow: "rgba(17, 17, 26, 0.1) 0px 0px 16px",
                 }}
@@ -52,11 +52,11 @@ const WhyChooseUs = () => {
                   src={data.img}
                   alt=""
                 />
-                <div className="mx-8 mt-6 flex flex-col gap-6">
-                  <h3 className="text-[#000] text-[28px] font-medium">
+                <div className="mx-4">
+                  <h3 className="text-[#000] text-[28px] font-medium my-5">
                     {data.heading}
                   </h3>
-                  <p>{data.title}</p>
+                  <p className="font-light text-14px">{data.title}</p>
                 </div>
               </div>
             ))}
