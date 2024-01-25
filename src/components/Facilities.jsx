@@ -48,7 +48,7 @@ const Facilities = () => {
             {FacilitiesData.slice(0, 3).map((data, i) => (
               <div
                 key={i}
-                className="px-[25px] py-[45px] border-l-4 border-b-8 border-t-4 border-r-8 border-[#2F76DE] rounded-3xl"
+                className="bg-[#F3FAFF] px-[25px] py-[45px] border-l-4 border-b-8 border-t-4 border-r-8 border-[#2F76DE] rounded-3xl"
               >
                 <h3 className="text-[28px] font-medium text-[#242424] mb-4">
                   {data.title}
@@ -57,7 +57,7 @@ const Facilities = () => {
               </div>
             ))}
           </div>
-          <div className="max-w-[860px] mx-auto mt-9 px-[25px] py-[45px] border-l-4 border-b-[10px] border-t-4 border-r-[16px] border-[#2F76DE] rounded-3xl ">
+          <div className="max-w-[860px] mx-auto mt-9 px-[25px] py-[45px] border-l-4 border-b-[10px] border-t-4 border-r-[16px] border-[#2F76DE] rounded-3xl bg-[#F3FAFF]">
             <div className="w-full md:flex justify-between gap-4">
               <div className="flex-1 mt-8">
                 {FacilitiesData.slice(3).map((data, i) => (
