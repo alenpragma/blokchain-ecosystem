@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
             <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px] mb-4">
               Why Choose BIZ Token?
             </h2>
-            <p className="font-light">
+            <p className="text-style2">
               BIZ Token develop under Binance Smart Chain that a Strong Network
               in the Crypto World and makes it Easily usable P2P System.
             </p>
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
                   <h3 className="text-[#000] text-[28px] font-medium my-5">
                     {data.heading}
                   </h3>
-                  <p className="font-light text-14px">{data.title}</p>
+                  <p className="text-style2">{data.title}</p>
                 </div>
               </div>
             ))}

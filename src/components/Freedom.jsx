@@ -45,7 +45,7 @@ const Freedom = () => {
                 </div>
                 <div className="flex flex-col gap-3 flex-[8]">
                   <h4>{data.title}</h4>
-                  <p>{data.description}</p>
+                  <p className="text-style1">{data.description}</p>
                   <div className="size-10 bg-[#2F76DE] p-3 rounded-full">
                     <img className="w-full" src={rightArrow} alt="" />
                   </div>

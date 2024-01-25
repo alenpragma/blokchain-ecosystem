@@ -39,7 +39,7 @@ const Facilities = () => {
             <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px] mb-4">
               Facilities with BIZ
             </h2>
-            <p className="text-[14px] font-light">
+            <p className="text-style2">
               We work to develop attractive featuers for furure facilities of
               BIZ <br /> Community
             </p>
@@ -53,7 +53,7 @@ const Facilities = () => {
                 <h3 className="text-[28px] font-medium text-[#242424] mb-4">
                   {data.title}
                 </h3>
-                <p>{data.description}</p>
+                <p className="text-style2">{data.description}</p>
               </div>
             ))}
           </div>
@@ -65,7 +65,7 @@ const Facilities = () => {
                     <h3 className="text-[28px] font-medium text-[#242424] mb-4">
                       {data.title}
                     </h3>
-                    <p className=" mr-10">{data.description}</p>
+                    <p className="mr-10 text-style2">{data.description}</p>
                   </div>
                 ))}
               </div>
@@ -73,7 +73,7 @@ const Facilities = () => {
                 {FacilitiesSecondData.map((data, i) => (
                   <div key={i} className="flex gap-3 items-start">
                     <img className="size-9" src={handBack} alt="" />
-                    <p className="font-light">{data}</p>
+                    <p className="text-style2">{data}</p>
                   </div>
                 ))}
               </div>

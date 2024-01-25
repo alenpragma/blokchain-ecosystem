@@ -9,42 +9,11 @@
     h4{
         @apply text-[24px] font-semibold text-[#242424]
     }
-    p{
-        @apply text-[16px] text-[#3E3E3E]
-    }
 }
 
-
-/* text-[#fff] py-3 px-8 bg-[#2F76DE] rounded-lg lg:flex md:flex hidden border border-red  */
-
-.btn-style{
-    padding: 5px 8px;
-    border: 2px solid green;
-    border-radius: 5px;
-    background-color: transparent;
-    transition-duration: 500ms;
-    transition-timing-function: ease;
-    position: relative;
-    overflow: hidden;
+.text-style1{
+    @apply text-[16px] text-[#3E3E3E]
 }
-.btn-style::after{
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(100px);
-    transition-timing-function: ease;
-    transition-duration: 500ms;
-    z-index: -1;
-
-}
-.btn-style:hover{
-    color:wheat;
-    transform: scale(1.1);
-}
-.btn-style:hover:after{
-transform: translate(0px);
+.text-style2{
+    @apply font-light text-[16px] text-[#3E3E3E]
 }
