@@ -1,0 +1,40 @@
+import Container from "./shared/Container";
+import developmentImage from "../assets/image/programming.png";
+
+const BuildBiz = () => {
+  return (
+    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
+      <Container>
+        <div
+          className="grid md:grid-cols-2 grid-cols-1 px-14 py-8 gap-5 rounded-2xl"
+          style={{
+            background:
+              "linear-gradient(86deg, rgba(47, 118, 222, 0.83) 27.69%, rgba(179, 0, 194, 0.00) 115.26%)",
+          }}
+        >
+          <div className="flex flex-col justify-around lg:pr-32 my-8 gap-5">
+            <h3 className="lg:max-w-[30ch] text-[#fff] text-[28px] font-bold">
+              Six unique aspects of TON Blockchain that will surprise Solidity
+              developers
+            </h3>
+            <p className="lg:max-w-[50ch] text-[16px] text-[#fff]">
+              When learning development on TON, you should be aware of certain
+              design differences that make things on TON act quite differently
+              from what you expect.
+            </p>
+            <div>
+              <button className="py-4 px-14 rounded-full bg-[#fff] md:w-fit w-full">
+                Build With Biz
+              </button>
+            </div>
+          </div>
+          <div>
+            <img className="w-full object-contain" src={developmentImage} alt="" />
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+};
+
+export default BuildBiz;

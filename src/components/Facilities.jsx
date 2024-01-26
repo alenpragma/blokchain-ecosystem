@@ -32,7 +32,7 @@ const FacilitiesSecondData = [
 
 const Facilities = () => {
   return (
-    <div className="w-full bg-[#F3F3F3] pt-10 pb-20 lg:px-0 px-5">
+    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
       <Container>
         <div className="w-full">
           <div className="pb-14 text-center">
