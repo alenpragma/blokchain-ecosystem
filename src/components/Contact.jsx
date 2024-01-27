@@ -23,12 +23,12 @@ const Contact = () => {
               </p>
             </div>
             <form className="w-full">
-              <div className="flex gap-5 items-center">
+              <div className="flex gap-[6px] items-center">
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border border-[#2F76DE] outline-none ring-1 ring-[#2F76DE] transition-all rounded-2xl"
+                  className="w-full px-4 py-2 border border-[#2F76DE] outline-[#2f76DE] transition-all rounded-2xl"
                 />
-                <button className="bg-[#2F76DE] rounded-2xl px-5 py-3 ">
+                <button className="bg-[#2F76DE] rounded-2xl px-5 py-3 text-[#fff]">
                   Subscribe
                 </button>
               </div>
