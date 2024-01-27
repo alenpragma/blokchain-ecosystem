@@ -7,6 +7,7 @@ import WhyChooseUs from './WhyChooseUs';
 import Facilities from './Facilities';
 import BuildBiz from './BuildBiz';
 import LatestBlog from './LatestBlog';
+import Contact from './Contact';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <Facilities />
             <BuildBiz />
             <LatestBlog />
+            <Contact />
         </div>
     );
 };

@@ -19,9 +19,9 @@ const LatestBlog = () => {
               BIZ Community
             </p>
           </div>
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+          <div className="grid grid-cols-12 gap-5">
             <div
-              className="p-10 h-[480px] relative rounded-3xl"
+              className="p-10 h-[480px] relative rounded-3xl md:col-span-4 col-span-12"
               style={{
                 backgroundImage: `url(${bitcoin})`,
                 backgroundSize: "cover",
@@ -46,7 +46,7 @@ const LatestBlog = () => {
               </div>
             </div>
             <div
-              className="p-10 h-[480px] relative rounded-3xl"
+              className="p-10 h-[480px] relative rounded-3xl md:col-span-4 col-span-12"
               style={{
                 backgroundImage: `url(${hand})`,
                 backgroundSize: "cover",
@@ -71,7 +71,7 @@ const LatestBlog = () => {
               </div>
             </div>
             <div
-              className="p-10 h-[480px] relative rounded-3xl"
+              className="p-10 h-[480px] relative rounded-3xl md:col-span-4 col-span-12"
               style={{
                 backgroundImage: `url(${cardano})`,
                 backgroundSize: "cover",

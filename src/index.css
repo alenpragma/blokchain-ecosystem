@@ -17,3 +17,6 @@
 .text-style2{
     @apply font-light text-[16px] text-[#3E3E3E]
 }
+.text-style3{
+    @apply font-normal text-[16px] text-[#262626]
+}

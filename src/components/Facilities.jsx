@@ -44,11 +44,11 @@ const Facilities = () => {
               BIZ <br /> Community
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+          <div className="grid grid-cols-12 gap-5">
             {FacilitiesData.slice(0, 3).map((data, i) => (
               <div
                 key={i}
-                className="bg-[#F3FAFF] px-[25px] py-[45px] border-l-4 border-b-8 border-t-4 border-r-8 border-[#2F76DE] rounded-3xl"
+                className="bg-[#F3FAFF] px-[25px] py-[45px] border-l-4 border-b-8 border-t-4 border-r-8 border-[#2F76DE] rounded-3xl col-span-12 md:col-span-4"
               >
                 <h3 className="text-[28px] font-medium text-[#242424] mb-4">
                   {data.title}

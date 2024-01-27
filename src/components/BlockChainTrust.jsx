@@ -13,8 +13,8 @@ const BlockChainTrust = () => {
   return (
     <div className="w-full bg-[#F3F3F3] px-5 py-20">
       <Container>
-        <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-10">
-          <div className="flex flex-col gap-8">
+        <div className="w-full grid grid-cols-12 gap-10">
+          <div className="flex flex-col gap-8  md:col-span-6 col-span-12">
             <h2>Blockchain You <br /> Can Trust</h2>
             <p>
               Major financial institutions—including some of the world’s <br /> biggest
@@ -22,15 +22,15 @@ const BlockChainTrust = () => {
               directly to the network.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-8">
-            <img className="w-[160px]" src={akuna} alt="" />
-            <img className="w-[160px]" src={binance} alt="" />
-            <img className="w-[160px]" src={cboe} alt="" />
-            <img className="w-[160px]" src={jane} alt="" />
-            <img className="w-[160px]" src={okx} alt="" />
-            <img className="w-[160px]" src={optiver} alt="" />
-            <img className="w-[160px]" src={twosigma} alt="" />
-            <img className="w-[160px]" src={wintermute} alt="" />
+          <div className="gap-8 md:col-span-6 col-span-12 grid grid-cols-12 gap-5">
+            <img className="w-[160px] col-span-3" src={akuna} alt="" />
+            <img className="w-[160px] col-span-3" src={binance} alt="" />
+            <img className="w-[160px] col-span-3" src={cboe} alt="" />
+            <img className="w-[160px] col-span-3" src={jane} alt="" />
+            <img className="w-[160px] col-span-3" src={okx} alt="" />
+            <img className="w-[160px] col-span-3" src={optiver} alt="" />
+            <img className="w-[160px] col-span-3" src={twosigma} alt="" />
+            <img className="w-[160px] col-span-3" src={wintermute} alt="" />
           </div>
         </div>
       </Container>
