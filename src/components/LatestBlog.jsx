@@ -21,32 +21,31 @@ const LatestBlog = () => {
           </div>
           <div className="grid grid-cols-12 gap-5">
             <div
-              className="p-10 h-[480px] relative rounded-3xl md:col-span-4 col-span-12"
-              style={{
-                backgroundImage: `url(${bitcoin})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
+              className="h-[480px] rounded-3xl md:col-span-4 col-span-12 flex flex-col bg-red-500"
             >
-              <div className="absolute bottom-0 left-0 right-0 h-full flex flex-col py-[30px] justify-end  bg-gradient-to-t from-[#3e3e3e] via-[#3e3e3e65] to-[#fff0] rounded-3xl">
+              <div className="flex-1 m-0 w-full h-full">
+                <img className="w-full h-full rounded-t-3xl" src={bitcoin} alt="" />
+              </div>
+              <div className="flex-1 bg-[#D5D5D5] flex flex-col justify-end pb-[30px] rounded-3xl">
                 <div className="px-[19px]">
-                  <h3 className="text-[18px] text-[#fff] font-semibold">
+                  <h3 className="text-[18px] font-semibold">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </h3>
-                  <button className="my-5 text-[18px] text-[#fff] flex items-center gap-3 font-semibold">
+                  <button className=" text-[18px] flex items-center gap-3 font-semibold my-5">
                     <span>Read More</span> <FaArrowRightLong />
                   </button>
                 </div>
-                <hr />
-                <div className="flex gap-5 items-center px-[19px] mt-5 text-[#fff]">
+                <div className="border border-black">
+                  
+                </div>
+                <div className="flex gap-5 items-center px-[19px] mt-5 text-[#242424]">
                   <FaCalendarAlt />
                   <p>20 January 2024</p>
                 </div>
               </div>
             </div>
             <div
-              className="p-10 h-[480px] relative rounded-3xl md:col-span-4 col-span-12"
+              className="h-[480px] relative rounded-3xl md:col-span-4 col-span-12"
               style={{
                 backgroundImage: `url(${hand})`,
                 backgroundSize: "cover",
@@ -56,14 +55,11 @@ const LatestBlog = () => {
             >
               <div className="absolute bottom-0 left-0 right-0 h-full flex flex-col py-[30px] justify-end  bg-gradient-to-t from-[#3e3e3e] via-[#3e3e3e65] to-[#fff0] rounded-3xl">
                 <div className="px-[19px]">
-                  <h3 className="text-[18px] text-[#fff] font-semibold">
+                  <h3 className="text-[18px] text-[#fff] font-semibold mb-5">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </h3>
-                  <button className="my-5 text-[18px] text-[#fff] flex items-center gap-3 font-semibold">
-                    <span>Read More</span> <FaArrowRightLong />
-                  </button>
                 </div>
-                <hr />
+                <div className="border border-[#fff]"></div>
                 <div className="flex gap-5 items-center px-[19px] mt-5 text-[#fff]">
                   <FaCalendarAlt />
                   <p>20 January 2024</p>
@@ -81,14 +77,11 @@ const LatestBlog = () => {
             >
               <div className="absolute bottom-0 left-0 right-0 h-full flex flex-col py-[30px] justify-end  bg-gradient-to-t from-[#3e3e3e] via-[#3e3e3e65] to-[#fff0] rounded-3xl">
                 <div className="px-[19px]">
-                  <h3 className="text-[18px] text-[#fff] font-semibold">
+                  <h3 className="text-[18px] text-[#fff] font-semibold mb-5">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </h3>
-                  <button className="my-5 text-[18px] text-[#fff] flex items-center gap-3 font-semibold">
-                    <span>Read More</span> <FaArrowRightLong />
-                  </button>
                 </div>
-                <hr />
+                <div className="border border-[#fff]"></div>
                 <div className="flex gap-5 items-center px-[19px] mt-5 text-[#fff]">
                   <FaCalendarAlt />
                   <p>20 January 2024</p>
