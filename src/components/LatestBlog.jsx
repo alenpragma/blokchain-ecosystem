@@ -20,13 +20,15 @@ const LatestBlog = () => {
             </p>
           </div>
           <div className="grid grid-cols-12 gap-5">
-            <div
-              className="h-[480px] rounded-3xl md:col-span-4 col-span-12 flex flex-col bg-red-500"
-            >
+            <div className="h-[480px] rounded-3xl md:col-span-4 col-span-12 flex flex-col">
               <div className="flex-1 m-0 w-full h-full">
-                <img className="w-full h-full rounded-t-3xl" src={bitcoin} alt="" />
+                <img
+                  className="w-full h-full rounded-t-3xl"
+                  src={bitcoin}
+                  alt=""
+                />
               </div>
-              <div className="flex-1 bg-[#D5D5D5] flex flex-col justify-end pb-[30px] rounded-3xl">
+              <div className="flex-1 bg-[#D5D5D5] flex flex-col justify-end pb-[30px] rounded-b-3xl">
                 <div className="px-[19px]">
                   <h3 className="text-[18px] font-semibold">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -35,9 +37,7 @@ const LatestBlog = () => {
                     <span>Read More</span> <FaArrowRightLong />
                   </button>
                 </div>
-                <div className="border border-black">
-                  
-                </div>
+                <div className="border border-black"></div>
                 <div className="flex gap-5 items-center px-[19px] mt-5 text-[#242424]">
                   <FaCalendarAlt />
                   <p>20 January 2024</p>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="w-[100%] bg-[#00265D] pt-20 pb-16">
+    <div className="w-[100%] bg-[#00265D] pt-20 pb-8">
       <Container>
         <div className="grid grid-cols-12 md:gap-5 gap-10 mb-[150px]  px-5 lg:px-0">
           <div className="lg:col-span-3 col-span-6">
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
       </Container>
       <hr />
-      <div className="text-[#fff] text-center mt-16">
+      <div className="text-[#fff] text-center mt-8">
         <p>Copyright © 2023 Biz Token. All rights reserved.</p>
       </div>
     </div>

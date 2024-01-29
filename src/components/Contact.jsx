@@ -28,7 +28,7 @@ const Contact = () => {
                   type="text"
                   className="w-full px-4 py-2 border border-[#2F76DE] outline-[#2f76DE] transition-all rounded-2xl"
                 />
-                <button className="bg-[#2F76DE] rounded-2xl px-5 py-3 text-[#fff]">
+                <button className="bg-[#2F76DE] rounded-2xl px-5 py-2 text-[#fff]">
                   Subscribe
                 </button>
               </div>
