@@ -14,12 +14,12 @@ const BuildBiz = () => {
         >
           <div className="flex flex-col justify-around lg:pr-32 my-8 gap-5">
             <h3 className="lg:max-w-[30ch] text-[#fff] text-[28px] font-bold">
-              Six unique aspects of TON Blockchain that will surprise Solidity
+              Six unique aspects of BIZ Blockchain that will surprise Solidity
               developers
             </h3>
             <p className="lg:max-w-[50ch] text-[16px] text-[#fff]">
-              When learning development on TON, you should be aware of certain
-              design differences that make things on TON act quite differently
+              When learning development on BIZ, you should be aware of certain
+              design differences that make things on BIZ act quite differently
               from what you expect.
             </p>
             <div>
