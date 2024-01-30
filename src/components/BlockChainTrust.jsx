@@ -15,7 +15,7 @@ import "swiper/css";
 
 const BlockChainTrust = () => {
   return (
-    <div className="w-full bg-[#F3F3F3] px-5 py-24">
+    <div className="w-full bg-[#F3F3F3] px-5 md:py-24 py-12">
       <Container>
         <div>
           <div className="flex flex-col justify-center items-center text-center">
@@ -26,7 +26,7 @@ const BlockChainTrust = () => {
               directly to the network.
             </p>
           </div>
-          <div className="my-[124px]">
+          <div className="mt-[124px]">
             <Swiper slidesPerView={5} spaceBetween={30} className="mySwiper">
               <SwiperSlide>
                 <img className="w-[160px] col-span-3" src={akuna} alt="" />

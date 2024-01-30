@@ -1,62 +1,58 @@
 import Container from "./shared/Container";
-import image from "../assets/image/cryptocall.png";
+import hero from "../assets/image/hero.png";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="w-full lg:h-[1300px] bg-[#F3FAFFF5] flex flex-col md:px-0 px-5">
-      <div className="bg-[#F3FAFFF5] flex-[4] h-full">
+    <div className="w-full bg-[#e9f0f5] md:px-0 px-5">
         <Container>
-          <div className="flex flex-col justify-center items-center gap-6">
-            <h1 className="lg:text-[64px] md:text-[52px] text-[32px]  text-[#323232] font-bold text-center mt-20">
-              BIZ Token an Ecosystem that <br /> Scaling Decentralized <br />{" "}
+          <div className="lg:pt-24 pt-12">
+            <h1 className="lg:text-[64px] md:text-[52px] text-[32px] text-[#323232] font-bold lg:leading-[76px]">
+              BIZ Token an Ecosystem <br /> that Scaling Decentralized <br />{" "}
               Applications
             </h1>
-            <p className="text-center">
-              BIZ Token is a Blockchain based, Decentralized system
-              infrastructure that enable the <br /> development, hosting, and
-              execution of commercial-scale decentralized <br /> applications
-              (dApps) on its platform.
-            </p>
-            <div className="flex justify-center gap-5 ">
-              <motion.button
-                className="text-[#fff] py-3 px-8 bg-[#2F76DE] rounded-lg lg:flex md:flex hidden border border-red"
-                initial={{ scale: 1 }}
-                whileHover={{
-                  backgroundColor: "#2F76DE",
-                  duration: 0.5,
-                  scale: 1.04,
-                }}
-                transition={{ ease: "easeInOut", duration: 0.2 }}
-              >
-                create wallet
-              </motion.button>
-              <motion.button
-                className="text-[#3E3E3E] py-3 px-8 rounded-lg lg:flex md:flex hidden border border-[#2F76DE]"
-                initial={{ scale: 1 }}
-                whileHover={{
-                  backgroundColor: "#2F76DE",
-                  color: "#fff",
-                  duration: 0.5,
-                  scale: 1.04,
-                }}
-                transition={{ ease: "easeInOut", duration: 0.2 }}
-              >
-                create wallet
-              </motion.button>
+          </div>
+          <div className="grid grid-cols-12 relative pb-[410px]">
+            <div className="col-span-12 lg:col-span-7">
+              <p className="lg:max-w-[68ch] mt-[28px] mb-[50px]">
+                BIZ Token is a Blockchain based, Decentralized system
+                infrastructure that enable the development, hosting, and
+                execution of commercial-scale decentralized applications (dApps)
+                on its platform.
+              </p>
+              <div className="flex gap-5 ">
+                <motion.button
+                  className="text-[#fff] py-3 px-8 bg-[#2F76DE] rounded-lg lg:flex md:flex hidden border border-red"
+                  initial={{ scale: 1 }}
+                  whileHover={{
+                    backgroundColor: "#2F76DE",
+                    duration: 0.5,
+                    scale: 1.04,
+                  }}
+                  transition={{ ease: "easeInOut", duration: 0.2 }}
+                >
+                  create wallet
+                </motion.button>
+                <motion.button
+                  className="text-[#3E3E3E] py-3 px-8 rounded-lg lg:flex md:flex hidden border border-[#2F76DE]"
+                  initial={{ scale: 1 }}
+                  whileHover={{
+                    backgroundColor: "#2F76DE",
+                    color: "#fff",
+                    duration: 0.5,
+                    scale: 1.04,
+                  }}
+                  transition={{ ease: "easeInOut", duration: 0.2 }}
+                >
+                  create wallet
+                </motion.button>
+              </div>
+            </div>
+            <div className="col-span-5 absolute right-0 lg:bottom-[190px] bottom-5">
+              <img className="w-full" src={hero} alt="" />
             </div>
           </div>
         </Container>
-      </div>
-      <div className="bg-[#fff] flex-[2] h-full">
-        <div className="flex items-center justify-center relative">
-          <img
-            className="w-[900px] lg:absolute -top-[300px]"
-            src={image}
-            alt=""
-          />
-        </div>
-      </div>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Freedom = () => {
     <div className="w-full bg-[#F3FAFF] pt-10 pb-20 lg:px-0 px-5">
       <Container>
         <div className="w-full">
-          <div className="pt-[80px] pb-10">
+          <div className="lg:pt-[80px] pb-10">
             <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px]">
               Unlocking freedom with
               <br /> Decentralized Finance
