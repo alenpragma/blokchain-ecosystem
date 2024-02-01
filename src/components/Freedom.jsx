@@ -1,6 +1,8 @@
 import Container from "./shared/Container";
 import efficacy from "../assets/icon/efficacy.svg";
 import rightArrow from "../assets/icon/arrow-up-right.svg";
+import { useScroll, motion, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const FreedomData = [
   {
@@ -18,8 +20,18 @@ const FreedomData = [
 ];
 
 const Freedom = () => {
+  const componentRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: componentRef,
+    offset: ["0 1", "2 1"],
+  });
+
+  const xValue = useTransform(scrollYProgress,  [0, 1], [-500, 0])
   return (
-    <div className="w-full bg-[#F3FAFF] pt-10 pb-20 lg:px-0 px-5">
+    <div
+      style={{ x: xValue }}
+      className="w-full bg-[#F3FAFF] pt-10 pb-20 lg:px-0 px-5"
+    >
       <Container>
         <div className="w-full">
           <div className="lg:pt-[80px] pb-10">
@@ -34,8 +46,7 @@ const Freedom = () => {
                 key={i}
                 className="flex justify-start bg-[#FFFFFF] p-7 gap-3 rounded-md"
                 style={{
-                  boxShadow:
-                    "rgba(17, 17, 26, 0.1) 0px 0px 16px",
+                  boxShadow: "rgba(17, 17, 26, 0.1) 0px 0px 16px",
                 }}
               >
                 <div className=" flex-[1]">

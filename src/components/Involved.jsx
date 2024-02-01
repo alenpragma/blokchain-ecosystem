@@ -1,6 +1,9 @@
 import Container from "./shared/Container";
 import rightArrow from "../assets/icon/arrow-small-right.svg";
 import microsoft from "../assets/icon/microsoft_logo.svg";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const InvolvedName = [
   { title: "Join Our", point: "true" },
@@ -10,6 +13,8 @@ const InvolvedName = [
 ];
 
 const Involved = () => {
+  const [mouse, setMouse] = useState(false);
+  console.log(mouse);
   return (
     <div className="w-full bg-[#F3F3F3] pt-10 pb-20 lg:px-0 px-5">
       <Container>
@@ -21,24 +26,45 @@ const Involved = () => {
           </div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
             {InvolvedName.map((data, i) => (
-              <div
+              <motion.div
+                initial={{ background: "#fff" }}
+                whileHover={{ background: "#2F76DE" }}
+                transition={{ duration: 0.5 }}
                 key={i}
                 className="bg-[#fff] py-10 flex justify-center items-center gap-10 flex-col rounded-md"
+                onMouseEnter={() => setMouse(i)}
+                onMouseLeave={() => setMouse(null)}
                 style={{
                   boxShadow: "rgba(17, 17, 26, 0.1) 0px 0px 16px",
                 }}
               >
                 <img src={microsoft} alt="" />
-                <p className="text-[#434343] font-medium text-[20px]">
+                <motion.p
+                  className={`${
+                    mouse === i ? "text-[#fff]" : "text-[#434343]"
+                  } font-medium text-[20px] duration-700`}
+                >
                   {data.title}
-                  <span className="border-b-4 border-[#2F76DE] ml-1 px-1">
-                    {data.point == "true" ? "Wallet" : "Grant"}
+                  <span
+                    className={`${
+                      mouse === i
+                        ? "border-b-4 border-[#fff]"
+                        : "border-b-4 border-[#2F76DE]"
+                    }  ml-1 px-1`}
+                  >
+                    {data.point === "true" ? "Wallet" : "Grant"}
                   </span>
-                </p>
-                <div className="size-10 rounded-full border-2 border-[#2F76DE]">
-                  <img className="w-full" src={rightArrow} alt="" />
+                </motion.p>
+                <div
+                  className={`size-10 rounded-full border-2 flex justify-center items-center`}
+                >
+                  <FaArrowRightLong
+                    className={`${
+                      mouse === i ? "text-[#fff]" : "text-[#2F76DE]"
+                    }`}
+                  />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

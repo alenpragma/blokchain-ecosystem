@@ -6,6 +6,7 @@ import twitter from "../assets/icon/twitter.svg";
 import linkedin from "../assets/icon/linkedin.svg";
 import youtube from "../assets/icon/youtube.svg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -28,9 +29,14 @@ const Contact = () => {
                   type="text"
                   className="w-full px-4 py-2 border border-[#2F76DE] outline-[#2f76DE] transition-all rounded-2xl"
                 />
-                <button className="bg-[#2F76DE] rounded-2xl px-5 py-2 text-[#fff]">
+                <motion.button
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                  className="bg-[#2F76DE] rounded-2xl px-5 py-2 text-[#fff]"
+                >
                   Subscribe
-                </button>
+                </motion.button>
               </div>
             </form>
           </div>
@@ -40,19 +46,54 @@ const Contact = () => {
             </h3>
             <div className="flex gap-5 mt-8">
               <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
-                <img className="size-10" src={facebook} alt="" />
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="size-10"
+                  src={facebook}
+                  alt=""
+                />
               </Link>
               <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
-                <img className="size-10" src={twitter} alt="" />
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="size-10"
+                  src={twitter}
+                  alt=""
+                />
               </Link>
               <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
-                <img className="size-10" src={linkedin} alt="" />
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="size-10"
+                  src={linkedin}
+                  alt=""
+                />
               </Link>
               <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
-                <img className="size-10" src={youtube} alt="" />
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="size-10"
+                  src={youtube}
+                  alt=""
+                />
               </Link>
               <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
-                <img className="size-10" src={facebook} alt="" />
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="size-10"
+                  src={facebook}
+                  alt=""
+                />
               </Link>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="w-full bg-[#e9f0f5] md:px-0 px-5">
+    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className="w-full bg-[#e9f0f5] md:px-0 px-5">
         <Container>
           <div className="lg:pt-24 pt-12">
             <h1 className="lg:text-[64px] md:text-[52px] text-[32px] text-[#323232] font-bold lg:leading-[76px]">
@@ -53,7 +53,7 @@ const Hero = () => {
             </div>
           </div>
         </Container>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Container from "./shared/Container";
 import akuna from "../assets/icon/share/akuna.svg";
 import binance from "../assets/icon/share/binance.svg";
@@ -8,16 +8,29 @@ import okx from "../assets/icon/share/okx.svg";
 import optiver from "../assets/icon/share/optiver.svg";
 import twosigma from "../assets/icon/share/twosigma.svg";
 import wintermute from "../assets/icon/share/wintermute.svg";
-import Slider from "react-slick";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const BlockChainTrust = () => {
+  const componentRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: componentRef,
+    offset: ["0 1", "1 8.5"],
+  });
+
+  const scaleValue = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const xValue = useTransform(scrollYProgress,  [0, 1], [-500, 0])
+
   return (
-    <div className="w-full bg-[#F3F3F3] px-5 md:py-24 py-12">
+    <motion.div
+      style={{ scale: scaleValue }}
+      className="w-full bg-[#F3F3F3] px-5 md:py-24 py-12"
+    
+    >
       <Container>
-        <div>
+        <motion.div>
           <div className="flex flex-col justify-center items-center text-center">
             <h2>Blockchain You Can Trust</h2>
             <p className="max-w-[70ch] mt-[30px]">
@@ -54,48 +67,10 @@ const BlockChainTrust = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-
-          {/* <img className="w-[160px] col-span-3" src={binance} alt="" />
-          <img className="w-[160px] col-span-3" src={cboe} alt="" />
-          <img className="w-[160px] col-span-3" src={jane} alt="" />
-          <img className="w-[160px] col-span-3" src={okx} alt="" />
-          <img className="w-[160px] col-span-3" src={optiver} alt="" />
-          <img className="w-[160px] col-span-3" src={twosigma} alt="" />
-          <img className="w-[160px] col-span-3" src={wintermute} alt="" /> */}
-        </div>
-        {/* <div className="w-full grid grid-cols-12 gap-10">
-          <div className="flex flex-col gap-8  md:col-span-6 col-span-12">
-            <h2>Blockchain You <br /> Can Trust</h2>
-            <p>
-              Major financial institutions—including some of the world’s <br /> biggest
-              exchanges, market makers, and trading firms—publish <br /> their data
-              directly to the network.
-            </p>
-          </div>
-          <div className=" md:col-span-6 col-span-12 grid grid-cols-12 gap-5">
-            <img className="w-[160px] col-span-3" src={akuna} alt="" />
-            <img className="w-[160px] col-span-3" src={binance} alt="" />
-            <img className="w-[160px] col-span-3" src={cboe} alt="" />
-            <img className="w-[160px] col-span-3" src={jane} alt="" />
-            <img className="w-[160px] col-span-3" src={okx} alt="" />
-            <img className="w-[160px] col-span-3" src={optiver} alt="" />
-            <img className="w-[160px] col-span-3" src={twosigma} alt="" />
-            <img className="w-[160px] col-span-3" src={wintermute} alt="" />
-          </div>
-        </div> */}
+        </motion.div>
       </Container>
-    </div>
+    </motion.div>
   );
 };
 
 export default BlockChainTrust;
-
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-//   <Swiper
-//   slidesPerView={3}
-//   spaceBetween={30}
-//   className="mySwiper"
-// >
-//   <SwiperSlide>Slide 1</SwiperSlide>
-// </Swiper>
