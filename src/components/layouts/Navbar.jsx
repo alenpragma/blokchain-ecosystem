@@ -45,7 +45,7 @@ const Navbar = () => {
           </div>
           <div className="">
             <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg lg:flex md:flex hidden">
-              create wallet
+            Start Building
             </button>
             <button
               onClick={handleToggleMenu}
