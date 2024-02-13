@@ -1,6 +1,6 @@
-import Container from "./shared/Container";
-import efficacy from "../assets/icon/efficacy.svg";
-import rightArrow from "../assets/icon/arrow-up-right.svg";
+import Container from "../../components/shared/Container";
+import efficacy from "../../assets/icon/efficacy.svg"
+import rightArrow from "../../assets/icon/arrow-up-right.svg";
 import { useScroll, motion, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -19,14 +19,14 @@ const FreedomData = [
   },
 ];
 
-const Freedom = () => {
+const FreedomSection = () => {
   const componentRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: componentRef,
     offset: ["0 1", "2 1"],
   });
 
-  const xValue = useTransform(scrollYProgress,  [0, 1], [-500, 0])
+  const xValue = useTransform(scrollYProgress, [0, 1], [-500, 0]);
   return (
     <div
       style={{ x: xValue }}
@@ -70,4 +70,4 @@ const Freedom = () => {
   );
 };
 
-export default Freedom;
+export default FreedomSection;

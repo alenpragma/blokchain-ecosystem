@@ -1,7 +1,7 @@
-import Container from "./shared/Container";
-import developmentImage from "../assets/image/programming.png";
+import Container from "../../components/shared/Container";
+import developmentImage from "../../assets/image/programming.png";
 
-const BuildBiz = () => {
+const BuildBizSection = () => {
   return (
     <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
       <Container>
@@ -29,7 +29,11 @@ const BuildBiz = () => {
             </div>
           </div>
           <div>
-            <img className="w-full object-contain" src={developmentImage} alt="" />
+            <img
+              className="w-full object-contain"
+              src={developmentImage}
+              alt=""
+            />
           </div>
         </div>
       </Container>
@@ -37,4 +41,4 @@ const BuildBiz = () => {
   );
 };
 
-export default BuildBiz;
+export default BuildBizSection;

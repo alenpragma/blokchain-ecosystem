@@ -2,7 +2,7 @@ import Container from "../shared/Container";
 import logo from "../../assets/icon/biz-token.png";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const MainFooter = () => {
   return (
     <div className="w-[100%] bg-[#00265D] pt-20 pb-8">
       <Container>
@@ -92,4 +92,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default MainFooter;

@@ -1,6 +1,6 @@
-import Container from "./shared/Container";
-import rightArrow from "../assets/icon/arrow-small-right.svg";
-import microsoft from "../assets/icon/microsoft_logo.svg";
+import Container from "../../components/shared/Container";
+// import rightArrow from "../assets/icon/arrow-small-right.svg";
+import microsoft from "../../assets/icon/microsoft_logo.svg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -12,7 +12,7 @@ const InvolvedName = [
   { title: "Apply For", point: "false" },
 ];
 
-const Involved = () => {
+const InvolvedSection = () => {
   const [mouse, setMouse] = useState(false);
   console.log(mouse);
   return (
@@ -29,7 +29,7 @@ const Involved = () => {
               <motion.div
                 initial={{ background: "#fff" }}
                 whileHover={{ background: "#2F76DE" }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
                 key={i}
                 className="bg-[#fff] py-10 flex justify-center items-center gap-10 flex-col rounded-md"
                 onMouseEnter={() => setMouse(i)}
@@ -50,7 +50,7 @@ const Involved = () => {
                       mouse === i
                         ? "border-b-4 border-[#fff]"
                         : "border-b-4 border-[#2F76DE]"
-                    }  ml-1 px-1`}
+                    }  ml-1 px-1 `}
                   >
                     {data.point === "true" ? "Wallet" : "Grant"}
                   </span>
@@ -73,4 +73,4 @@ const Involved = () => {
   );
 };
 
-export default Involved;
+export default InvolvedSection;

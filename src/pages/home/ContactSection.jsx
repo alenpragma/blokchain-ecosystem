@@ -1,14 +1,14 @@
-import Container from "./shared/Container";
+import Container from "../../components/shared/Container";
 
-import email from "../assets/icon/email.svg";
-import facebook from "../assets/icon/facebook.svg";
-import twitter from "../assets/icon/twitter.svg";
-import linkedin from "../assets/icon/linkedin.svg";
-import youtube from "../assets/icon/youtube.svg";
+import email from "../../assets/icon/email.svg";
+import facebook from "../../assets/icon/facebook.svg";
+import twitter from "../../assets/icon/twitter.svg";
+import linkedin from "../../assets/icon/linkedin.svg";
+import youtube from "../../assets/icon/youtube.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const ContactSection = () => {
   return (
     <div className="w-full bg-[#F3F3F3] px-5 py-20">
       <Container>
@@ -103,4 +103,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

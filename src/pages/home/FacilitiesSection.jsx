@@ -1,5 +1,5 @@
-import Container from "./shared/Container";
-import handBack from "../assets/icon/hand-back.svg";
+import Container from "../../components/shared/Container";
+import handBack from "../../assets/icon/hand-back.svg";
 
 const FacilitiesData = [
   {
@@ -30,7 +30,7 @@ const FacilitiesSecondData = [
   "Withdraw your Token or Balance Instant.",
 ];
 
-const Facilities = () => {
+const FacilitiesSection = () => {
   return (
     <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
       <Container>
@@ -85,4 +85,4 @@ const Facilities = () => {
   );
 };
 
-export default Facilities;
+export default FacilitiesSection;

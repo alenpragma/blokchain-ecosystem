@@ -1,11 +1,11 @@
-import Container from "./shared/Container";
-import bitcoin from "../assets/image/bitcoin.png";
-import hand from "../assets/image/hand.png";
-import cardano from "../assets/image/cardano.png";
+import Container from "../../components/shared/Container";
+import bitcoin from "../../assets/image/bitcoin.png";
+import hand from "../../assets/image/hand.png";
+import cardano from "../../assets/image/cardano.png";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const LatestBlog = () => {
+const LatestBlogSection = () => {
   return (
     <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
       <Container>
@@ -95,4 +95,4 @@ const LatestBlog = () => {
   );
 };
 
-export default LatestBlog;
+export default LatestBlogSection;

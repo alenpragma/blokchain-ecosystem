@@ -6,7 +6,7 @@ import { IoMdMenu, IoIosClose } from "react-icons/io";
 
 const NavItem = (
   <>
-    <Link to="/" className="hover:text-slate-300">
+    <Link to="/about/about-home" className="hover:text-slate-300">
       Developers
     </Link>
     <Link to="/" className="hover:text-slate-300">
@@ -83,34 +83,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// import React, { useState } from 'react';
-
-// const Navbar = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsMenuOpen(!isMenuOpen);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={toggleMenu} className="bg-blue-500 text-white p-2">
-//         Toggle Menu
-//       </button>
-
-//       <div
-//         className={`${
-//           isMenuOpen ? 'transition duration-500 ' : ''
-//         } ${
-//           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-//         }  top-0 left-0 w-64 h-full bg-gray-800 p-4`}
-//       >
-//         {/* Your menu content goes here */}
-//         <p className="text-white">Menu Content</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;

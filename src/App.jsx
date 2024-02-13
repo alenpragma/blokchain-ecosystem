@@ -1,9 +1,9 @@
-import Main from "./layouts/Main";
+import MainLayout from "./components/layouts/MainLayout";
 
 function App() {
   return (
     <>
-      <Main />
+      <MainLayout />
     </>
   );
 }

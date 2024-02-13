@@ -20,3 +20,9 @@
 .text-style3{
     @apply font-normal text-[16px] text-[#262626]
 }
+
+@layer base{
+    input[type="text"]::placeholder{
+    @apply font-light text-[#000] text-[16px]
+  }
+  }

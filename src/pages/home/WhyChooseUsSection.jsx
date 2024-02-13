@@ -1,7 +1,7 @@
-import Container from "./shared/Container";
-import asset from "../assets/image/asset.jpg";
-import community from "../assets/image/community.jpg";
-import insigts from "../assets/image/insights.jpg";
+import Container from "../../components/shared/Container";
+import asset from "../../assets/image/asset.jpg";
+import community from "../../assets/image/community.jpg";
+import insigts from "../../assets/image/insights.jpg";
 
 const WhyChooseUsData = [
   {
@@ -24,7 +24,7 @@ const WhyChooseUsData = [
   },
 ];
 
-const WhyChooseUs = () => {
+const WhyChooseUsSection = () => {
   return (
     <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
       <Container>
@@ -67,4 +67,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default WhyChooseUsSection;
