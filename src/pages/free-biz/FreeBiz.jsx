@@ -30,7 +30,7 @@ const faqData = [
   },
 ];
 
-const Faq = () => {
+const FreeBiz = () => {
   const [isOpen, setIsOpen] = useState(null);
   const [toggle, setToggle] = useState(null);
   console.log(isOpen);
@@ -39,7 +39,7 @@ const Faq = () => {
     setToggle((prev) => (prev === i ? null : i));
   };
   return (
-    <div className="bg-[#e3f3ff] md:py-[132px] py-10">
+    <div className="bg-[#e3f3ff] md:py-[100px] py-10">
       <Container className="">
         <div className="text-center md:mb-[80px] mb-10">
           <h3 className="md:text-[64px] text-[44px] font-bold text-[#323232] uppercase">
@@ -101,4 +101,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FreeBiz;

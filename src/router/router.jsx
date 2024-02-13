@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/home";
-import FaqLayout from "../components/layouts/FaqLayout";
-import Faq from "../pages/faq/Faq";
+import FreeBizLayout from "../components/layouts/FreeBizLayout";
+import FreeBiz from "../pages/free-biz/FreeBiz";
 
 const router = createBrowserRouter([
   {
@@ -16,9 +16,9 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "faq",
-    element: <FaqLayout />,
-    children: [{ path: "faq-home", element: <Faq /> }],
+    path: "/",
+    element: <FreeBizLayout />,
+    children: [{ path: "free-biz-home", element: <FreeBiz /> }],
   },
 ]);
 export default router;

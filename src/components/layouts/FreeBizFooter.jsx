@@ -1,6 +1,6 @@
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
-const FaqFooter = () => {
+const FreeBizFooter = () => {
   return (
     <div className="w-full bg-[#3F3F3F] py-[125px]">
       <div className="max-w-[537px] mx-auto flex flex-col justify-center items-center">
@@ -38,4 +38,4 @@ const FaqFooter = () => {
   );
 };
 
-export default FaqFooter;
+export default FreeBizFooter;
