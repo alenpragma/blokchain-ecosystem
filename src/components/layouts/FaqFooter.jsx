@@ -1,6 +1,6 @@
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
-const AboutFooter = () => {
+const FaqFooter = () => {
   return (
     <div className="w-full bg-[#3F3F3F] py-[125px]">
       <div className="max-w-[537px] mx-auto flex flex-col justify-center items-center">
@@ -38,4 +38,4 @@ const AboutFooter = () => {
   );
 };
 
-export default AboutFooter;
+export default FaqFooter;

@@ -6,7 +6,7 @@ import { IoMdMenu, IoIosClose } from "react-icons/io";
 
 const NavItem = (
   <>
-    <Link to="/about/about-home" className="hover:text-slate-300">
+    <Link to="" className="hover:text-slate-300">
       Developers
     </Link>
     <Link to="/" className="hover:text-slate-300">
@@ -18,8 +18,8 @@ const NavItem = (
     <Link to="/" className="hover:text-slate-300">
       NewsFeed
     </Link>
-    <Link to="/" className="hover:text-slate-300">
-      About
+    <Link to="/faq/faq-home" className="hover:text-slate-300">
+      FAQ
     </Link>
   </>
 );

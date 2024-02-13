@@ -30,7 +30,7 @@ const faqData = [
   },
 ];
 
-const About = () => {
+const Faq = () => {
   const [isOpen, setIsOpen] = useState(null);
   const [toggle, setToggle] = useState(null);
   console.log(isOpen);
@@ -101,4 +101,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Faq;
