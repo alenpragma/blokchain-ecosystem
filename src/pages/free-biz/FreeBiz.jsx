@@ -39,7 +39,7 @@ const FreeBiz = () => {
     setToggle((prev) => (prev === i ? null : i));
   };
   return (
-    <div className="bg-[#e3f3ff] md:py-[100px] py-10">
+    <div className="bg-[#e3f3ff] md:py-[80px] py-10">
       <Container className="">
         <div className="text-center md:mb-[80px] mb-10">
           <h3 className="md:text-[64px] text-[44px] font-bold text-[#323232] uppercase">
@@ -49,7 +49,7 @@ const FreeBiz = () => {
             Get BIZ Testnet tokens every 24 hours for test deployment.
           </p>
         </div>
-        <div className="bg-[#ffff] md:py-[137px] py-[50px] pl-[60px] pr-[28px] rounded-lg">
+        <div className="bg-[#ffff] md:py-[100px] py-[50px] pl-[60px] pr-[28px] rounded-lg">
           <form>
             <div className="flex flex-col">
               <label
@@ -60,19 +60,19 @@ const FreeBiz = () => {
               </label>
               <div className="flex md:flex-row flex-col gap-7">
                 <input
-                  className="w-full bg-[#F3F3F3] rounded-2xl border border-[#747474] outline-[#2f76de] md:px-[47px] px-5 md:py-[35px] py-[10px] md:text-[20px] text-[16px]"
+                  className="w-full bg-[#F3F3F3] rounded-2xl border border-[#747474] outline-[#2f76de] md:px-[47px] px-5 md:py-[15px] py-[15px] md:text-[20px] text-[16px]"
                   type="text"
                   id=""
                   placeholder="Enter your BNB Smart Chain Testnet address"
                 />
-                <button className="px-[152px] md:py-[27px] py-3 bg-[#2f76de] rounded font-semibold md:text-[32px] text-[18px] text-white md:w-fit w-full">
+                <button className="px-[152px] md:py-[15px] py-3 bg-[#2f76de] rounded font-semibold md:text-[32px] text-[18px] text-white md:w-fit w-full">
                   Send
                 </button>
               </div>
             </div>
           </form>
         </div>
-        <div className="md:mt-[184px] mt-10">
+        <div className="md:mt-[100px] mt-10">
           <h2 className="font-bold text[48px] text-center mb-[71px]">FAQ</h2>
           <div className="space-y-5 w-[90%] mx-auto">
             {faqData.map((data, i) => (
