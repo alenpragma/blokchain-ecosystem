@@ -44,9 +44,11 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="">
-            <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg lg:flex md:flex hidden">
-            Start Building
-            </button>
+            <Link to="/dashboard/dashboard-home">
+              <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+                Start Building
+              </button>
+            </Link>
             <button
               onClick={handleToggleMenu}
               className="lg:hidden md:hidden flex"
@@ -71,9 +73,11 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="my-4">
-              <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
-                Start Building
-              </button>
+              <Link to="/dashboard/dashboard-home">
+                <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+                  Start Building
+                </button>
+              </Link>
             </div>
           </div>
         </div>
