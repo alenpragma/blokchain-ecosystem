@@ -16,7 +16,7 @@ const InvolvedSection = () => {
   const [mouse, setMouse] = useState(false);
   console.log(mouse);
   return (
-    <div className="w-full bg-[#F3F3F3] pt-10 pb-20 lg:px-0 px-5">
+    <div className="w-full bg-[#F3F3F3] pt-10 pb-20 lg:px-0 px-3">
       <Container>
         <div className="w-full">
           <div className="pb-10 text-center">

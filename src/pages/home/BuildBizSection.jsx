@@ -3,7 +3,7 @@ import developmentImage from "../../assets/image/programming.png";
 
 const BuildBizSection = () => {
   return (
-    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
+    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-3">
       <Container>
         <div
           className="grid md:grid-cols-2 grid-cols-1 px-14 py-8 gap-5 rounded-2xl"

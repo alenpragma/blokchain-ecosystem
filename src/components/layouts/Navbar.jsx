@@ -45,13 +45,13 @@ const Navbar = () => {
           </div>
           <div className="">
             <Link to="/dashboard/dashboard-home">
-              <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+              <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg md:block hidden">
                 Start Building
               </button>
             </Link>
             <button
               onClick={handleToggleMenu}
-              className="lg:hidden md:hidden flex"
+              className="flex md:hidden"
             >
               {menu ? (
                 <IoIosClose className="text-[40px]" />

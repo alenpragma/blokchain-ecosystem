@@ -8,7 +8,7 @@ const HeroSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="w-full bg-[#e9f0f5] md:px-0 px-5"
+      className="w-full bg-[#e9f0f5] md:px-0 px-3"
     >
       <Container>
         <div className="lg:pt-24 pt-12">

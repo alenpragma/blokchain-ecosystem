@@ -7,7 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const LatestBlogSection = () => {
   return (
-    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-5">
+    <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-3">
       <Container>
         <div>
           <div className="pb-14 text-center">

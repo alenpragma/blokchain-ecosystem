@@ -6,9 +6,9 @@ const MainFooter = () => {
   return (
     <div className="w-[100%] bg-[#00265D] pt-20 pb-8">
       <Container>
-        <div className="grid grid-cols-12 md:gap-5 gap-10 mb-[150px]  px-5 lg:px-0">
+        <div className="grid grid-cols-12 md:gap-5 mb-[150px] gap-5 px-5 lg:px-0">
           <div className="lg:col-span-3 col-span-6">
-            <img src={logo} alt="" />
+            <img className="w-[75%]" src={logo} alt="" />
           </div>
           <div className="lg:col-span-3 col-span-6 lg:flex justify-center">
             <div>

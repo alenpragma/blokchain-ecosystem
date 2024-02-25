@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 const ContactSection = () => {
   return (
-    <div className="w-full bg-[#F3F3F3] px-5 py-20">
+    <div className="w-full bg-[#F3F3F3] px-3 py-20">
       <Container>
         <div className="grid grid-cols-12 gap-5">
           <div className="bg-[#F3FAFF] rounded-md lg:col-span-6 col-span-12 flex flex-col justify-center items-center py-6 lg:px-24 px-5">
@@ -45,7 +45,7 @@ const ContactSection = () => {
               Join Our Social Media
             </h3>
             <div className="flex gap-5 mt-8">
-              <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
+              <Link to="/" className="md:md:p-3 md:bg-[#D6E7FF] rounded-full">
                 <motion.img
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
@@ -55,7 +55,7 @@ const ContactSection = () => {
                   alt=""
                 />
               </Link>
-              <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
+              <Link to="/" className="md:md:p-3 md:bg-[#D6E7FF] rounded-full">
                 <motion.img
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
@@ -65,7 +65,7 @@ const ContactSection = () => {
                   alt=""
                 />
               </Link>
-              <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
+              <Link to="/" className="md:md:p-3 md:bg-[#D6E7FF] rounded-full">
                 <motion.img
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
@@ -75,7 +75,7 @@ const ContactSection = () => {
                   alt=""
                 />
               </Link>
-              <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
+              <Link to="/" className="md:md:p-3 md:bg-[#D6E7FF] rounded-full">
                 <motion.img
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
@@ -85,7 +85,7 @@ const ContactSection = () => {
                   alt=""
                 />
               </Link>
-              <Link to="/" className="p-3 bg-[#D6E7FF] rounded-full">
+              <Link to="/" className="md:md:p-3 md:bg-[#D6E7FF] rounded-full">
                 <motion.img
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}

@@ -30,7 +30,7 @@ const FreedomSection = () => {
   return (
     <div
       style={{ x: xValue }}
-      className="w-full bg-[#F3FAFF] pt-10 pb-20 lg:px-0 px-5"
+      className="w-full bg-[#F3FAFF] pt-10 pb-20 lg:px-0 px-3"
     >
       <Container>
         <div className="w-full">
