@@ -4,29 +4,29 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqData = [
   {
-    question: "What is JavaScript?",
+    question: "What standard are these tokens issued in?",
     answer:
-      "Welcome to the MDN beginner's JavaScript course! In this article we will look at JavaScript from a high level",
+      "BTC, BUSD, DAI, ETH, USDC, XRP, and USDT are issued as BEP20 tokens.",
   },
   {
-    question: "What is JavaScript?",
-    answer:
-      "Welcome to the MDN beginner's JavaScript course! In this article we will look at JavaScript from a high level",
+    question: "Are there any rate limits?",
+    answer: "Yes, you can only request 1 time per 24 hours, for all tokens.",
   },
   {
-    question: "What is JavaScript?",
+    question: "What if I want to request a large amount of tokens?",
     answer:
-      "Welcome to the MDN beginner's JavaScript course! In this article we will look at JavaScript from a high level",
+      "Request for a large number of tokens is restricted to development purposes only. Please reach out via the BizToken Telegram support group to make this request.",
   },
   {
-    question: "What is JavaScript?",
+    question:
+      "Does the tBIZ have any value, like some Binance testnet that can be traded with a real price?",
     answer:
-      "Welcome to the MDN beginner's JavaScript course! In this article we will look at JavaScript from a high level",
+      "tBIZ holds no financial value and cannot be traded at a real price, given its unlimited supply, exclusively serving test and development purposes.",
   },
   {
-    question: "What is JavaScript?",
+    question: "What if my request keeps failing?",
     answer:
-      "Welcome to the MDN beginner's JavaScript course! In this article we will look at JavaScript from a high level",
+      "To prevent potential misidentification as a bot, kindly refrain from frequent operations and allow a few minutes before attempting the next action. Feel free to seek assistance on the BizToken Telegram support group if issues persist.",
   },
 ];
 
@@ -81,17 +81,20 @@ const FreeBiz = () => {
                   className="flex items-center justify-between mr-5"
                   onClick={() => handeFaq(i)}
                 >
-                  <div className="flex gap-7 items-center">
+                  <div className="flex gap-7 items-start mr-10">
                     <span className="text-[#2f76de] text-[48px] font-semibold">
                       0{i + 1}
                     </span>
-                    <h3 className="cursor-pointer font-semibold text-[24px]">
-                      {data.question}
-                    </h3>
+                    <div className="mt-5">
+                      <h3 className="cursor-pointer font-semibold text-[24px]">
+                        {data.question}
+                      </h3>
+                      {isOpen == i && <p className="mt-10">{data.answer}</p>}
+                    </div>
                   </div>
                   {toggle == i ? <FaMinus /> : <FaPlus />}
                 </div>
-                {isOpen == i && <p className="mt-10">{data.answer}</p>}
+                {/* {isOpen == i && <p className="mt-10">{data.answer}</p>} */}
               </div>
             ))}
           </div>
