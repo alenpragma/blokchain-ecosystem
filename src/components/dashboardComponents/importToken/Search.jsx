@@ -29,7 +29,7 @@ const Search = () => {
             />
             <div className="relative w-[200px]">
               <div className="flex items-center h-full">
-                <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full h-full  rounded-r-md">
+                <select className="block appearance-none  cursor-pointer  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full h-full  rounded-r-md">
                   <option>Biz</option>
                   <option>Option 2</option>
                   <option>Option 3</option>

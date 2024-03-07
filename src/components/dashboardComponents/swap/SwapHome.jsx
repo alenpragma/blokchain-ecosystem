@@ -65,7 +65,7 @@ const SwapHome = () => {
                     <div>
                       <img className="size-[30px]" src={BizToken} alt="" />
                     </div>
-                    <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full">
+                    <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full cursor-pointer">
                       <option>Biz</option>
                       <option>Option 2</option>
                       <option>Option 3</option>
@@ -98,7 +98,7 @@ const SwapHome = () => {
                     <div>
                       <img className="size-[30px]" src={pmlogo} alt="" />
                     </div>
-                    <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full text-[#343434] font-semibold text-[18px]">
+                    <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full text-[#343434] font-semibold text-[18px] cursor-pointer">
                       <option>Pmind</option>
                       <option>Option 2</option>
                       <option>Option 3</option>

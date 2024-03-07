@@ -34,7 +34,7 @@ const SendReceived = () => {
             Send from
           </label>
           <div className="relative">
-            <select className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold">
+            <select className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold cursor-pointer">
               <option hidden className="text-red-400">
                 User Wallet Address
               </option>
@@ -55,7 +55,7 @@ const SendReceived = () => {
             Send to
           </label>
           <div className="relative">
-            <select className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold">
+            <select className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold cursor-pointer">
               <option hidden className="text-red-400">
                 User Wallet Address
               </option>
@@ -76,7 +76,7 @@ const SendReceived = () => {
             Assets
           </label>
           <div className="relative">
-            <select className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold">
+            <select className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold cursor-pointer">
               <option hidden className="text-red-400">
                 User Wallet Address
               </option>
@@ -99,7 +99,7 @@ const SendReceived = () => {
           <div className="relative">
             <input
               type="text"
-              className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold"
+              className="block appearance-none bg-white border border-[#2F76DE] px-4 py-4 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded-md w-full text-[18px] font-semibold cursor-pointer"
               placeholder="00"
             />
           </div>

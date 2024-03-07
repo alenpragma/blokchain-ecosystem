@@ -31,7 +31,7 @@ const CustomToken = () => {
             />
             <div className="relative w-[250px]">
               <div className="flex items-center h-full">
-                <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full h-full  rounded-r-md">
+                <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full h-full  rounded-r-md cursor-pointer">
                   <option>Select Network</option>
                   <option>Option 2</option>
                   <option>Option 3</option>
