@@ -26,12 +26,12 @@ const CustomToken = () => {
             <input
               type="text"
               id="name"
-              className="w-full h-full py-2 outline-none px-5 rounded-l-md border-r border-[#3D3D3D]"
+              className="w-full h-full py-3 outline-none px-5 rounded-l-md border-r border-[#3D3D3D]"
               placeholder="Token contract address"
             />
             <div className="relative w-[250px]">
               <div className="flex items-center h-full">
-                <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full h-full  rounded-r-md cursor-pointer">
+                <select className="block appearance-none  px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline w-full h-full  rounded-r-md cursor-pointer text-[18px] font-semibold">
                   <option>Select Network</option>
                   <option>Option 2</option>
                   <option>Option 3</option>
@@ -50,8 +50,8 @@ const CustomToken = () => {
             <input
               type="text"
               id="name"
-              className=" appearance-none px-4 py-2 shadow leading-tight focus:outline-none focus:shadow-outline w-full rounded-md"
-              placeholder="Token contract address"
+              className=" appearance-none px-4 py-3 shadow leading-tight focus:outline-none focus:shadow-outline w-full rounded-md"
+              placeholder="Token Symble"
             />
           </div>
           <div className="w-full  space-y-3">
@@ -59,8 +59,8 @@ const CustomToken = () => {
             <input
               type="text"
               id="name"
-              className=" appearance-none px-4 py-2 shadow leading-tight focus:outline-none focus:shadow-outline w-full rounded-md"
-              placeholder="Token contract address"
+              className=" appearance-none px-4 py-3 shadow leading-tight focus:outline-none focus:shadow-outline w-full rounded-md"
+              placeholder="Token Decimals"
             />
           </div>
         </div>

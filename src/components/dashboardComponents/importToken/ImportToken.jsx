@@ -6,8 +6,8 @@ const ImportToken = () => {
   const [show, setShow] = useState("1");
   return (
     <div
-      className={`max-w-[868px] mx-auto p-5 mt-12 mb-12  rounded-xl md:h-[80vh] h-full ${
-        show == 1 ? "bg-[#E7F5FF]" : "bg-[#F4F4F4]"
+      className={`max-w-[868px] mx-auto p-5 mt-12 mb-12  rounded-xl  h-full ${
+        show == 1 ? "bg-[#E7F5FF] md:h-[80vh]" : "bg-[#F4F4F4] md:h-[85vh]"
       }`}
     >
       <div className="flex justify-center mb-12">
