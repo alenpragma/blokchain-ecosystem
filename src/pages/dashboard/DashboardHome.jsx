@@ -1,8 +1,11 @@
+import CopyToken from "../../components/dashboardComponents/dashboard/CopyToken";
+import DashboardTable from "../../components/dashboardComponents/dashboard/DashboardTable";
 
 const DashboardHome = () => {
   return (
     <div>
-        <h2>this is dashboard home</h2>
+      <CopyToken />
+      <DashboardTable />
     </div>
   );
 };

@@ -3,26 +3,55 @@
 @tailwind utilities;
 
 @layer base {
-    h2{
-        @apply text-[#242424] font-bold text-[48px]
-    }
-    h4{
-        @apply text-[24px] font-semibold text-[#242424]
-    }
+  h2 {
+    @apply text-[#242424] font-bold text-[48px];
+  }
+  h4 {
+    @apply text-[24px] font-semibold text-[#242424];
+  }
+  input[type="text"]::placeholder {
+    @apply font-light text-[#000] text-[16px];
+  }
+}
+@layer components {
+  .text-style1 {
+    @apply text-[16px] text-[#3E3E3E];
+  }
+  .text-style2 {
+    @apply font-light text-[16px] text-[#3E3E3E];
+  }
+  .text-style3 {
+    @apply font-normal text-[16px] text-[#262626];
+  }
+
+  .select-form-style {
+    @apply block appearance-none py-2 px-5 focus:outline-none  rounded-3xl text-[14px] font-medium text-[#2E2E2E] cursor-pointer
+  }
+  .select-icon-style {
+    @apply pointer-events-none absolute top-0 bottom-0 my-auto right-3 flex items-center px-2 text-gray-700
+  }
 }
 
-.text-style1{
-    @apply text-[16px] text-[#3E3E3E]
+::-webkit-scrollbar-button {
+  height: 12px;
 }
-.text-style2{
-    @apply font-light text-[16px] text-[#3E3E3E]
+::-webkit-scrollbar {
+  width: 10px;
 }
-.text-style3{
-    @apply font-normal text-[16px] text-[#262626]
+::-webkit-scrollbar-track {
+  background: var(rgba(255, 0, 0, 0.4));
+}
+/* ::-webkit-scrollbar-thumb{
+    background: #fff;
+  } */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
 }
 
-@layer base{
-    input[type="text"]::placeholder{
-    @apply font-light text-[#000] text-[16px]
-  }
-  }
+

@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
-import vector from "../../../assets/icon/dashboard-icon/vector0.svg";
+// import vector from "../../../assets/icon/dashboard-icon/vector0.svg";
+import vector0 from "../../../assets/icon/dashboard-icon/vector0.svg";
 import vector1 from "../../../assets/icon/dashboard-icon/vector1.svg";
 import minus from "../../../assets/icon/dashboard-icon/minus-circle0.svg";
 import minus1 from "../../../assets/icon/dashboard-icon/minus-circle1.svg";
@@ -20,7 +21,7 @@ import shuffle1 from "../../../assets/icon/dashboard-icon/shuffle1.svg";
 
 const menuItem = [
   {
-    img0: vector,
+    img0: vector0,
     img1: vector1,
     title: "dashboard",
     pathname: "dashboard-home",
@@ -71,18 +72,98 @@ const menuItem = [
     img0: fileimport,
     img1: fileimport1,
     title: "import token",
-    pathname: "import",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
+  },
+  {
+    img0: fileimport,
+    img1: fileimport1,
+    title: "import token",
+    pathname: "import-token",
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ show }) => {
   // const [active, setIsActive] = useState()
 
   const location = useLocation();
-  console.log(location.pathname);
 
   return (
-    <aside className="bg-light-gray h-screen col-span-3 sticky top-0 left-0 overflow-auto border-r border-slate-500">
+    <aside className="bg-light-gray h-screen col-span-3 md:sticky md:top-0 left-0 overflow-auto w-[243px]">
+      <div className="flex justify-end pr-5 pt-3 lg:hidden ">
+        {show ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        )}
+      </div>
       <div className="text-3xl font-semibold text-slate-500 flex justify-center my-[30px]">
         <h3>Biz Token</h3>
       </div>

@@ -5,7 +5,12 @@ import FreeBizLayout from "../components/layouts/FreeBizLayout";
 import FreeBiz from "../pages/free-biz/FreeBiz";
 import DashboardLayout from "../components/layouts/dashboard/DashboardLayout";
 import DashboardHome from "../pages/dashboard/DashboardHome";
-import Explore from "../pages/dashboard/Explore";
+import Buy from "../pages/dashboard/Buy";
+import Swap from "../pages/dashboard/Swap";
+import Sell from "../pages/dashboard/Sell";
+import SellReceived from "../pages/dashboard/SellReceived";
+import Import from "../pages/dashboard/Import";
+import Error from "../components/error/Error";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +33,13 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       { index: true, element: <Navigate to="/dashboard/dashboard-home" /> },
+      { path: "*", element: <Error /> },
       { path: "dashboard-home", element: <DashboardHome /> },
-      { path: "explore", element: <Explore /> },
+      { path: "buy", element: <Buy /> },
+      { path: "sell", element: <Sell /> },
+      { path: "swap", element: <Swap /> },
+      { path: "send", element: <SellReceived /> },
+      { path: "import-token", element: <Import /> },
     ],
   },
 ]);

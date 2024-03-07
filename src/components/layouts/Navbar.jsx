@@ -9,7 +9,7 @@ const NavItem = (
     <Link to="/" className="hover:text-slate-300">
       Developers
     </Link>
-    <Link to="/" className="hover:text-slate-300">
+    <Link to="/ecosystem" className="hover:text-slate-300">
       Ecosystem
     </Link>
     <Link to="/" className="hover:text-slate-300">
