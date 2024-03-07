@@ -74,54 +74,6 @@ const menuItem = [
     title: "import token",
     pathname: "import-token",
   },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
-  {
-    img0: fileimport,
-    img1: fileimport1,
-    title: "import token",
-    pathname: "import-token",
-  },
 ];
 
 const Sidebar = ({ show }) => {
