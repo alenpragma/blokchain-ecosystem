@@ -12,22 +12,22 @@ const Token = () => {
         </thead>
         <tbody className="">
           <tr className="text-center border-b border-slate-500">
-            <td className="p-5">MindChain</td>
-            <td className="p-5">Mind $20</td>
-            <td className="p-5">$ 20</td>
-            <td className="p-5">220</td>
+            <td className="p-5">Biztoken</td>
+            <td className="p-5">1000BIZ</td>
+            <td className="p-5">$0.40</td>
+            <td className="p-5">1000BIZ</td>
           </tr>
           <tr className="text-center  border-b border-slate-500">
-            <td className="p-5">MindChain</td>
-            <td className="p-5">Mind $20</td>
-            <td className="p-5">$ 20</td>
-            <td className="p-5">220</td>
+            <td className="p-5">Biztoken</td>
+            <td className="p-5">1000BIZ</td>
+            <td className="p-5">$0.40</td>
+            <td className="p-5">1000BIZ</td>
           </tr>
           <tr className="text-center border-b border-slate-500">
-            <td className="p-5">MindChain</td>
-            <td className="p-5">Mind $20</td>
-            <td className="p-5">$ 20</td>
-            <td className="p-5">220</td>
+            <td className="p-5">Biztoken</td>
+            <td className="p-5">1000BIZ</td>
+            <td className="p-5">$0.40</td>
+            <td className="p-5">1000BIZ</td>
           </tr>
         </tbody>
       </table>
