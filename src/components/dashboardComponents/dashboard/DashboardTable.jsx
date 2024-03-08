@@ -74,7 +74,7 @@ const DashboardTable = () => {
                 onChange={(e) => setToken(e.target.value)}
                 className="select-form-style pl-10 w-full"
               >
-                <option>Biz Token Network</option>
+                <option>BizToken Network</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
                 <option>Option 4</option>
