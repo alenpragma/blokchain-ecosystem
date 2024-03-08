@@ -1,5 +1,5 @@
 import { useState } from "react";
-import bizToken from "../../../assets/dashboardImg/bizToken.svg";
+import bizToken from "../../../assets/dashboardImg/BizToken.svg";
 import file from "../../../assets/icon/dashboard-icon/wallet.svg";
 import arrow from "../../../assets/icon/dashboard-icon/angle-down.svg";
 import icon from "../../../assets/icon/dashboard-icon/image.png";

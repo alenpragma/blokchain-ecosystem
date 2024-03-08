@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import bizToken from "../../../assets/dashboardImg/bizToken.svg";
+import bizToken from "../../../assets/dashboardImg/BizToken.svg";
 import download from "../../../assets/dashboardImg/inbox-in.svg";
 import arrow from "../../../assets/icon/dashboard-icon/angle-down.svg";
 import Token from "./Token";

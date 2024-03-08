@@ -2,7 +2,7 @@ import { FaCopy } from "react-icons/fa";
 import { PropTypes } from "prop-types";
 import { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import bizToken from "../../../assets/dashboardImg/bizToken.svg";
+import bizToken from "../../../assets/dashboardImg/BizToken.svg";
 const CopyToken = () => {
   const [copied, setCopied] = useState(false);
   const [copyText, setCopyText] = useState("aaaaaaaaaaaaaaaaaa");
