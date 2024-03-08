@@ -3,7 +3,7 @@ import toggleImg from "../../../assets/icon/dashboard-icon/Group 16.svg";
 import pmlogo from "../../../assets/icon/dashboard-icon/pmlogo.svg";
 import BizToken from "../../../assets/icon/dashboard-icon/BizToken.svg";
 import arrow from "../../../assets/icon/dashboard-icon/angle-down.svg";
-import bizToken from "../../../assets/dashboardImg/bizToken.svg";
+import bizToken from "../../../assets/dashboardImg/BizToken.svg";
 const options = [
   {
     value: 1,
