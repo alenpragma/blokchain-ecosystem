@@ -31,7 +31,7 @@ const LatestBlogSection = () => {
               <div className="flex-1 bg-[#D5D5D5] flex flex-col justify-end pb-[30px] rounded-b-3xl">
                 <div className="px-[19px]">
                   <h3 className="text-[18px] font-semibold">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   BIZ Token withdraw with Low Fees and ZERO Transfer in P2P System. Swap your Token Instantly no hidden cost. Use this token as a payment process of your business as low cost.
                   </h3>
                   <button className=" text-[18px] flex items-center gap-3 font-semibold my-5">
                     <span>Read More</span> <FaArrowRightLong />
@@ -40,7 +40,7 @@ const LatestBlogSection = () => {
                 <div className="border border-black"></div>
                 <div className="flex gap-5 items-center px-[19px] mt-5 text-[#242424]">
                   <FaCalendarAlt />
-                  <p>20 January 2024</p>
+                  <p>12 March 2024</p>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@ const LatestBlogSection = () => {
               <div className="absolute bottom-0 left-0 right-0 h-full flex flex-col py-[30px] justify-end  bg-gradient-to-t from-[#3e3e3e] via-[#3e3e3e65] to-[#fff0] rounded-3xl">
                 <div className="px-[19px]">
                   <h3 className="text-[18px] text-[#fff] font-semibold mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   Exploring the Latest in Blockchain Technology.
                   </h3>
                 </div>
                 <div className="border border-[#fff]"></div>
@@ -78,7 +78,7 @@ const LatestBlogSection = () => {
               <div className="absolute bottom-0 left-0 right-0 h-full flex flex-col py-[30px] justify-end  bg-gradient-to-t from-[#3e3e3e] via-[#3e3e3e65] to-[#fff0] rounded-3xl">
                 <div className="px-[19px]">
                   <h3 className="text-[18px] text-[#fff] font-semibold mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   Cornering the Market on Cryptocurrency Insights
                   </h3>
                 </div>
                 <div className="border border-[#fff]"></div>
