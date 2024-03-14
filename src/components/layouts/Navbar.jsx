@@ -49,14 +49,9 @@ const Navbar = () => {
                 Start Building
               </button>
             </Link>
-            <button
-              onClick={handleToggleMenu}
-              className="flex md:hidden"
-            >
-              {menu ? (
-                <IoIosClose className="text-[40px]" />
-              ) : (
-                <IoMdMenu className="text-[40px]" />
+            <button onClick={handleToggleMenu} className="flex md:hidden">
+              {menu ? "" : (
+                <IoMdMenu className="text-[40px] text-[#fff]" />
               )}
             </button>
           </div>
@@ -65,9 +60,18 @@ const Navbar = () => {
               menu
                 ? "transition duration-300 ease-in-out transform translate-x-0"
                 : "transition duration-300 ease-in-out transform translate-x-full"
-            } fixed top-16 right-0 w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
+            } fixed top-0 right-0 md:hidden w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
           >
-            <div>
+            <div className="w-full">
+              <div className="flex justify-end">
+                <button onClick={handleToggleMenu} className="flex md:hidden">
+                  {menu ? (
+                    <IoIosClose className="text-[40px] text-[#fff]" />
+                  ) : (
+                    <IoMdMenu className="text-[40px] text-[#fff]" />
+                  )}
+                </button>
+              </div>
               <ul className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
                 {NavItem}
               </ul>

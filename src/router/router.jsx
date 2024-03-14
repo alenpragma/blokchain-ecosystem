@@ -11,6 +11,7 @@ import Sell from "../pages/dashboard/Sell";
 import SellReceived from "../pages/dashboard/SellReceived";
 import Import from "../pages/dashboard/Import";
 import Error from "../components/error/Error";
+import News from "../pages/news/News";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/news/:id",
+        element: <News />,
+        loader: ({params}) => fetch(`https://biz-server-5834vbm9r-remontripuras-projects.vercel.app/news${params.id}`)
+      },
     ],
   },
   {
@@ -28,6 +34,7 @@ const router = createBrowserRouter([
     element: <FreeBizLayout />,
     children: [{ path: "free-biz-home", element: <FreeBiz /> }],
   },
+
   {
     path: "/dashboard",
     element: <DashboardLayout />,

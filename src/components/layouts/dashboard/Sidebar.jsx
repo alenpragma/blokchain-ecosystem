@@ -18,6 +18,7 @@ import refresh from "../../../assets/icon/dashboard-icon/refresh0.svg";
 import refresh1 from "../../../assets/icon/dashboard-icon/refresh1.svg";
 import shuffle from "../../../assets/icon/dashboard-icon/shuffle0.svg";
 import shuffle1 from "../../../assets/icon/dashboard-icon/shuffle1.svg";
+import logo from "../../../assets/icon/logo2.svg"
 
 const menuItem = [
   {
@@ -117,7 +118,7 @@ const Sidebar = ({ show }) => {
         )}
       </div>
       <div className="text-3xl font-semibold text-slate-500 flex justify-center my-[30px]">
-        <h3>Biz Token</h3>
+        <img src={logo} alt="" />
       </div>
       <nav className="flex flex-col gap-3 border-r-2">
         {menuItem.map((item, i) => (

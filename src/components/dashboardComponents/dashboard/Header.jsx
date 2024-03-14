@@ -1,5 +1,6 @@
 import { GoSearch } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import logo from "../../../assets/icon/logo2.svg"
 
 const Header = ({ show, setShow }) => {
   const toggleMenu = () => {
@@ -28,6 +29,7 @@ const Header = ({ show, setShow }) => {
             />
           </svg>
         </div>
+        <img className="md:hidden block w-[150px]" src={logo} alt="" />
         <h2 className="font-bold text-[24px] hidden md:block">Dashboard</h2>
       </div>
       <div className="flex items-center gap-5">
