@@ -78,7 +78,6 @@ const menuItem = [
 ];
 
 const Sidebar = ({ show }) => {
-  // const [active, setIsActive] = useState()
 
   const location = useLocation();
 

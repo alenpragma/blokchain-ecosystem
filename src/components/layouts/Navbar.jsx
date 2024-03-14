@@ -1,26 +1,33 @@
 import React, { useState } from "react";
 import Container from "../shared/Container";
 import icon from "../../assets/icon/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoMdMenu, IoIosClose } from "react-icons/io";
 
 const NavItem = (
   <>
-    <Link to="/" className="hover:text-slate-300">
+    <NavLink to="/" className="hover:text-slate-300">
       Developers
-    </Link>
-    <Link to="/ecosystem" className="hover:text-slate-300">
+    </NavLink>
+    <NavLink to="/ecosystem" className="hover:text-slate-300">
       Ecosystem
-    </Link>
-    <Link to="/" className="hover:text-slate-300">
+    </NavLink>
+    <NavLink to="/" className="hover:text-slate-300">
       Community
-    </Link>
-    <Link to="/" className="hover:text-slate-300">
+    </NavLink>
+    <NavLink to="/" className="hover:text-slate-300">
       NewsFeed
-    </Link>
-    <Link to="/free-biz-home" className="hover:text-slate-300">
+    </NavLink>
+    <NavLink
+      to="/free-biz-home"
+      className={({ isActive }) =>
+        `${
+          isActive ? "text-[#000] font-semibold hover:text-[#000]" : "hover:text-slate-300"
+        } `
+      }
+    >
       Free-Biz
-    </Link>
+    </NavLink>
   </>
 );
 
@@ -32,16 +39,16 @@ const Navbar = () => {
   return (
     <div className="w-full bg-[#2F76DE]">
       <Container>
-        <div className="w-full flex justify-between items-center py-4 relative px-5">
+        <nav className="w-full flex justify-between items-center py-4 relative px-5">
           <div>
             <Link to="/">
               <img className="w-32" src={icon} alt="" />
             </Link>
           </div>
           <div className="lg:flex md:flex hidden">
-            <ul className="flex gap-5 text-[#FFF] text-[16px] hover:text-[#F3FAFF]">
+            <div className="flex gap-5 text-[#FFF] text-[16px] hover:text-[#F3FAFF]">
               {NavItem}
-            </ul>
+            </div>
           </div>
           <div className="">
             <Link to="/dashboard/dashboard-home">
@@ -50,9 +57,7 @@ const Navbar = () => {
               </button>
             </Link>
             <button onClick={handleToggleMenu} className="flex md:hidden">
-              {menu ? "" : (
-                <IoMdMenu className="text-[40px] text-[#fff]" />
-              )}
+              {menu ? "" : <IoMdMenu className="text-[40px] text-[#fff]" />}
             </button>
           </div>
           <div
@@ -84,7 +89,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </nav>
       </Container>
     </div>
   );

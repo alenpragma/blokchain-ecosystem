@@ -5,10 +5,7 @@ import { useState } from "react";
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
-  // const date = new Date().getFullYear()
-  // const date = new Date().getFullYear()
-  // const date = new getMonth()
-  // console.log(date);
+ console.log(hover);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -35,10 +32,10 @@ const HeroSection = () => {
               <motion.button
                 className={`${
                   hover == true ? "border border-[#2F76DE] text-[#3E3E3E]" : "bg-[#2F76DE] text-[#fff]"
-                }  py-3 px-8  rounded-lg lg:flex md:flex  border border-red`}
+                }  py-3 px-8  rounded-lg lg:flex md:flex`}
                 initial={{ scale: 1 }}
                 whileHover={{
-                  backgroundColor: "#2F76DE",
+                  // backgroundColor: "#2F76DE",
                   duration: 0.5,
                   scale: 1.04,
                 }}
