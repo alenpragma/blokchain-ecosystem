@@ -6,7 +6,7 @@ const BuildBizSection = () => {
     <div className="w-full bg-[#fff] pt-10 pb-20 lg:px-0 px-3">
       <Container>
         <div
-          className="grid md:grid-cols-2 grid-cols-1 px-14 py-8 gap-5 rounded-2xl"
+          className="grid md:grid-cols-2 grid-cols-1 md:px-14 md:py-8 px-5 py-3 gap-5 rounded-2xl"
           style={{
             background:
               "linear-gradient(86deg, rgba(47, 118, 222, 0.83) 27.69%, rgba(179, 0, 194, 0.00) 115.26%)",
