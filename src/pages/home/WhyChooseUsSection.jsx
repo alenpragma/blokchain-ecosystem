@@ -53,7 +53,7 @@ const WhyChooseUsSection = () => {
                   alt=""
                 />
                 <div className="mx-4">
-                  <h3 className="text-[#000] text-[28px] font-medium my-5">
+                  <h3 className="text-[#000] md:text-[28px] text-[20px] font-medium my-5">
                     {data.heading}
                   </h3>
                   <p className="text-style2">{data.title}</p>
