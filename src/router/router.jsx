@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/news/:id",
         element: <News />,
-        loader: ({params}) => fetch(`https://biz-server-5834vbm9r-remontripuras-projects.vercel.app/news${params.id}`)
+        loader: ({params}) => fetch(`https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`)
       },
     ],
   },

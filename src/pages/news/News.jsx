@@ -6,8 +6,8 @@ const News = () => {
   const { img, title, news } = loaderData;
   return <Container>
     <div className="w-2/4 my-5">
-        <h3 className="font-semibold text-4 text-3xl">{title}</h3>
-        <img className="h-[400px] w-full my-3" src={img} alt="" />
+        <img className="h-[400px] w-full" src={img} alt="" />
+        <h3 className="font-semibold text-4 text-3xl my-3">{title}</h3>
         <p>{news}</p>
     </div>
   </Container>;
