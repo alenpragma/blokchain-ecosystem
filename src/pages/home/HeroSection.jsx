@@ -1,11 +1,17 @@
 import Container from "../../components/shared/Container";
 import hero from "../../assets/image/hero.png";
 import { motion } from "framer-motion";
-import { useState } from "react";
-
+import {  useState } from "react";
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
- console.log(hover);
+
+  const openMetaMask = () => {
+    if (typeof window.ethereum !== "undefined") {
+      window.ethereum.request({ method: "eth_requestAccounts" });
+    } else {
+      console.log("MetaMask is not installed");
+    }
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,7 +37,9 @@ const HeroSection = () => {
             <div className="flex gap-5 md:justify-start justify-center items-center">
               <motion.button
                 className={`${
-                  hover == true ? "border border-[#2F76DE] text-[#3E3E3E]" : "bg-[#2F76DE] text-[#fff]"
+                  hover == true
+                    ? "border border-[#2F76DE] text-[#3E3E3E]"
+                    : "bg-[#2F76DE] text-[#fff]"
                 }  py-3 px-8  rounded-lg lg:flex md:flex`}
                 initial={{ scale: 1 }}
                 whileHover={{
@@ -44,6 +52,7 @@ const HeroSection = () => {
                 create wallet
               </motion.button>
               <motion.button
+              onClick={openMetaMask}
                 className="text-[#3E3E3E] py-3 px-8 rounded-lg lg:flex md:flex border border-[#2F76DE]"
                 initial={{ scale: 1 }}
                 whileHover={{
@@ -70,3 +79,36 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+// import React, { useState } from "react";
+// // import { ethers } from 'ethers';
+
+// // Import the MetaMask provider
+
+// function MetaMaskButton() {
+   
+//   const openMetaMask = () => {
+//     // Open MetaMask
+//     if (typeof window.ethereum !== "undefined") {
+//       window.ethereum.request({ method: "eth_requestAccounts" });
+//     } else {
+//       // MetaMask not installed
+//       console.log("MetaMask is not installed");
+//     }
+//   };
+
+//   return (
+//     <>
+//       <button onClick={openMetaMask}>Connect MetaMask</button>
+
+//       {/* <div>
+//         <button onClick={checkMetaMask}>Check MetaMask</button>
+//         {isMetaMaskInstalled && (
+//           <button onClick={openMetaMask}>Open MetaMask</button>
+//         )}
+//       </div> */}
+//     </>
+//   );
+// }
+
+// export default MetaMaskButton;

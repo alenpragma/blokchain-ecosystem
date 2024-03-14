@@ -64,7 +64,7 @@ const Navbar = () => {
             className={`${
               menu
                 ? "transition duration-300 ease-in-out transform translate-x-0"
-                : "transition duration-300 ease-in-out transform translate-x-full"
+                : "transition duration-300 ease-in-out transform translate-x-full w-full"
             } fixed top-0 right-0 md:hidden w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
           >
             <div className="w-full">
