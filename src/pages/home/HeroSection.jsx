@@ -18,14 +18,14 @@ const HeroSection = () => {
     >
       <Container>
         <div className="lg:pt-24 pt-12 ">
-          <h1 className="lg:text-[64px] md:text-[52px] text-[32px] text-[#323232] font-bold lg:leading-[76px] text-center">
+          <h1 className="lg:text-[64px] md:text-[52px] text-[32px] text-[#323232] font-bold lg:leading-[76px] md:text-start text-center">
             BIZ Token an Ecosystem <br /> that Scaling Decentralized <br />{" "}
             Applications
           </h1>
         </div>
         <div className="grid grid-cols-12 relative md:pb-[410px] pb-5">
           <div className="col-span-12 lg:col-span-7">
-            <p className="lg:max-w-[68ch] mt-[28px] mb-[50px] text-center">
+            <p className="lg:max-w-[68ch] mt-[28px] mb-[50px] md:text-start text-center">
               BIZ Token is a Blockchain based, Decentralized system
               infrastructure that enable the development, hosting, and execution
               of commercial-scale decentralized applications (dApps) on its
