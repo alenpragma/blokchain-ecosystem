@@ -26,7 +26,7 @@ const HeroSection = () => {
             Applications
           </h1>
         </div>
-        <div className="grid grid-cols-12 relative md:pb-[410px] pb-5">
+        <div className="grid grid-cols-12 relative md:pb-[210px]">
           <div className="col-span-12 lg:col-span-7">
             <p className="lg:max-w-[68ch] mt-[28px] mb-[50px] md:text-start text-center">
               BIZ Token is a Blockchain based, Decentralized system
@@ -69,7 +69,7 @@ const HeroSection = () => {
               </motion.button>
             </div>
           </div>
-          <div className="col-span-5 absolute right-0 lg:bottom-[190px] lg:top-0 -top-44 -z-10">
+          <div className="col-span-5 absolute right-0 lg:bottom-[150px] lg:-top-44 -top-44 -z-10">
             <img className="w-full" src={hero} alt="" />
           </div>
         </div>

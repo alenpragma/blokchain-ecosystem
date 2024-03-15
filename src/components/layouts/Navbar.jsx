@@ -6,23 +6,73 @@ import { IoMdMenu, IoIosClose } from "react-icons/io";
 
 const NavItem = (
   <>
-    <NavLink to="/" className="hover:text-slate-300">
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#353535] font-bold hover:text-[#353535] "
+            : "hover:text-slate-300"
+        } `
+      }
+    >
+      Home
+    </NavLink>
+    <NavLink
+      to="/Developers"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#353535] font-bold hover:text-[#353535] "
+            : "hover:text-slate-300"
+        } `
+      }
+    >
       Developers
     </NavLink>
-    <NavLink to="/ecosystem" className="hover:text-slate-300">
+    <NavLink
+      to="/ecosystem"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#353535] font-bold hover:text-[#353535] "
+            : "hover:text-slate-300"
+        } `
+      }
+    >
       Ecosystem
     </NavLink>
-    <NavLink to="/" className="hover:text-slate-300">
+    <NavLink
+      to="/commiunity"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#353535] font-bold hover:text-[#353535] "
+            : "hover:text-slate-300"
+        } `
+      }
+    >
       Community
     </NavLink>
-    <NavLink to="/" className="hover:text-slate-300">
+    <NavLink
+      to="/news-feed"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#353535] font-bold hover:text-[#353535] "
+            : "hover:text-slate-300"
+        } `
+      }
+    >
       NewsFeed
     </NavLink>
     <NavLink
       to="/free-biz-home"
       className={({ isActive }) =>
         `${
-          isActive ? "text-[#000] font-semibold hover:text-[#000]" : "hover:text-slate-300"
+          isActive
+            ? "text-[#353535] font-bold hover:text-[#353535] "
+            : "hover:text-slate-300"
         } `
       }
     >
@@ -60,35 +110,35 @@ const Navbar = () => {
               {menu ? "" : <IoMdMenu className="text-[40px] text-[#fff]" />}
             </button>
           </div>
-          <div
-            className={`${
-              menu
-                ? "transition duration-300 ease-in-out transform translate-x-0"
-                : "transition duration-300 ease-in-out transform translate-x-full w-full"
-            } fixed top-0 right-0 md:hidden w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
-          >
-            <div className="w-full">
-              <div className="flex justify-end">
-                <button onClick={handleToggleMenu} className="flex md:hidden">
-                  {menu ? (
-                    <IoIosClose className="text-[40px] text-[#fff]" />
-                  ) : (
-                    <IoMdMenu className="text-[40px] text-[#fff]" />
-                  )}
-                </button>
+            <div
+              className={`${
+                menu
+                  ? "transition duration-300 ease-in-out transform translate-x-0"
+                  : "transition duration-300 ease-in-out transform translate-x-full w-full"
+              } fixed top-0 right-0 w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
+            >
+              <div className="w-full">
+                <div className="flex justify-end">
+                  <button onClick={handleToggleMenu} className="flex md:hidden">
+                    {menu ? (
+                      <IoIosClose className="text-[40px] text-[#fff]" />
+                    ) : (
+                      <IoMdMenu className="text-[40px] text-[#fff]" />
+                    )}
+                  </button>
+                </div>
+                <ul className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
+                  {NavItem}
+                </ul>
               </div>
-              <ul className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
-                {NavItem}
-              </ul>
+              <div className="my-4">
+                <Link to="/dashboard/dashboard-home">
+                  <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+                    Start Building
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className="my-4">
-              <Link to="/dashboard/dashboard-home">
-                <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
-                  Start Building
-                </button>
-              </Link>
-            </div>
-          </div>
         </nav>
       </Container>
     </div>
@@ -96,3 +146,51 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// ${
+//   menu
+//     ? "transition duration-300 ease-in-out transform translate-x-0"
+//     : "transition duration-300 ease-in-out transform translate-x-full w-full"
+// }
+
+{
+  /* <div
+className={`${
+  menu
+    ? "transition duration-300 ease-in-out transform translate-x-0"
+    : "transition duration-300 ease-in-out transform translate-x-full w-full"
+} fixed top-0 right-0 md:hidden w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
+> */
+}
+
+// <div className="relative ">
+// <div
+//   className={`${
+//     menu
+//       ? "transition duration-300 ease-in-out transform translate-x-0"
+//       : "transition duration-300 ease-in-out transform translate-x-full w-full"
+//   } fixed top-0 right-0 md:hidden w-full h-full p-4 flex flex-col items-center bg-[#2F76DE] z-[999]`}
+// >
+//   <div className="w-full">
+//     <div className="flex justify-end">
+//       <button onClick={handleToggleMenu} className="flex md:hidden">
+//         {menu ? (
+//           <IoIosClose className="text-[40px] text-[#fff]" />
+//         ) : (
+//           <IoMdMenu className="text-[40px] text-[#fff]" />
+//         )}
+//       </button>
+//     </div>
+//     <ul className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
+//       {NavItem}
+//     </ul>
+//   </div>
+//   <div className="my-4">
+//     <Link to="/dashboard/dashboard-home">
+//       <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+//         Start Building
+//       </button>
+//     </Link>
+//   </div>
+// </div>
+// </div>

@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div className="w-[500px] mx-auto flex justify-center items-center h-[80vh]">
+    <div className="w-[500px] mx-auto flex justify-center  h-[80vh]">
       <div>
         <img
           className="w-full"
-          src="https://i.ibb.co/wgZqMwG/error.jpg"
+          src="https://i.ibb.co/J38JsB7/404.png"
           alt=""
         />
-        <div className="w-[300px] mx-auto bg-[#458DF3] rounded-md mt-5 h-10">
+        <h3 className="text-3xl font-medium text-center">oops! page not found</h3>
+        <div className="w-fit mx-auto bg-[#458DF3] rounded-2xl mt-5 px-5 py-3">
           <Link
             to="/dashboard"
             className=" text-white text-center flex items-center justify-center h-full"

@@ -15,10 +15,13 @@ import News from "../pages/news/News";
 
 const router = createBrowserRouter([
   {
+    
     path: "/",
     element: <App />,
     children: [
+      { path: "*", element: <Error /> },
       {
+        index: true,
         path: "/",
         element: <Home />,
       },
