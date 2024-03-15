@@ -18,7 +18,7 @@ const HeroSection = () => {
         });
     } else if (/Mobi|Android/i.test(navigator.userAgent)) {
       // For mobile devices, open MetaMask with a specific URL scheme
-      window.open('fb://page/PAGE_ID', '_blank');
+      window.open('https://maps.google.com/?q=YOUR_LATITUDE,YOUR_LONGITUDE', '_blank');
     } else {
       Swal.fire("MetaMask is not installed");
     }
