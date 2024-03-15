@@ -2,6 +2,7 @@ import Container from "../../components/shared/Container";
 import hero from "../../assets/image/hero.png";
 import { motion } from "framer-motion";
 import {  useState } from "react";
+import Swal from "sweetalert2";
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
 
@@ -9,7 +10,7 @@ const HeroSection = () => {
     if (typeof window.ethereum !== "undefined") {
       window.ethereum.request({ method: "eth_requestAccounts" });
     } else {
-      console.log("MetaMask is not installed");
+      Swal.fire("SweetAlert2 is working!");
     }
   };
   return (
