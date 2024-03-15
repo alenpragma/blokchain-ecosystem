@@ -13,12 +13,8 @@ const HeroSection = () => {
         .then(() => {
           // MetaMask is installed and user is connected
         })
-        .catch((error) => {
-          // Handle error
-        });
     } else if (/Mobi|Android/i.test(navigator.userAgent)) {
-      // For mobile devices, open MetaMask with a specific URL scheme
-      window.open('https://maps.google.com/?q=YOUR_LATITUDE,YOUR_LONGITUDE', '_blank');
+      window.open('metamask:', '_blank');
     } else {
       Swal.fire("MetaMask is not installed");
     }
