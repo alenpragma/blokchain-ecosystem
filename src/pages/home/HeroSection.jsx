@@ -1,16 +1,29 @@
 import Container from "../../components/shared/Container";
 import hero from "../../assets/image/hero.png";
 import { motion } from "framer-motion";
-import {  useState } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
 
   const openMetaMask = () => {
     if (typeof window.ethereum !== "undefined") {
-      window.ethereum.request({ method: "eth_requestAccounts" });
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then(() => {
+          // MetaMask is installed and user is connected
+        })
+        .catch((error) => {
+          // Handle error
+        });
+    } else if (/Mobi|Android/i.test(navigator.userAgent)) {
+      // For mobile devices, open MetaMask with a specific URL scheme
+      window.open(
+        "https://metamask.app.link/dapp/<your-dapp-url-here>",
+        "_blank"
+      );
     } else {
-      Swal.fire("SweetAlert2 is working!");
+      Swal.fire("MetaMask is not installed");
     }
   };
   return (
@@ -53,7 +66,7 @@ const HeroSection = () => {
                 create wallet
               </motion.button>
               <motion.button
-              onClick={openMetaMask}
+                onClick={openMetaMask}
                 className="text-[#3E3E3E] py-3 px-8 rounded-lg lg:flex md:flex border border-[#2F76DE]"
                 initial={{ scale: 1 }}
                 whileHover={{
@@ -87,7 +100,7 @@ export default HeroSection;
 // // Import the MetaMask provider
 
 // function MetaMaskButton() {
-   
+
 //   const openMetaMask = () => {
 //     // Open MetaMask
 //     if (typeof window.ethereum !== "undefined") {
