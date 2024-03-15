@@ -19,7 +19,7 @@ const HeroSection = () => {
     } else if (/Mobi|Android/i.test(navigator.userAgent)) {
       // For mobile devices, open MetaMask with a specific URL scheme
       window.open(
-        "https://metamask.app.link/dapp/<your-dapp-url-here>",
+        "https://metamask.app.link/dapp/https://play.google.com/store/apps/details?id=io.metamask",
         "_blank"
       );
     } else {
