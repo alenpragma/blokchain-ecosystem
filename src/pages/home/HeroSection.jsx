@@ -8,11 +8,15 @@ const HeroSection = () => {
 
   const openMetaMask = () => {
     if (typeof window.ethereum !== "undefined") {
-      window.ethereum.request({ method: "eth_requestAccounts" }).then(() => {
-        // MetaMask is installed and user is connected
-      });
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then(() => {
+        })
     } else if (/Mobi|Android/i.test(navigator.userAgent)) {
-      window.open("metamask:", "_blank");
+      window.open(
+        "https://metamask.app.link/dapp/https://seednode.mindchain.info",
+        "_blank"
+      );
     } else {
       Swal.fire("MetaMask is not installed");
     }
@@ -22,7 +26,7 @@ const HeroSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="w-full mb-5 md:px-5 px-3 bg-[#ffffffa7] md:bg-[#fdfdfd00]"
+      className="w-full  md:px-5 px-3 bg-[#ffffffa7] md:bg-[#fdfdfd00]"
     >
       <Container>
         <div className="lg:pt-24 pt-12 ">
@@ -45,7 +49,7 @@ const HeroSection = () => {
                   hover == true
                     ? "border border-[#2F76DE] text-[#3E3E3E]"
                     : "bg-[#2F76DE] text-[#fff]"
-                }  py-3 px-8  rounded-lg lg:flex md:flex focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                }  py-3 px-8  rounded-lg lg:flex md:flex`}
                 initial={{ scale: 1 }}
                 whileHover={{
                   // backgroundColor: "#2F76DE",
