@@ -18,10 +18,7 @@ const HeroSection = () => {
         });
     } else if (/Mobi|Android/i.test(navigator.userAgent)) {
       // For mobile devices, open MetaMask with a specific URL scheme
-      window.open(
-        "https://metamask.app.link/dapp/https://seednode.mindchain.info",
-        "_blank"
-      );
+      window.open('fb://page/PAGE_ID', '_blank');
     } else {
       Swal.fire("MetaMask is not installed");
     }
