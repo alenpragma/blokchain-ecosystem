@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../shared/Container";
 import icon from "../../assets/icon/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { IoMdMenu, IoIosClose } from "react-icons/io";
 
 const NavItem = (
@@ -83,9 +83,25 @@ const NavItem = (
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  useEffect(() => {
+    if (menu) {
+      // Hide scrollbar when the menu is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore scrollbar when the menu is closed
+      document.body.style.overflow = "visible";
+    }
+
+    // Cleanup function to restore scrollbar when the component unmounts
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, [menu]);
+  const path = useLocation();
+  const location = "/ecosystem"
   const handleToggleMenu = () => {
-    setMenu((prev) => !prev);
-  };
+setMenu(!menu)
+  }
   return (
     <div className="w-full bg-[#2F76DE]">
       <Container>
@@ -113,30 +129,30 @@ const Navbar = () => {
           <div
             className={`${
               menu
-                ? "transition duration-300 ease-in-out transform translate-x-0  md:hidden "
-                : "transition duration-300 ease-in-out transform translate-x-full w-full"
-            } fixed top-0 right-0 w-full h-full p-4 flex flex-col items-center bg-[#2F76DE]  z-[999]`}
+                ? "transition duration-300 ease-in-out transform translate-x-0  md:hidden  "
+                : "transition duration-300 ease-in-out transform translate-x-full w-full overflow-auto"
+            } fixed top-0 right-0 w-full h-full flex flex-col items-end  z-[999]`}
           >
-            <div className="w-full">
+            <div className="w-1/2 bg-[#2F76DE]  h-[100vh]">
               <div className="flex justify-end">
                 <button onClick={handleToggleMenu} className="flex md:hidden">
                   {menu ? (
                     <IoIosClose className="text-[40px] text-[#fff]" />
                   ) : (
-                    <IoMdMenu className="text-[40px] text-[#fff]" />
+                    ""
                   )}
                 </button>
               </div>
-              <ul className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
+              <nav className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
                 {NavItem}
-              </ul>
-            </div>
-            <div className="my-4">
-              <Link to="/dashboard/dashboard-home">
-                <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
-                  Start Building
-                </button>
-              </Link>
+              </nav>
+              <div className="my-4 flex justify-center">
+                <Link to="/dashboard/dashboard-home">
+                  <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+                    Start Building
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </nav>
