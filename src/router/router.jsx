@@ -12,10 +12,10 @@ import SellReceived from "../pages/dashboard/SellReceived";
 import Import from "../pages/dashboard/Import";
 import Error from "../components/error/Error";
 import News from "../pages/news/News";
+import NewsLayout from "../components/layouts/NewsLayout/NewsLayout";
 
 const router = createBrowserRouter([
   {
-    
     path: "/",
     element: <App />,
     children: [
@@ -25,10 +25,19 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+    ],
+  },
+  {
+    path: "/",
+    element: <NewsLayout />,
+    children: [
       {
         path: "/news/:id",
         element: <News />,
-        loader: ({params}) => fetch(`https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },

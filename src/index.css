@@ -25,10 +25,10 @@
   }
 
   .select-form-style {
-    @apply block appearance-none py-2 px-5 focus:outline-none  rounded-3xl text-[14px] font-medium text-[#2E2E2E] cursor-pointer
+    @apply block appearance-none py-2 px-5 focus:outline-none  rounded-3xl text-[14px] font-medium text-[#2E2E2E] cursor-pointer;
   }
   .select-icon-style {
-    @apply pointer-events-none absolute top-0 bottom-0 my-auto right-3 flex items-center px-2 text-gray-700
+    @apply pointer-events-none absolute top-0 bottom-0 my-auto right-3 flex items-center px-2 text-gray-700;
   }
 }
 
@@ -57,11 +57,82 @@
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
- /* Hide scrollbar for IE, Edge and Firefox */
+  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
+
+.btn {
+  position: relative;
+  background-color: transparent;
+  transition-duration: 1000ms;
+  transition-timing-function: ease;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid white;
+  margin-top: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease;
+  transform: translate(-100px);
+}
+.btn:hover::after {
+  transform: translate(0);
+}
+
+::placeholder {
+  color: red;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: red;
+}
+
+
+.swiper{
+  padding: 50px 0px 50px 10px  !important;
+  width: 100% !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #f00;
+  color: yellow !important;
+margin-top: 0px !important;
+}
+
+.swiper-button-prev{
+  position: absolute !important;
+    right: 40px !important;
+    top: 0px !important;
+    right: 50px !important;
+    left: auto !important;
+}
+.swiper-button-prev::after{
+  font-size: 15px !important;
+}
+.swiper-button-next{
+  position: absolute !important;
+    right: 40px !important;
+    top: 0px !important;
+    right: 15px !important;
+    left: auto !important;
+}
+.swiper-button-next::after{
+  font-size: 15px !important;
 }

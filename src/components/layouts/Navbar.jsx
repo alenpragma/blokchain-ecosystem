@@ -11,9 +11,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-            ? "text-[#353535] font-bold hover:text-[#353535] "
-            : "hover:text-slate-300"
-        } `
+          ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+          : "text-[#DDDDDD] hover:text-[#fff]"
+      } `
       }
     >
       Home
@@ -23,9 +23,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-            ? "text-[#353535] font-bold hover:text-[#353535] "
-            : "hover:text-slate-300"
-        } `
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        }  btn`
       }
     >
       Developers
@@ -35,9 +35,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-            ? "text-[#353535] font-bold hover:text-[#353535] "
-            : "hover:text-slate-300"
-        } `
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } btn`
       }
     >
       Ecosystem
@@ -47,9 +47,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-            ? "text-[#353535] font-bold hover:text-[#353535] "
-            : "hover:text-slate-300"
-        } `
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } btn`
       }
     >
       Community
@@ -59,9 +59,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-            ? "text-[#353535] font-bold hover:text-[#353535] "
-            : "hover:text-slate-300"
-        } `
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } btn`
       }
     >
       NewsFeed
@@ -71,9 +71,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-            ? "text-[#353535] font-bold hover:text-[#353535] "
-            : "hover:text-slate-300"
-        } `
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } btn`
       }
     >
       Free-Biz
@@ -85,23 +85,20 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   useEffect(() => {
     if (menu) {
-      // Hide scrollbar when the menu is open
       document.body.style.overflow = "hidden";
     } else {
-      // Restore scrollbar when the menu is closed
       document.body.style.overflow = "visible";
     }
 
-    // Cleanup function to restore scrollbar when the component unmounts
     return () => {
       document.body.style.overflow = "visible";
     };
   }, [menu]);
   const path = useLocation();
-  const location = "/ecosystem"
+  const location = "/ecosystem";
   const handleToggleMenu = () => {
-setMenu(!menu)
-  }
+    setMenu(!menu);
+  };
   return (
     <div className="w-full bg-[#2F76DE]">
       <Container>
@@ -112,9 +109,7 @@ setMenu(!menu)
             </Link>
           </div>
           <div className="lg:flex md:flex hidden">
-            <div className="flex gap-5 text-[#FFF] text-[16px] hover:text-[#F3FAFF]">
-              {NavItem}
-            </div>
+            <div className="flex gap-5 text-[16px]">{NavItem}</div>
           </div>
           <div className="">
             <Link to="/dashboard/dashboard-home">

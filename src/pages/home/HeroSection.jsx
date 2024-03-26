@@ -8,10 +8,7 @@ const HeroSection = () => {
 
   const openMetaMask = () => {
     if (typeof window.ethereum !== "undefined") {
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then(() => {
-        })
+      window.ethereum.request({ method: "eth_requestAccounts" }).then(() => {});
     } else if (/Mobi|Android/i.test(navigator.userAgent)) {
       window.open(
         "https://metamask.app.link/dapp/https://seednode.mindchain.info",
@@ -31,7 +28,7 @@ const HeroSection = () => {
       <Container>
         <div className="lg:pt-24 pt-12 ">
           <h1 className="lg:text-[64px] md:text-[52px] text-[32px] text-[#323232] font-bold lg:leading-[76px] md:text-start text-center">
-            BIZ Token an Ecosystem <br /> that Scaling Decentralized <br />{" "}
+            BIZ <span className="btn">Token</span> an Ecosystem <br /> that Scaling Decentralized <br />{" "}
             Applications
           </h1>
         </div>
