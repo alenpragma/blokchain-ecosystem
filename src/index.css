@@ -101,38 +101,38 @@
   color: red;
 }
 
-
-.swiper{
-  padding: 50px 0px 50px 10px  !important;
+.swiper {
+  padding: 80px 0px 50px 0px !important;
   width: 100% !important;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  width: 30px !important;
-  height: 30px !important;
-  background-color: #f00;
+  width: 55px !important;
+  height: 55px !important;
+  background-color: #2f77e0;
+  border-radius: 50%;
   color: yellow !important;
-margin-top: 0px !important;
+  margin-top: 0px !important;
 }
 
-.swiper-button-prev{
+.swiper-button-prev {
   position: absolute !important;
-    right: 40px !important;
-    top: 0px !important;
-    right: 50px !important;
-    left: auto !important;
+  right: 40px !important;
+  top: 20px !important;
+  right: 80px !important;
+  left: auto !important;
 }
-.swiper-button-prev::after{
+.swiper-button-prev::after {
   font-size: 15px !important;
 }
-.swiper-button-next{
+.swiper-button-next {
   position: absolute !important;
-    right: 40px !important;
-    top: 0px !important;
-    right: 15px !important;
-    left: auto !important;
+  right: 40px !important;
+  top: 20px !important;
+  right: 15px !important;
+  left: auto !important;
 }
-.swiper-button-next::after{
+.swiper-button-next::after {
   font-size: 15px !important;
 }

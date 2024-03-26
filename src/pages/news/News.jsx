@@ -27,7 +27,7 @@ const News = () => {
     queryKey: ["repoData"],
     queryFn: () =>
       fetch(
-        "https://biz-server-git-main-remontripuras-projects.vercel.app/news"
+        "https://jsonplaceholder.typicode.com/users"
       ).then((res) => res.json()),
   });
   if (isPending) {
@@ -92,18 +92,36 @@ const News = () => {
 
           {/* <div className="grid grid-cols-12 gap-3">
             </div> */}
-          <Swiper  slidesPerView={4} navigation={true} modules={[Navigation]} className="mySwiper">
-            {data?.map((data) => (
-              <SwiperSlide key={data._id} className="col-span-3 mx-4">
-                <img
-                  className="h-[190px] w-full object-cover"
-                  src={data.img}
-                  alt=""
-                />
-                <p>{data.title}</p>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="relative">
+           <h3 className="absolute z-[999] top-5 text-[48px] font-bold leading-8">Related blog</h3>
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+              breakpoints={{
+                320: {
+                  slidesPerView: 3,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+              }}
+            >
+              {data?.map((data) => (
+                <SwiperSlide key={data._id} className="col-span-3 mr-">
+                  <img
+                    className="h-[190px] w-[90%] object-cover"
+                    src={data.img}
+                    alt=""
+                  />
+                  <p>{data.title}</p>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </Container>
