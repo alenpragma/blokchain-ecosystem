@@ -18,7 +18,7 @@ const NavItem = (
     >
       Home
     </NavLink>
-    <NavLink
+    {/* <NavLink
       to="/Developers"
       className={({ isActive }) =>
         `${
@@ -29,8 +29,8 @@ const NavItem = (
       }
     >
       Developers
-    </NavLink>
-    <NavLink
+    </NavLink> */}
+    {/* <NavLink
       to="/ecosystem"
       className={({ isActive }) =>
         `${
@@ -41,8 +41,8 @@ const NavItem = (
       }
     >
       Ecosystem
-    </NavLink>
-    <NavLink
+    </NavLink> */}
+    {/* <NavLink
       to="/commiunity"
       className={({ isActive }) =>
         `${
@@ -53,7 +53,7 @@ const NavItem = (
       }
     >
       Community
-    </NavLink>
+    </NavLink> */}
     <NavLink
       to="/news-feed"
       className={({ isActive }) =>

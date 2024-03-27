@@ -118,7 +118,6 @@
 
 .swiper-button-prev {
   position: absolute !important;
-  right: 40px !important;
   top: 20px !important;
   right: 70px !important;
   left: auto !important;
@@ -128,7 +127,6 @@
 }
 .swiper-button-next {
   position: absolute !important;
-  right: 40px !important;
   top: 20px !important;
   right: 0px !important;
   left: auto !important;
@@ -137,8 +135,33 @@
   font-size: 15px !important;
 }
 
+@media (max-width: 767px) {
+  .swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+    right: 50px !important;
+  }
+  .swiper-button-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .swiper {
+    padding: 70px 0px 50px 0px !important;
+    width: 100% !important;
+  }
+}
 
-.swiper-size{
+/* For screens between 768px and 991px (typically tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* CSS styles for medium-sized screens */
+}
+
+/* For screens larger than 992px (typically desktops) */
+@media (min-width: 992px) {
+  /* CSS styles for larger screens */
+}
+
+.swiper-size {
   padding: 40px 0px !important;
   width: 100%;
 }
