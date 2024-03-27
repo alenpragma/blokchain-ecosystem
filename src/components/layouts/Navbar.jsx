@@ -4,7 +4,7 @@ import icon from "../../assets/icon/logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { IoMdMenu, IoIosClose } from "react-icons/io";
 
-const NavItem = (
+const NavItem1 = (
   <>
     <NavLink
       to="/"
@@ -18,42 +18,42 @@ const NavItem = (
     >
       Home
     </NavLink>
-    {/* <NavLink
+    <NavLink
       to="/Developers"
       className={({ isActive }) =>
         `${
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        }  md:btn`
+        }  btn`
       }
     >
       Developers
-    </NavLink> */}
-    {/* <NavLink
+    </NavLink>
+    <NavLink
       to="/ecosystem"
       className={({ isActive }) =>
         `${
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } md:btn`
+        } btn`
       }
     >
       Ecosystem
-    </NavLink> */}
-    {/* <NavLink
+    </NavLink>
+    <NavLink
       to="/commiunity"
       className={({ isActive }) =>
         `${
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } md:btn`
+        } btn`
       }
     >
       Community
-    </NavLink> */}
+    </NavLink>
     <NavLink
       to="/news-feed"
       className={({ isActive }) =>
@@ -61,7 +61,7 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } md:btn`
+        } btn`
       }
     >
       NewsFeed
@@ -73,7 +73,83 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } md:btn`
+        } btn`
+      }
+    >
+      Free-Biz
+    </NavLink>
+  </>
+);
+const NavItem2 = (
+  <>
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } `
+      }
+    >
+      Home
+    </NavLink>
+    <NavLink
+      to="/Developers"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } `
+      }
+    >
+      Developers
+    </NavLink>
+    <NavLink
+      to="/ecosystem"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } `
+      }
+    >
+      Ecosystem
+    </NavLink>
+    <NavLink
+      to="/commiunity"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        }`
+      }
+    >
+      Community
+    </NavLink>
+    <NavLink
+      to="/news-feed"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        }`
+      }
+    >
+      NewsFeed
+    </NavLink>
+    <NavLink
+      to="/free-biz-home"
+      className={({ isActive }) =>
+        `${
+          isActive
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        }`
       }
     >
       Free-Biz
@@ -127,7 +203,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="lg:flex md:flex hidden">
-            <div className="flex gap-5 text-[16px]">{NavItem}</div>
+            <div className="flex gap-5 text-[16px]">{NavItem1}</div>
           </div>
           <div className="">
             <Link to="/dashboard/dashboard-home">
@@ -146,7 +222,7 @@ const Navbar = () => {
                 : "transition duration-300 ease-in-out transform translate-x-full w-full overflow-auto"
             } fixed top-0 right-0 w-full h-full flex flex-col items-end  z-[999]`}
           >
-            <div  className="w-1/2 bg-[#a2a5b9]  h-[100vh]">
+            <div className="w-1/2 bg-[#a2a5b9]  h-[100vh]">
               <div className="flex justify-end">
                 <button onClick={handleToggleMenu} className="flex md:hidden">
                   {menu ? (
@@ -157,7 +233,7 @@ const Navbar = () => {
                 </button>
               </div>
               <nav className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
-                {NavItem}
+                {NavItem2}
               </nav>
               <div className="my-4 flex justify-center">
                 <Link to="/dashboard/dashboard-home">

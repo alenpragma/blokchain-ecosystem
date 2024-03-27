@@ -1,5 +1,5 @@
 import Container from "../../components/shared/Container";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import timelogo from "../../assets/icon/time.svg";
 import { useQuery } from "@tanstack/react-query";
 import facebook from "../../assets/icon/pagesicon/facebook.svg";
@@ -17,12 +17,16 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper/modules";
+import { useEffect } from "react";
 
 // Swiper.use([Navigation]);
 
 const News = () => {
   const loaderData = useLoaderData();
   const { img, title, news } = loaderData;
+  useEffect(() => {
+    window.scrollTo(0, 100);
+  }, []);
   const { data, isPending, error } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
@@ -37,7 +41,13 @@ const News = () => {
       </p>
     );
   }
-
+  const scroll = () => {
+    window.scrollTo({
+      top: 0,
+      button: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Container>
       <div className="grid grid-cols-12 mt-5 gap-5 mb-10">
@@ -59,12 +69,34 @@ const News = () => {
           <h3 className="font-semibold text-4 text-3xl my-3">{title}</h3>
           <p>{news}</p>
           <div className="flex justify-end items-center md:gap-8 gap-3 md:my-[66px] my-[30px]">
-            <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">Share</h3>
-            <img src={facebook} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
-            <img src={twitter} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
-            <img src={instagram} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
-            <img src={reddit} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
-            <img src={linkedin} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
+            <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">
+              Share
+            </h3>
+            <img
+              src={facebook}
+              alt=""
+              className="md:size-[50px] size-[24px] cursor-pointer"
+            />
+            <img
+              src={twitter}
+              alt=""
+              className="md:size-[50px] size-[24px] cursor-pointer"
+            />
+            <img
+              src={instagram}
+              alt=""
+              className="md:size-[50px] size-[24px] cursor-pointer"
+            />
+            <img
+              src={reddit}
+              alt=""
+              className="md:size-[50px] size-[24px] cursor-pointer"
+            />
+            <img
+              src={linkedin}
+              alt=""
+              className="md:size-[50px] size-[24px] cursor-pointer"
+            />
           </div>
           <div className="md:mt-[84px] mt-[50px] mb-[100px]">
             <form>
@@ -115,7 +147,9 @@ const News = () => {
                   src={data.img}
                   alt=""
                 />
-                <p className="mt-4">{data.title}</p>
+                <Link to={`/news/${data?._id}`} onClick={scroll}>
+                  <p className="mt-4 hover:text-blue-600 duration-300">{data.title}</p>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

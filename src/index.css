@@ -87,6 +87,7 @@
   transition-duration: 1000ms;
   transition-timing-function: ease;
   transform: translate(-100px);
+  z-index: -1px;
 }
 .btn:hover::after {
   transform: translate(0);
