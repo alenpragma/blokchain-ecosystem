@@ -139,9 +139,11 @@
   .swiper-button-prev {
     width: 40px !important;
     height: 40px !important;
-    right: 50px !important;
+    right: 55px !important;
   }
   .swiper-button-next {
+    
+  right: 8px !important;
     width: 40px !important;
     height: 40px !important;
   }

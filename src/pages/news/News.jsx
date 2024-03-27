@@ -95,7 +95,7 @@ const News = () => {
           <Swiper
             navigation={true}
             modules={[Navigation]}
-            className="mySwiper mx-5"
+            className="mySwiper"
             breakpoints={{
               320: {
                 slidesPerView: 2,
