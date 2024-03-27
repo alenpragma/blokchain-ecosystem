@@ -102,7 +102,7 @@
 }
 
 .swiper {
-  padding: 80px 0px 50px 0px !important;
+  padding: 100px 0px 50px 0px !important;
   width: 100% !important;
 }
 
@@ -112,7 +112,7 @@
   height: 55px !important;
   background-color: #2f77e0;
   border-radius: 50%;
-  color: yellow !important;
+  color: #fff !important;
   margin-top: 0px !important;
 }
 
@@ -120,7 +120,7 @@
   position: absolute !important;
   right: 40px !important;
   top: 20px !important;
-  right: 80px !important;
+  right: 70px !important;
   left: auto !important;
 }
 .swiper-button-prev::after {
@@ -130,7 +130,7 @@
   position: absolute !important;
   right: 40px !important;
   top: 20px !important;
-  right: 15px !important;
+  right: 0px !important;
   left: auto !important;
 }
 .swiper-button-next::after {

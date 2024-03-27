@@ -27,7 +27,7 @@ const News = () => {
     queryKey: ["repoData"],
     queryFn: () =>
       fetch(
-        "https://jsonplaceholder.typicode.com/users"
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/news"
       ).then((res) => res.json()),
   });
   if (isPending) {
@@ -60,11 +60,11 @@ const News = () => {
           <p>{news}</p>
           <div className="flex justify-end items-center gap-8 my-[66px]">
             <h3 className="text-[32px] text-[#494949] font-bold">Share</h3>
-            <img src={facebook} alt="" className="size-[50px" />
-            <img src={twitter} alt="" className="size-[50px" />
-            <img src={instagram} alt="" className="size-[50px" />
-            <img src={reddit} alt="" className="size-[50px" />
-            <img src={linkedin} alt="" className="size-[50px" />
+            <img src={facebook} alt="" className="size-[50px] cursor-pointer" />
+            <img src={twitter} alt="" className="size-[50px] cursor-pointer" />
+            <img src={instagram} alt="" className="size-[50px] cursor-pointer" />
+            <img src={reddit} alt="" className="size-[50px] cursor-pointer" />
+            <img src={linkedin} alt="" className="size-[50px] cursor-pointer" />
           </div>
           <div className="mt-[84px] mb-[100px]">
             <form>
@@ -87,41 +87,38 @@ const News = () => {
               </div>
             </form>
           </div>
-
-          {/* <SwiperSlide className="w-full">Slide 2</SwiperSlide> */}
-
-          {/* <div className="grid grid-cols-12 gap-3">
-            </div> */}
-          <div className="relative">
-           <h3 className="absolute z-[999] top-5 text-[48px] font-bold leading-8">Related blog</h3>
-            <Swiper
-              navigation={true}
-              modules={[Navigation]}
-              className="mySwiper"
-              breakpoints={{
-                320: {
-                  slidesPerView: 3,
-                },
-                640: {
-                  slidesPerView: 3,
-                },
-                768: {
-                  slidesPerView: 4,
-                },
-              }}
-            >
-              {data?.map((data) => (
-                <SwiperSlide key={data._id} className="col-span-3 mr-">
-                  <img
-                    className="h-[190px] w-[90%] object-cover"
-                    src={data.img}
-                    alt=""
-                  />
-                  <p>{data.title}</p>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+        </div>
+        <div className="relative col-span-12">
+          <h3 className="absolute z-[999] top-5 text-[48px] font-bold leading-8">
+            Related blog
+          </h3>
+          <Swiper
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper mx-5"
+            breakpoints={{
+              320: {
+                slidesPerView: 3,
+              },
+              640: {
+                slidesPerView: 3,
+              },
+              768: {
+                slidesPerView: 4,
+              },
+            }}
+          >
+            {data?.map((data) => (
+              <SwiperSlide key={data._id} className="w-full mr-2">
+                <img
+                  className="h-[190px] w-full object-cover"
+                  src={data.img}
+                  alt=""
+                />
+                <p className="mt-4">{data.title}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </Container>

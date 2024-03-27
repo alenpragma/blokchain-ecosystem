@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "../shared/Container";
 import icon from "../../assets/icon/logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -11,9 +11,9 @@ const NavItem = (
       className={({ isActive }) =>
         `${
           isActive
-          ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-          : "text-[#DDDDDD] hover:text-[#fff]"
-      } `
+            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
+            : "text-[#DDDDDD] hover:text-[#fff]"
+        } `
       }
     >
       Home
@@ -25,7 +25,7 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        }  btn`
+        }  md:btn`
       }
     >
       Developers
@@ -37,7 +37,7 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } btn`
+        } md:btn`
       }
     >
       Ecosystem
@@ -49,7 +49,7 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } btn`
+        } md:btn`
       }
     >
       Community
@@ -61,7 +61,7 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } btn`
+        } md:btn`
       }
     >
       NewsFeed
@@ -73,7 +73,7 @@ const NavItem = (
           isActive
             ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
             : "text-[#DDDDDD] hover:text-[#fff]"
-        } btn`
+        } md:btn`
       }
     >
       Free-Biz
@@ -94,11 +94,29 @@ const Navbar = () => {
       document.body.style.overflow = "visible";
     };
   }, [menu]);
-  const path = useLocation();
-  const location = "/ecosystem";
   const handleToggleMenu = () => {
     setMenu(!menu);
   };
+  // useEffect(() => {
+  //   const handlar = () => {
+  //     setMenu(false);
+  //   };
+  //   document.addEventListener("mousedown", handlar);
+  // });
+
+  // const ref = useRef();
+
+  // useEffect(() => {
+  //   document.addEventListener("click", handleClickOutside, true);
+  // }, []);
+  // const handleClickOutside = (e) => {
+  //   if (ref.current.contains(e.target)) {
+  //     console.log("click onside");
+  //   } else {
+  //     console.log("click outside");
+  //   }
+  // };
+
   return (
     <div className="w-full bg-[#2F76DE]">
       <Container>
@@ -112,7 +130,7 @@ const Navbar = () => {
             <div className="flex gap-5 text-[16px]">{NavItem}</div>
           </div>
           <div className="">
-            <Link to="/dashboard/dashboard-home">
+            <Link>
               <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg md:block hidden">
                 Start Building
               </button>
@@ -124,11 +142,11 @@ const Navbar = () => {
           <div
             className={`${
               menu
-                ? "transition duration-300 ease-in-out transform translate-x-0  md:hidden  "
+                ? "transition duration-300 ease-in-out transform translate-x-0  md:hidden"
                 : "transition duration-300 ease-in-out transform translate-x-full w-full overflow-auto"
             } fixed top-0 right-0 w-full h-full flex flex-col items-end  z-[999]`}
           >
-            <div className="w-1/2 bg-[#2F76DE]  h-[100vh]">
+            <div  className="w-1/2 bg-[#a2a5b9]  h-[100vh]">
               <div className="flex justify-end">
                 <button onClick={handleToggleMenu} className="flex md:hidden">
                   {menu ? (
