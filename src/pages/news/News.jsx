@@ -89,7 +89,7 @@ const News = () => {
           </div>
         </div>
         <div className="relative col-span-12">
-          <h3 className="absolute z-[999] top-[13px] left-3 md:text-[48px] text-[32px] font-bold leading-8">
+          <h3 className="absolute z-[999] top-[16px] left-3 md:text-[48px] text-[32px] font-bold leading-8">
             Related blog
           </h3>
           <Swiper
