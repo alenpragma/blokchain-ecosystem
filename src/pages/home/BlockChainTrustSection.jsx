@@ -26,7 +26,7 @@ const BlockChainTrustSection = () => {
               directly to the network.
             </p>
           </div>
-          <div className="mt-[124px]">
+          <div className="md:mt-[124px]">
             <Swiper
               slidesPerView="auto"
               spaceBetween={30}
@@ -47,7 +47,7 @@ const BlockChainTrustSection = () => {
                   spaceBetween: 40,
                 },
               }}
-              className="mySwiper"
+              className="md:p-0 swiper-size"
             >
               <SwiperSlide>
                 <img className="w-[160px] col-span-3" src={akuna} alt="" />

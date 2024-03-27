@@ -58,30 +58,30 @@ const News = () => {
           </p>
           <h3 className="font-semibold text-4 text-3xl my-3">{title}</h3>
           <p>{news}</p>
-          <div className="flex justify-end items-center gap-8 my-[66px]">
-            <h3 className="text-[32px] text-[#494949] font-bold">Share</h3>
-            <img src={facebook} alt="" className="size-[50px] cursor-pointer" />
-            <img src={twitter} alt="" className="size-[50px] cursor-pointer" />
-            <img src={instagram} alt="" className="size-[50px] cursor-pointer" />
-            <img src={reddit} alt="" className="size-[50px] cursor-pointer" />
-            <img src={linkedin} alt="" className="size-[50px] cursor-pointer" />
+          <div className="flex justify-end items-center md:gap-8 gap-3 md:my-[66px] my-[30px]">
+            <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">Share</h3>
+            <img src={facebook} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
+            <img src={twitter} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
+            <img src={instagram} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
+            <img src={reddit} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
+            <img src={linkedin} alt="" className="md:size-[50px] size-[24px] cursor-pointer" />
           </div>
-          <div className="mt-[84px] mb-[100px]">
+          <div className="md:mt-[84px] mt-[50px] mb-[100px]">
             <form>
               <div className="w-full space-y-3">
                 <input
                   type="text"
-                  className="w-full px-[34px] py-[20px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                  className="w-full md:px-[34px] px-[5px] md:py-[20px] py-[10px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
                   placeholder="Name"
                 />
                 <textarea
                   name=""
                   id=""
                   rows=""
-                  className="w-full h-[155px] px-[34px] py-[20px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                  className="w-full h-[155px] md:px-[34px] px-[5px] md:py-[20px] py-[10px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
                   placeholder="Enter Your Text"
                 ></textarea>
-                <button className="px-[41px] py-[16px] rounded-lg bg-[#2F77E0] text-[20px] font-medium text-[#FFFFFF]">
+                <button className="md:px-[41px] px-[20px] md:py-[16px] py-[8px] rounded-lg bg-[#2F77E0] text-[20px] font-medium text-[#FFFFFF]">
                   Comment
                 </button>
               </div>
@@ -89,7 +89,7 @@ const News = () => {
           </div>
         </div>
         <div className="relative col-span-12">
-          <h3 className="absolute z-[999] top-5 text-[48px] font-bold leading-8">
+          <h3 className="absolute z-[999] top-5 md:text-[48px] text-[32px] font-bold leading-8">
             Related blog
           </h3>
           <Swiper
@@ -98,10 +98,10 @@ const News = () => {
             className="mySwiper mx-5"
             breakpoints={{
               320: {
-                slidesPerView: 3,
+                slidesPerView: 2,
               },
               640: {
-                slidesPerView: 3,
+                slidesPerView: 2,
               },
               768: {
                 slidesPerView: 4,
@@ -109,7 +109,7 @@ const News = () => {
             }}
           >
             {data?.map((data) => (
-              <SwiperSlide key={data._id} className="w-full mr-2">
+              <SwiperSlide key={data._id} className="w-full ml-3">
                 <img
                   className="h-[190px] w-full object-cover"
                   src={data.img}

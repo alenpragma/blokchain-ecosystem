@@ -130,7 +130,7 @@ const Navbar = () => {
             <div className="flex gap-5 text-[16px]">{NavItem}</div>
           </div>
           <div className="">
-            <Link>
+            <Link to="/dashboard/dashboard-home">
               <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg md:block hidden">
                 Start Building
               </button>

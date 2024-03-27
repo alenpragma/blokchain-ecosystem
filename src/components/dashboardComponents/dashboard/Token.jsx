@@ -1,7 +1,7 @@
 const Token = () => {
   return (
     <div>
-      <table className="w-full">
+      <table className="w-full overflow-x-auto">
         <thead>
           <tr className="border-b border-slate-400">
             <th className="text-[14px] font-normal p-5">Token</th>

@@ -32,7 +32,7 @@ const HeroSection = () => {
             Applications
           </h1>
         </div>
-        <div className="grid grid-cols-12 relative md:pb-[210px]">
+        <div className="grid grid-cols-12 relative md:pb-[210px] pb-5">
           <div className="col-span-12 lg:col-span-7">
             <p className="lg:max-w-[68ch] mt-[28px] mb-[50px] md:text-start text-center">
               BIZ Token is a Blockchain based, Decentralized system
