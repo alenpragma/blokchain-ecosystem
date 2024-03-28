@@ -9,9 +9,9 @@
   h4 {
     @apply text-[24px] font-semibold text-[#242424];
   }
-  input[type="text"]::placeholder {
+  /* input[type="text"]::placeholder {
     @apply font-light text-[#000] text-[16px];
-  }
+  } */
 }
 @layer components {
   .text-style1 {

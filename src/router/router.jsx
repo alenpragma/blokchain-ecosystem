@@ -13,6 +13,9 @@ import Import from "../pages/dashboard/Import";
 import Error from "../components/error/Error";
 import News from "../pages/news/News";
 import NewsLayout from "../components/layouts/NewsLayout/NewsLayout";
+import Login from "../components/Login/Login";
+import Blog from "../pages/blog/Blog";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/blog",
+        element: (
+          <AdminRoute>
+            <Blog></Blog>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

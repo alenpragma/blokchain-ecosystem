@@ -55,7 +55,7 @@ const NavItem1 = (
       Community
     </NavLink>
     <NavLink
-      to="/news-feed"
+      to="/blog"
       className={({ isActive }) =>
         `${
           isActive
@@ -64,7 +64,7 @@ const NavItem1 = (
         } btn`
       }
     >
-      NewsFeed
+      Blog
     </NavLink>
     <NavLink
       to="/free-biz-home"
