@@ -5,9 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from "../../components/shared/Container";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import left from "../../assets/icon/latestblog/left.svg"
+import right from "../../assets/icon/latestblog/right.svg"
 
 const LatestBlogSection = () => {
   const [active, setActive] = useState(0);
+  console.log(active);
   const { data, isPending, error } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
@@ -28,36 +31,10 @@ const LatestBlogSection = () => {
     const { className, style, onClick } = props;
     return (
       <div className="absolute bottom-2 z-10 right-[40%]" onClick={onClick}>
-        {active ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#453F78"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="#453F78"
-            className="size-8"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-            />
-          </svg>
+        {active < 1 ? (
+         <img src={right} alt="" />
         ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#CC001E"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="#CC001E"
-            className="size-8"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-            />
-          </svg>
+          <img src={right} alt="" />
         )}
       </div>
     );
@@ -67,20 +44,11 @@ const LatestBlogSection = () => {
     const { className, style, onClick } = props;
     return (
       <div className="absolute bottom-2 z-10 left-[40%]" onClick={onClick}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="#453F78"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="#453F78"
-          className="w-8 h-8"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
-          />
-        </svg>
+        {active < 1 ? (
+          <img src={left} alt="" />
+        ) : (
+          <img src={left} alt="" />
+        )}
       </div>
     );
   };
