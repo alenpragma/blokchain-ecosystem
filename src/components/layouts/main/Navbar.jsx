@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Container from "../shared/Container";
-import icon from "../../assets/icon/logo.png";
+import Container from "../../shared/Container";
+import icon from "../../../assets/icon/logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { IoMdMenu, IoIosClose } from "react-icons/io";
 

@@ -1,7 +1,5 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import App from "../App";
 import Home from "../pages/home";
-import FreeBizLayout from "../components/layouts/FreeBizLayout";
 import FreeBiz from "../pages/free-biz/FreeBiz";
 import DashboardLayout from "../components/layouts/dashboard/DashboardLayout";
 import DashboardHome from "../pages/dashboard/DashboardHome";
@@ -16,11 +14,13 @@ import NewsLayout from "../components/layouts/NewsLayout/NewsLayout";
 import Login from "../components/Login/Login";
 import Blog from "../pages/blog/Blog";
 import AdminRoute from "./AdminRoute";
+import FreeBizLayout from "../components/layouts/FreeBiz/FreeBizLayout";
+import MainLayout from "../components/layouts/main/MainLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainLayout />,
     children: [
       { path: "*", element: <Error /> },
       {

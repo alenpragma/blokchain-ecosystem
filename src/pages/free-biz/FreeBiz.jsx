@@ -33,7 +33,6 @@ const faqData = [
 const FreeBiz = () => {
   const [isOpen, setIsOpen] = useState(null);
   const [toggle, setToggle] = useState(null);
-  console.log(isOpen);
   const handeFaq = (i) => {
     setIsOpen((prev) => (prev === i ? null : i));
     setToggle((prev) => (prev === i ? null : i));

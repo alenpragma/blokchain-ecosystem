@@ -1,11 +1,10 @@
-import MainLayout from "./components/layouts/MainLayout";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <MainLayout />
-    </>
+    <div>
+      this is App page 
+    </div>
   );
-}
+};
 
 export default App;

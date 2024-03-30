@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
+
 import FreeBizFooter from "./FreeBizFooter";
+import Navbar from "../main/Navbar";
 
 const FreeBizLayout = () => {
   return (
     <div>
-    <Navbar />
-    <Outlet />
-    <FreeBizFooter />
+      <Navbar />
+      <Outlet />
+      <FreeBizFooter />
     </div>
   );
 };

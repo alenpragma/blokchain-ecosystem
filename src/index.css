@@ -164,7 +164,9 @@
 .slick-dots{
   bottom: 12px !important;
 }
-.slick-slide{
-  /* width: 70% !important; */
-  /* margin-right: 5px !important; */
+.slick-dots li button::before{
+font-size: 15px !important;
+color: #2F76DE !important;
+border: 2px solid #2F76DE;
+border-radius: 50%;
 }

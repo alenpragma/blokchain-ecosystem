@@ -1,5 +1,5 @@
-import Container from "../shared/Container";
-import logo from "../../assets/icon/biz-token.png";
+import Container from "../../shared/Container";
+import logo from "../../../assets/icon/biz-token.png";
 import { Link } from "react-router-dom";
 
 const MainFooter = () => {
