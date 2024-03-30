@@ -155,3 +155,16 @@
   padding: 40px 0px !important;
   width: 100%;
 }
+
+/* latest blog section style */
+.slick-track{
+  padding-bottom: 80px !important;
+}
+
+.slick-dots{
+  bottom: 12px !important;
+}
+.slick-slide{
+  /* width: 70% !important; */
+  /* margin-right: 5px !important; */
+}

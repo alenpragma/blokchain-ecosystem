@@ -8,14 +8,11 @@ import instagram from "../../assets/icon/pagesicon/instagram.svg";
 import reddit from "../../assets/icon/pagesicon/reddit.svg";
 import linkedin from "../../assets/icon/pagesicon/linkedin.svg";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
-// import required modules
 import { Navigation } from "swiper/modules";
 import { useEffect } from "react";
 
@@ -148,7 +145,9 @@ const News = () => {
                   alt=""
                 />
                 <Link to={`/news/${data?._id}`} onClick={scroll}>
-                  <p className="mt-4 hover:text-blue-600 duration-300">{data.title}</p>
+                  <p className="mt-4 hover:text-blue-600 duration-300">
+                    {data.title}
+                  </p>
                 </Link>
               </SwiperSlide>
             ))}
