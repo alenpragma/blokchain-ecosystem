@@ -20,7 +20,7 @@ import { useEffect } from "react";
 
 const News = () => {
   const loaderData = useLoaderData();
-  const { img, title, news } = loaderData;
+  const { imageUrl, title1, title2, title3, news1, news2, news3 } = loaderData;
   useEffect(() => {
     window.scrollTo(0, 100);
   }, []);
@@ -51,7 +51,7 @@ const News = () => {
         <div className="lg:col-span-9 col-span-12 px-3">
           <img
             className="md:h-[500px] h-[300px] object-cover w-full rounded-3xl"
-            src={img}
+            src={imageUrl}
             alt=""
           />
           <p className="flex items-center gap-5 mt-10 mb-[60px]">
@@ -63,8 +63,16 @@ const News = () => {
               2.18 PM
             </span>{" "}
           </p>
-          <h3 className="font-semibold text-4 text-3xl my-3">{title}</h3>
-          <p>{news}</p>
+          {title1 ? (
+            <h3 className="font-semibold text-4 text-3xl my-3">{title1}</h3>
+          ) : (
+            ""
+          )}
+          <p>{news1}</p>
+          <h3 className="font-semibold text-4 text-3xl my-3">{title2}</h3>
+          <p>{news2}</p>
+          <h3 className="font-semibold text-4 text-3xl my-3">{title3}</h3>
+          <p>{news3}</p>
           <div className="flex justify-end items-center md:gap-8 gap-3 md:my-[66px] my-[30px]">
             <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">
               Share

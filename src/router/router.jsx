@@ -16,6 +16,9 @@ import Blog from "../pages/blog/Blog";
 import AdminRoute from "./AdminRoute";
 import FreeBizLayout from "../components/layouts/FreeBiz/FreeBizLayout";
 import MainLayout from "../components/layouts/main/MainLayout";
+import AdminLayout from "../components/layouts/admin/AdminLayout";
+import AllBlog from "../pages/blog/AllBlog";
+import EditBlog from "../pages/blog/EditBlog";
 
 const router = createBrowserRouter([
   {
@@ -27,14 +30,6 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/blog",
-        element: (
-          <AdminRoute>
-            <Blog></Blog>
-          </AdminRoute>
-        ),
       },
       {
         path: "/login",
@@ -74,6 +69,35 @@ const router = createBrowserRouter([
       { path: "swap", element: <Swap /> },
       { path: "send", element: <SellReceived /> },
       { path: "import-token", element: <Import /> },
+    ],
+  },
+
+  {
+    path: "/blog",
+    element: (
+      <AdminRoute>
+        <AdminLayout />
+      </AdminRoute>
+    ),
+    children: [
+      { index: true, element: <Navigate to="/blog/blog-post" /> },
+      { path: "*", element: <Error /> },
+      {
+        path: "blog-post",
+        element: <Blog />,
+      },
+      {
+        path: "all-blog",
+        element: <AllBlog />,
+      },
+      {
+        path: "edit-blog/:id",
+        element: <EditBlog />,
+        loader: ({ params }) =>
+        fetch(
+          `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`
+        ),
+      },
     ],
   },
 ]);

@@ -12,8 +12,9 @@ const Blog = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    console.log(data.imageUrl);
     const formData = new FormData();
-    formData.append("image", data.image[0]);
+    formData.append("image", data.imageUrl[0]);
 
     try {
       const imgBBResponse = await fetch(
@@ -32,16 +33,14 @@ const Blog = () => {
       const imageUrl = imgBBData.data.url;
 
       const formDataWithImage = { ...data, imageUrl };
-      const mongoResponse = await fetch(
-        "https://biz-server-git-main-remontripuras-projects.vercel.app/news",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formDataWithImage),
-        }
-      );
+      console.log(formDataWithImage);
+      const mongoResponse = await fetch("http://localhost:5000/news", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataWithImage),
+      });
 
       if (!mongoResponse.ok) {
         throw new Error("Failed to save data");
@@ -63,7 +62,7 @@ const Blog = () => {
 
   return (
     <Container>
-      <div className="max-w-3xl mx-auto border border-slate-300 rounded-lg p-8 my-20">
+      <div className="w-full border border-slate-300 rounded-lg p-8 mt-3 ">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div className="flex flex-col gap-2">
             <label htmlFor="title" className="font-semibold">
@@ -74,34 +73,95 @@ const Blog = () => {
               className="w-full  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
               placeholder="Image"
               id="imageUrl"
-              {...register("imageUrl", { required: true })}
+              {...register("imageUrl")}
             />
           </div>
+          <div className="">
+            <div>
+              <label htmlFor="title" className="font-semibold">
+                Title 1
+              </label>
+              <input
+                type="text"
+                className="w-full  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="Blog Title"
+                id="title1"
+                {...register("title1")}
+              />
+            </div>
+            <div>
+              <label htmlFor="title" className="font-semibold">
+                blog 1
+              </label>
+              <textarea
+                name=""
+                cols=""
+                rows=""
+                className="w-full h-[100px] px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="text"
+                id="news1"
+                {...register("news1")}
+              ></textarea>
+            </div>
+          </div>
+
           <div>
-            <label htmlFor="title" className="font-semibold">
-              Title
-            </label>
-            <input
-              type="text"
-              className="w-full  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
-              placeholder="Blog Title"
-              id="title"
-              {...register("title", { required: true })}
-            />
+            <div>
+              <label htmlFor="title" className="font-semibold">
+                Title 2
+              </label>
+              <input
+                type="text"
+                className="w-full  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="Blog Title"
+                id="title2"
+                {...register("title2")}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="title" className="font-semibold">
+                blog 2
+              </label>
+              <textarea
+                name=""
+                cols=""
+                rows=""
+                className="w-full h-[100px] px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="text"
+                id="news2"
+                {...register("news2")}
+              ></textarea>
+            </div>
           </div>
           <div>
-            <label htmlFor="title" className="font-semibold">
-              blog
-            </label>
-            <textarea
-              name=""
-              cols=""
-              rows=""
-              className="w-full h-[200px] px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
-              placeholder="text"
-              id="blog"
-              {...register("news", { required: true })}
-            ></textarea>
+            <div>
+              <label htmlFor="title" className="font-semibold">
+                Title 3
+              </label>
+              <input
+                type="text"
+                className="w-full  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="Blog Title"
+                id="title3"
+                {...register("title3")}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="title" className="font-semibold">
+                blog
+              </label>
+              <textarea
+                name=""
+                cols=""
+                rows=""
+                className="w-full h-[100px] px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="text"
+                id="news3"
+                {...register("news3")}
+              ></textarea>
+            </div>
           </div>
           <button
             type="submit"

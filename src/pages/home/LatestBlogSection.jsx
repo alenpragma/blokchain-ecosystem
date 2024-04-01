@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from "../../components/shared/Container";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import left from "../../assets/icon/latestblog/left.svg"
-import right from "../../assets/icon/latestblog/right.svg"
+import left from "../../assets/icon/latestblog/left.svg";
+import right from "../../assets/icon/latestblog/right.svg";
 
 const LatestBlogSection = () => {
   const [active, setActive] = useState(0);
@@ -31,11 +31,7 @@ const LatestBlogSection = () => {
     const { className, style, onClick } = props;
     return (
       <div className="absolute bottom-2 z-10 right-[40%]" onClick={onClick}>
-        {active < 1 ? (
-         <img src={right} alt="" />
-        ) : (
-          <img src={right} alt="" />
-        )}
+        {active < 1 ? <img src={right} alt="" /> : <img src={right} alt="" />}
       </div>
     );
   };
@@ -44,39 +40,72 @@ const LatestBlogSection = () => {
     const { className, style, onClick } = props;
     return (
       <div className="absolute bottom-2 z-10 left-[40%]" onClick={onClick}>
-        {active < 1 ? (
-          <img src={left} alt="" />
-        ) : (
-          <img src={left} alt="" />
-        )}
+        {active < 1 ? <img src={left} alt="" /> : <img src={left} alt="" />}
       </div>
     );
   };
   const settings = {
     dots: true,
+    infinite: false,
+    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
+    initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    afterChange: (currentSlide) => {
+      setActive(currentSlide);
+    },
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
+          infinite: true,
+          dots: true,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
-    afterChange: (currentSlide) => {
-      setActive(currentSlide);
-    },
+    // dots: true,
+    // slidesToShow: 3, // Show 3 slides by default
+    // slidesToScroll: 1,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 2, // Show 2 slides on screens smaller than 1024px
+    //       slidesToScroll: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 1, // Show 1 slide on screens smaller than 768px
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
+    // afterChange: (currentSlide) => {
+    //   setActive(currentSlide);
+    // },
   };
   return (
     <div className="w-full">
@@ -90,9 +119,12 @@ const LatestBlogSection = () => {
             <br /> Community
           </p>
         </div>
-        <Slider {...settings} className="pb-8">
+        <Slider {...settings} className="pb-8 ml-3">
           {reversedData.map((item) => (
-            <div key={item._id} className={`h-[411px] relative md:mt-0 mt-10`}>
+            <div
+              key={item._id}
+              className={`h-[411px] relative md:mt-0 mt-10 mr-3`}
+            >
               <Link to={`news/${item?._id}`}>
                 <img
                   className="w-full h-[354px] rounded-lg"
@@ -113,3 +145,45 @@ const LatestBlogSection = () => {
 };
 
 export default LatestBlogSection;
+
+// import React from "react";
+// import Slider from "react-slick";
+// import Container from "../../components/shared/Container";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+// function LatestBlogSection() {
+//   var settings = {
+//     dots: true,
+//     infinite: false,
+//     speed: 500,
+//     slidesToScroll: 4,
+//     slidesToShow: 4,
+//   };
+//   return (
+//     <div className="slider-container">
+//       <Container>
+//         <Slider {...settings}>
+//           <div className="bg-red-500 p-4">
+//             <h3>1</h3>
+//           </div>
+//           <div className="bg-red-500">
+//             <h3>1</h3>
+//           </div>
+//           <div className="bg-red-500">
+//             <h3>1</h3>
+//           </div>
+//           <div className="bg-red-500">
+//             <h3>1</h3>
+//           </div>
+//           <div className="bg-red-500">
+//             <h3>1</h3>
+//           </div>
+
+//         </Slider>
+//       </Container>
+//     </div>
+//   );
+// }
+
+// export default LatestBlogSection;

@@ -66,6 +66,7 @@
   }
 }
 
+/*------------------------------- navbar border bottom animation start---------------------------- */
 .btn {
   position: relative;
   background-color: transparent;
@@ -92,16 +93,9 @@
 .btn:hover::after {
   transform: translate(0);
 }
+/*--------------------- navbar border bottom animation end-------------------------- */
 
-::placeholder {
-  color: red;
-  opacity: 1;
-}
-
-::-ms-input-placeholder {
-  color: red;
-}
-
+/*-------------------------- news section bottom slider swiper start-------------------------------- */
 .swiper {
   padding: 100px 0px 50px 0px !important;
   width: 100% !important;
@@ -155,18 +149,28 @@
   padding: 40px 0px !important;
   width: 100%;
 }
+/* -------------------------news section bottom slider swiper end ---------------------------*/
 
-/* latest blog section style */
-.slick-track{
+/*--------------------------- latest blog section style start-----------------*/
+.slick-track {
   padding-bottom: 80px !important;
 }
 
-.slick-dots{
+.slick-dots {
   bottom: 12px !important;
 }
-.slick-dots li button::before{
-font-size: 15px !important;
-color: #2F76DE !important;
-border: 2px solid #2F76DE;
-border-radius: 50%;
+.slick-dots li button::before {
+  font-size: 15px !important;
+  color: #2f76de !important;
+  border: 2px solid #2f76de;
+  border-radius: 50%;
+}
+.custom-card {
+  width: 90% !important;
+  margin: auto !important;
+}
+/*--------------------------- latest blog section style end-----------------*/
+
+.td-class{
+  
 }
