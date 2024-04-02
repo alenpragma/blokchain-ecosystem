@@ -135,6 +135,9 @@ const LatestBlogSection = () => {
                 <div className="p-[33px] w-[80%] absolute bg-[#FFFFFF] right-0 left-0 mx-auto -bottom-10 rounded-lg shadow-lg">
                   <h3 className="text-[20px] font-medium">{item.title}</h3>
                   <p className="text-[16px] text-[#6A6A6A]">20 January 2024</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item?.content }}
+                  ></div>
                 </div>
               </Link>
             </div>
