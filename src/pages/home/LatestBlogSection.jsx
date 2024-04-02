@@ -69,9 +69,10 @@ const LatestBlogSection = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          dots: false,
         },
       },
       {
@@ -127,11 +128,11 @@ const LatestBlogSection = () => {
             >
               <Link to={`news/${item?._id}`}>
                 <img
-                  className="w-full h-[354px] rounded-lg"
+                  className="w-[90%] mx-auto h-[354px] rounded-lg"
                   src={item.imageUrl}
                   alt=""
                 />
-                <div className="p-[33px] w-[90%] absolute bg-[#FFFFFF] right-0 left-0 mx-auto -bottom-10 rounded-lg shadow-lg">
+                <div className="p-[33px] w-[80%] absolute bg-[#FFFFFF] right-0 left-0 mx-auto -bottom-10 rounded-lg shadow-lg">
                   <h3 className="text-[20px] font-medium">{item.title}</h3>
                   <p className="text-[16px] text-[#6A6A6A]">20 January 2024</p>
                 </div>
