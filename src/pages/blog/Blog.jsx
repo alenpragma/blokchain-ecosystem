@@ -33,8 +33,8 @@ const Blog = () => {
       const imageUrl = imgBBData.data.url;
 
       const formDataWithImage = { ...data, imageUrl };
-      console.log(formDataWithImage);
-      const mongoResponse = await fetch("http://localhost:5000/news", {
+    
+      const mongoResponse = await fetch("https://biz-server-git-main-remontripuras-projects.vercel.app/news", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
