@@ -18,7 +18,7 @@ import refresh from "../../../assets/icon/dashboard-icon/refresh0.svg";
 import refresh1 from "../../../assets/icon/dashboard-icon/refresh1.svg";
 import shuffle from "../../../assets/icon/dashboard-icon/shuffle0.svg";
 import shuffle1 from "../../../assets/icon/dashboard-icon/shuffle1.svg";
-import logo from "../../../assets/icon/logo2.svg"
+import logo from "../../../assets/icon/logo2.svg";
 
 const menuItem = [
   {
@@ -36,7 +36,6 @@ const menuItem = [
 ];
 
 const Sidebar = ({ show }) => {
-
   const location = useLocation();
 
   return (
@@ -85,11 +84,19 @@ const Sidebar = ({ show }) => {
               }`
             }
           >
-            <span className="flex gap-3 items-center">
-              {item.title}
-            </span>
+            <span className="flex gap-3 items-center">{item.title}</span>
           </NavLink>
         ))}
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `w-full py-3 rounded pl-6 transition-all ${
+              isActive ? "bg-blue-800 text-[#FFFFFF]" : ""
+            }`
+          }
+        >
+          <span className="flex gap-3 items-center">Home</span>
+        </NavLink>
       </nav>
     </aside>
   );

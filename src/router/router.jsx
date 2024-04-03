@@ -19,6 +19,7 @@ import MainLayout from "../components/layouts/main/MainLayout";
 import AdminLayout from "../components/layouts/admin/AdminLayout";
 import AllBlog from "../pages/blog/AllBlog";
 import EditBlog from "../pages/blog/EditBlog";
+import Bloogs from "../pages/blog/Bloogs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/blog",
+        element: <Bloogs />,
       },
       {
         path: "/login",
@@ -72,33 +77,33 @@ const router = createBrowserRouter([
     ],
   },
 
-  {
-    path: "/blog",
-    element: (
-      <AdminRoute>
-        <AdminLayout />
-      </AdminRoute>
-    ),
-    children: [
-      { index: true, element: <Navigate to="/blog/blog-post" /> },
-      { path: "*", element: <Error /> },
-      {
-        path: "blog-post",
-        element: <Blog />,
-      },
-      {
-        path: "all-blog",
-        element: <AllBlog />,
-      },
-      {
-        path: "edit-blog/:id",
-        element: <EditBlog />,
-        loader: ({ params }) =>
-        fetch(
-          `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`
-        ),
-      },
-    ],
-  },
+  // {
+  //   path: "/blog",
+  //   element: (
+  //     <AdminRoute>
+  //       <AdminLayout />
+  //     </AdminRoute>
+  //   ),
+  //   children: [
+  //     { index: true, element: <Navigate to="/blog/blog-post" /> },
+  //     { path: "*", element: <Error /> },
+  //     {
+  //       path: "blog-post",
+  //       element: <Blog />,
+  //     },
+  //     {
+  //       path: "all-blog",
+  //       element: <AllBlog />,
+  //     },
+  //     {
+  //       path: "edit-blog/:id",
+  //       element: <EditBlog />,
+  //       loader: ({ params }) =>
+  //         fetch(
+  //           `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`
+  //         ),
+  //     },
+  //   ],
+  // },
 ]);
 export default router;
