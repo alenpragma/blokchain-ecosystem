@@ -30,7 +30,10 @@ const LatestBlogSection = () => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-      <div className="absolute bottom-2 z-10 right-[40%] cursor-pointer" onClick={onClick}>
+      <div
+        className="absolute bottom-2 z-10 right-[40%] cursor-pointer"
+        onClick={onClick}
+      >
         {active < 1 ? <img src={right} alt="" /> : <img src={right} alt="" />}
       </div>
     );
@@ -39,7 +42,10 @@ const LatestBlogSection = () => {
   const SamplePrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-      <div className="absolute bottom-2 z-10 left-[40%] cursor-pointer" onClick={onClick}>
+      <div
+        className="absolute bottom-2 z-10 left-[40%] cursor-pointer"
+        onClick={onClick}
+      >
         {active < 1 ? <img src={left} alt="" /> : <img src={left} alt="" />}
       </div>
     );
@@ -110,14 +116,19 @@ const LatestBlogSection = () => {
                 />
 
                 <div className="px-[33px] py-[25px] w-[80%] absolute bg-[#FFFFFF]  right-0 left-0 mx-auto -bottom-0 rounded-lg shadow-lg">
-                  <h3 className="font-medium text-[20px]">{item.title.slice(0, 15) + ' ...'}</h3>
+                  <h3 className="font-medium text-[20px]">
+                    {item.title.slice(0, 15) + " ..."}
+                  </h3>
                   <p className="text-[#6A6A6A] text-4">20 January 2024</p>
-                <div className="p-[33px] w-[80%] absolute bg-[#FFFFFF] right-0 left-0 mx-auto -bottom-10 rounded-lg shadow-lg">
-                  <h3 className="text-[20px] font-medium">{item.title}</h3>
-                  <p className="text-[16px] text-[#6A6A6A]">20 January 2024</p>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: item?.content }}
-                  ></div>
+                  <div className="p-[33px] w-[80%] absolute bg-[#FFFFFF] right-0 left-0 mx-auto -bottom-10 rounded-lg shadow-lg">
+                    <h3 className="text-[20px] font-medium">{item.title}</h3>
+                    <p className="text-[16px] text-[#6A6A6A]">
+                      20 January 2024
+                    </p>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: item?.content }}
+                    ></div>
+                  </div>
                 </div>
               </Link>
             </div>
