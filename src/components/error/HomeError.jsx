@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Error = () => {
+const HomeError = () => {
   return (
     <div className="w-[500px] mx-auto flex justify-center  h-[80vh]">
       <div>
@@ -12,7 +12,7 @@ const Error = () => {
         <h3 className="text-3xl font-medium text-center">oops! page not found</h3>
         <div className="w-fit mx-auto bg-[#458DF3] rounded-2xl mt-5 px-5 py-3">
           <Link
-            to="/dashboard"
+            to="/"
             className=" text-white text-center flex items-center justify-center h-full"
           >
             Back to home
@@ -23,4 +23,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default HomeError;

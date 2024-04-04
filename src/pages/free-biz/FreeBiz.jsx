@@ -38,7 +38,7 @@ const FreeBiz = () => {
     setToggle((prev) => (prev === i ? null : i));
   };
   return (
-    <div className="bg-[#e3f3ff] md:py-[80px] py-10">
+    <div className="bg-[#e3f3ff] md:pb-[80px] pt-[150px] pb-5">
       <Container className="">
         <div className="text-center md:mb-[80px] mb-10">
           <h3 className="md:text-[64px] text-[44px] font-bold text-[#323232] uppercase">
@@ -80,12 +80,12 @@ const FreeBiz = () => {
                   className="flex items-center justify-between mr-5"
                   onClick={() => handeFaq(i)}
                 >
-                  <div className="flex gap-7 items-start mr-10">
-                    <span className="text-[#2f76de] text-[48px] font-semibold">
+                  <div className="flex gap-7 md:items-start items-center mr-10">
+                    <span className="text-[#2f76de] md:text-[48px] text-[24px] font-semibold">
                       0{i + 1}
                     </span>
                     <div className="mt-5">
-                      <h3 className="cursor-pointer font-semibold text-[24px]">
+                      <h3 className="cursor-pointer font-semibold md:text-[24px] text-[16px]">
                         {data.question}
                       </h3>
                       {isOpen == i && <p className="mt-10">{data.answer}</p>}

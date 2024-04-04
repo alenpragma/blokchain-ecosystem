@@ -39,7 +39,20 @@ const AllBlog = () => {
                   alt=""
                 />
               </td>
-              <td className=" text-start w-4/12">{data.title}</td>
+              <td className=" text-start w-4/12">
+                {" "}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data?.content
+                      ? data.content
+                          .replace(/(<([^>]+)>)/gi, "") 
+                          .split(" ")
+                          .slice(0, 5)
+                          .join(" ") 
+                      : "",
+                  }}
+                ></div>
+              </td>
               <td className=" text-start w-3/12">
                 <Link to={`/blog/edit-blog/${data._id}`}>
                   <button>
