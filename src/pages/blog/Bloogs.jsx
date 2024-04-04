@@ -18,7 +18,7 @@ const Bloogs = () => {
     );
   }
   return (
-    <div className="w-full py-10 mt-14">
+    <div className="w-full py-10 mt-14 mx-3">
       <Container>
         <div className="flex justify-center mb-5">
           <h3 className="text-4xl font-semibold text-center border-b-2 border-b-slate-400 w-fit pb-2">
@@ -30,7 +30,7 @@ const Bloogs = () => {
             <Link
               to={`/news/${data?._id}`}
               key={i}
-              className="col-span-3 duration-300"
+              className="md:col-span-3 col-span-6 duration-300"
             >
               <div className="  border border-blue-800">
                 <div>
