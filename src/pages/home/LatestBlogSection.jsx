@@ -108,9 +108,16 @@ const LatestBlogSection = () => {
                   src={item.imageUrl}
                   alt=""
                 />
+
                 <div className="px-[33px] py-[25px] w-[80%] absolute bg-[#FFFFFF]  right-0 left-0 mx-auto -bottom-0 rounded-lg shadow-lg">
                   <h3 className="font-medium text-[20px]">{item.title.slice(0, 15) + ' ...'}</h3>
                   <p className="text-[#6A6A6A] text-4">20 January 2024</p>
+                <div className="p-[33px] w-[80%] absolute bg-[#FFFFFF] right-0 left-0 mx-auto -bottom-10 rounded-lg shadow-lg">
+                  <h3 className="text-[20px] font-medium">{item.title}</h3>
+                  <p className="text-[16px] text-[#6A6A6A]">20 January 2024</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item?.content }}
+                  ></div>
                 </div>
               </Link>
             </div>
