@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 // import vector from "../../../assets/icon/dashboard-icon/vector0.svg";
 import vector0 from "../../../assets/icon/dashboard-icon/vector0.svg";
 import vector1 from "../../../assets/icon/dashboard-icon/vector1.svg";
@@ -117,7 +117,7 @@ const Sidebar = ({ show }) => {
         )}
       </div>
       <div className="text-3xl font-semibold text-slate-500 flex justify-center my-[30px]">
-        <img src={logo} alt="" />
+     <Link to="/">   <img src={logo} alt="" /></Link>
       </div>
       <nav className="flex flex-col gap-3 border-r-2">
         {menuItem.map((item, i) => (

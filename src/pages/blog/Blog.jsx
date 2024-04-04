@@ -73,7 +73,7 @@ const Blog = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">
             Image

@@ -26,9 +26,9 @@ const HeroSection = () => {
       className="w-full  md:px-5 px-3 bg-[#ffffffa7] md:bg-[#fdfdfd00]"
     >
       <Container>
-        <div className="lg:pt-24 pt-12 ">
+        <div className="lg:pt-32 pt-24 ">
           <h1 className="lg:text-[64px] md:text-[52px] text-[32px] text-[#323232] font-bold lg:leading-[76px] md:text-start text-center">
-            BIZ <span className="btn">Token</span> an Ecosystem <br /> that Scaling Decentralized <br />{" "}
+            BIZ Token an Ecosystem <br /> that Scaling Decentralized <br />{" "}
             Applications
           </h1>
         </div>
