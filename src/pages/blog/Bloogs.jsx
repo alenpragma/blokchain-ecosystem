@@ -18,7 +18,7 @@ const Bloogs = () => {
     );
   }
   return (
-    <div className="w-full py-10">
+    <div className="w-full py-10 mt-14">
       <Container>
         <div className="flex justify-center mb-5">
           <h3 className="text-4xl font-semibold text-center border-b-2 border-b-slate-400 w-fit pb-2">

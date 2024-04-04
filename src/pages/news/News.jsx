@@ -47,7 +47,7 @@ const News = () => {
   };
   return (
     <Container>
-      <div className="grid grid-cols-12 mt-5 gap-5 mb-10">
+      <div className="grid grid-cols-12 gap-5 mb-10 mt-24">
         <div className="lg:col-span-9 col-span-12 px-3">
           <img
             className="md:h-[500px] h-[300px] object-cover w-full rounded-3xl"
