@@ -20,7 +20,7 @@ import { useEffect } from "react";
 
 const News = () => {
   const loaderData = useLoaderData();
-  const { imageUrl, title1, title2, title3, news1, news2, news3 } = loaderData;
+  const { imageUrl, content, title } = loaderData;
   useEffect(() => {
     window.scrollTo(0, 100);
   }, []);
@@ -47,7 +47,7 @@ const News = () => {
   };
   return (
     <Container>
-      <div className="grid grid-cols-12 mt-5 gap-5 mb-10">
+      <div className="grid grid-cols-12 gap-5 mb-10 mt-24">
         <div className="lg:col-span-9 col-span-12 px-3">
           <img
             className="md:h-[500px] h-[300px] object-cover w-full rounded-3xl"
@@ -63,16 +63,13 @@ const News = () => {
               2.18 PM
             </span>{" "}
           </p>
-          {title1 ? (
-            <h3 className="font-semibold text-4 text-3xl my-3">{title1}</h3>
-          ) : (
-            ""
-          )}
-          <p>{news1}</p>
-          <h3 className="font-semibold text-4 text-3xl my-3">{title2}</h3>
-          <p>{news2}</p>
-          <h3 className="font-semibold text-4 text-3xl my-3">{title3}</h3>
-          <p>{news3}</p>
+            <h3 className="font-bold text-[48px] text-[#242424] mb-3">{title}</h3>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: content,
+            }}
+          ></div>
+
           <div className="flex justify-end items-center md:gap-8 gap-3 md:my-[66px] my-[30px]">
             <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">
               Share
@@ -149,7 +146,7 @@ const News = () => {
               <SwiperSlide key={data._id} className="w-full ml-3">
                 <img
                   className="h-[190px] w-full object-cover"
-                  src={data.img}
+                  src={data.imageUrl}
                   alt=""
                 />
                 <Link to={`/news/${data?._id}`} onClick={scroll}>

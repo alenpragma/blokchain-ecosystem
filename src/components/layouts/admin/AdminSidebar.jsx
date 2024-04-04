@@ -18,7 +18,7 @@ import refresh from "../../../assets/icon/dashboard-icon/refresh0.svg";
 import refresh1 from "../../../assets/icon/dashboard-icon/refresh1.svg";
 import shuffle from "../../../assets/icon/dashboard-icon/shuffle0.svg";
 import shuffle1 from "../../../assets/icon/dashboard-icon/shuffle1.svg";
-import logo from "../../../assets/icon/logo2.svg"
+import logo from "../../../assets/icon/logo2.svg";
 
 const menuItem = [
   {
@@ -35,14 +35,19 @@ const menuItem = [
   },
 ];
 
-const Sidebar = ({ show }) => {
-
+const Sidebar = ({ toggle, setToggle }) => {
   const location = useLocation();
 
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
   return (
-    <aside className="bg-light-gray h-screen col-span-3 md:sticky md:top-0 left-0 overflow-auto w-[243px]">
-      <div className="flex justify-end pr-5 pt-3 lg:hidden ">
-        {show ? (
+    <aside className=" bg-light-gray h-screen col-span-3 md:sticky md:top-0 left-0 overflow-auto w-[243px]">
+      <div
+        className="flex justify-end pr-5 py-2 md:hidden"
+        onClick={handleToggle}
+      >
+        {toggle == true ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -58,23 +63,10 @@ const Sidebar = ({ show }) => {
             />
           </svg>
         ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-8"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
+          ""
         )}
       </div>
-      <nav className="flex flex-col gap-3 border-r-2">
+      <nav className="flex flex-col gap-3 ">
         {menuItem.map((item, i) => (
           <NavLink
             key={i}
@@ -85,11 +77,19 @@ const Sidebar = ({ show }) => {
               }`
             }
           >
-            <span className="flex gap-3 items-center">
-              {item.title}
-            </span>
+            <span className="flex gap-3 items-center">{item.title}</span>
           </NavLink>
         ))}
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `w-full py-3 rounded pl-6 transition-all ${
+              isActive ? "bg-blue-800 text-[#FFFFFF]" : ""
+            }`
+          }
+        >
+          <span className="flex gap-3 items-center">Home</span>
+        </NavLink>
       </nav>
     </aside>
   );
