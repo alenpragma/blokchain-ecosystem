@@ -82,76 +82,22 @@ const NavItem1 = (
 );
 const NavItem2 = (
   <>
-    <NavLink
-      to="/"
-      className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-            : "text-[#DDDDDD] hover:text-[#fff]"
-        } `
-      }
-    >
+    <NavLink to="/" className="text-[#000] hover:text-blue-600 ">
       Home
     </NavLink>
-    <NavLink
-      to="/Developers"
-      className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-            : "text-[#DDDDDD] hover:text-[#fff]"
-        } `
-      }
-    >
+    <NavLink to="/Developers" className="text-[#000] hover:text-blue-600 ">
       Developers
     </NavLink>
-    <NavLink
-      to="/ecosystem"
-      className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-            : "text-[#DDDDDD] hover:text-[#fff]"
-        }`
-      }
-    >
+    <NavLink to="/ecosystem" className="text-[#000] hover:text-blue-600 ">
       Ecosystem
     </NavLink>
-    <NavLink
-      to="/commiunity"
-      className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-            : "text-[#DDDDDD] hover:text-[#fff]"
-        }`
-      }
-    >
+    <NavLink to="/commiunity" className="text-[#000] hover:text-blue-600 ">
       Community
     </NavLink>
-    <NavLink
-      to="/blog"
-      className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-            : "text-[#DDDDDD] hover:text-[#fff]"
-        }`
-      }
-    >
+    <NavLink to="/blog" className="text-[#000] hover:text-blue-600 ">
       Blog
     </NavLink>
-    <NavLink
-      to="/free-biz-home"
-      className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-[#FFFFFF] font-medium hover:text-[#FFFFFF] "
-            : "text-[#DDDDDD] hover:text-[#fff]"
-        }`
-      }
-    >
+    <NavLink to="/free-biz-home" className="text-[#000] hover:text-blue-600 ">
       Free-Biz
     </NavLink>
   </>
@@ -159,18 +105,9 @@ const NavItem2 = (
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const location = useLocation()
   const [isScroll, setIsScroll] = useState(false);
-  useEffect(() => {
-    if (menu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
-
-    return () => {
-      document.body.style.overflow = "visible";
-    };
-  }, [menu]);
+   useEffect(() => window.scrollTo(0, 10))
   const handleToggleMenu = () => {
     setMenu(!menu);
   };
@@ -184,13 +121,18 @@ const Navbar = () => {
   }, []);
 
 
+
+  useEffect(() => {
+    setMenu(false);
+  }, [location.pathname]);
+
   return (
     <div
-    className={`${
-      isScroll == true
-        ? "bg-[#2F76DE] duration-500 "
-        : "transition-all duration-500 py-[5px] bg-[#2F76DE]"
-    } w-full fixed top-0 left-0 z-10`}
+      className={`${
+        isScroll == true
+          ? "bg-[#2F76DE] duration-500 "
+          : "transition-all duration-500 py-[5px] bg-[#2F76DE]"
+      } w-full fixed top-0 left-0 z-10`}
     >
       <Container>
         <nav className="w-full flex justify-between items-center py-4 relative px-5">
@@ -215,29 +157,31 @@ const Navbar = () => {
           <div
             className={`${
               menu
-                ? "transition duration-300 ease-in-out transform translate-x-0  md:hidden"
-                : "transition duration-300 ease-in-out transform translate-x-full w-full overflow-auto"
+                ? "transition  ease-in-out transform translate-x-0  md:hidden"
+                : "transition  ease-in-out transform translate-x-full w-full overflow-auto"
             } fixed top-0 right-0 w-full h-full flex flex-col items-end  z-[999]`}
           >
-            <div className="w-1/2 bg-[#a2a5b9]  h-[100vh]">
-              <div className="flex justify-end mr-5">
-                <button onClick={handleToggleMenu} className="flex md:hidden">
-                  {menu ? (
-                    <IoIosClose className="text-[50px] text-[#fff]" />
-                  ) : (
-                    ""
-                  )}
-                </button>
-              </div>
-              <nav className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
-                {NavItem2}
-              </nav>
-              <div className="my-4 flex justify-center">
-                <Link to="/dashboard/dashboard-home">
-                  <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
-                    Start Building
+            <div className="w-full bg-[#00000014]  h-[100vh] flex justify-end">
+              <div className="w-1/2 bg-[#fff]">
+                <div className="flex justify-start mr-5">
+                  <button onClick={handleToggleMenu} className="flex md:hidden">
+                    {menu == true? (
+                      <IoIosClose className="text-[50px] text-[#000]" />
+                    ) : (
+                      ""
+                    )}
                   </button>
-                </Link>
+                </div>
+                <nav className="flex flex-col gap-5 text-[#FFF] text-[16px] text-center">
+                  {NavItem2}
+                </nav>
+                <div className="my-4 flex justify-center">
+                  <Link to="/dashboard/dashboard-home">
+                    <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+                      Start Building
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   return (
     <Container>
-      <div className="max-w-xl mx-auto border border-slate-300 rounded-lg p-8 my-20">
+      <div className="max-w-xl mx-auto border border-slate-300 rounded-lg p-8 mb-20 mt-32">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <input
             type="text"

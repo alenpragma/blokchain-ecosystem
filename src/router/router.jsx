@@ -78,33 +78,33 @@ const router = createBrowserRouter([
     ],
   },
 
-  // {
-  //   path: "/blog",
-  //   element: (
-  //     <AdminRoute>
-  //       <AdminLayout />
-  //     </AdminRoute>
-  //   ),
-  //   children: [
-  //     { index: true, element: <Navigate to="/blog/blog-post" /> },
-  //     { path: "*", element: <Error /> },
-  //     {
-  //       path: "blog-post",
-  //       element: <Blog />,
-  //     },
-  //     {
-  //       path: "all-blog",
-  //       element: <AllBlog />,
-  //     },
-  //     {
-  //       path: "edit-blog/:id",
-  //       element: <EditBlog />,
-  //       loader: ({ params }) =>
-  //         fetch(
-  //           `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`
-  //         ),
-  //     },
-  //   ],
-  // },
+  {
+    path: "blog/blog-post",
+    element: (
+      <AdminRoute>
+        <AdminLayout />
+      </AdminRoute>
+    ),
+    children: [
+      { index: true, element: <Navigate to="/blog/blog-post/blog-post" /> },
+      { path: "*", element: <Error /> },
+      {
+        path: "blog-post",
+        element: <Blog />,
+      },
+      {
+        path: "all-blog",
+        element: <AllBlog />,
+      },
+      {
+        path: "edit-blog/:id",
+        element: <EditBlog />,
+        loader: ({ params }) =>
+          fetch(
+            `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${params.id}`
+          ),
+      },
+    ],
+  },
 ]);
 export default router;

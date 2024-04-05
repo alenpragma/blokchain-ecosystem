@@ -70,7 +70,7 @@ const Sidebar = ({ toggle, setToggle }) => {
         {menuItem.map((item, i) => (
           <NavLink
             key={i}
-            to={`/blog/${item.pathname}`}
+            to={`/blog/blog-post/${item.pathname}`}
             className={({ isActive }) =>
               `w-full py-3 rounded pl-6 transition-all ${
                 isActive ? "bg-blue-800 text-[#FFFFFF]" : ""
