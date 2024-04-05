@@ -11,11 +11,11 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
- 
+
   const onSubmit = (data) => {
     localStorage.setItem("username", data.username);
     localStorage.setItem("password", data.password);
-    navigate(from, { replace: true })
+    navigate(from, { replace: true });
   };
 
   const navigate = useNavigate();
@@ -24,8 +24,14 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   return (
     <Container>
-      <div className="max-w-xl mx-auto border border-slate-300 rounded-lg p-8 mb-20 mt-32">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      <div className="max-w-md mx-auto   mb-20 mt-32">
+        <div className="flex justify-center items-center my-3">
+          <h3 className="font-semibold text-2xl  ">Login</h3>
+        </div>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-5 border  p-8  border-slate-300 rounded"
+        >
           <input
             type="text"
             className="w-full  px-5 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
