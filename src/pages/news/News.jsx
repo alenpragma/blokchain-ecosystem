@@ -26,7 +26,7 @@ const News = () => {
   const { imageUrl, content, title, date } = loaderData;
   useEffect(() => {
     axios
-      .get("http://localhost:5000/category-group")
+      .get("https://biz-server-git-main-remontripuras-projects.vercel.app/category-group")
       .then((response) => {
         setCategory(response.data);
         setLoading(false);
