@@ -105,11 +105,16 @@ const NavItem2 = (
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const location = useLocation()
+  const location = useLocation();
   const [isScroll, setIsScroll] = useState(false);
-   useEffect(() => window.scrollTo(0, 10))
+  useEffect(() => window.scrollTo(0, 10));
   const handleToggleMenu = () => {
     setMenu(!menu);
+    if (menu == true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   };
 
   useEffect(() => {
@@ -120,12 +125,9 @@ const Navbar = () => {
     return window.addEventListener("scroll", handleScroll);
   }, []);
 
-
-
   useEffect(() => {
     setMenu(false);
   }, [location.pathname]);
-
   return (
     <div
       className={`${
@@ -158,14 +160,14 @@ const Navbar = () => {
             className={`${
               menu
                 ? "transition  ease-in-out transform translate-x-0  md:hidden"
-                : "transition  ease-in-out transform translate-x-full w-full overflow-auto"
-            } fixed top-0 right-0 w-full h-full flex flex-col items-end  z-[999]`}
+                : "transition  ease-in-out transform translate-x-full w-full "
+            } fixed top-0 right-0 w-full h-full flex flex-col items-end z-[999]`}
           >
-            <div className="w-full bg-[#00000014]  h-[100vh] flex justify-end">
-              <div className="w-1/2 bg-[#fff]">
+            <div className=" bg-[#00000014] h-screen sticky overflow-y-auto flex justify-end">
+              <div className=" bg-[#fff]">
                 <div className="flex justify-start mr-5">
                   <button onClick={handleToggleMenu} className="flex md:hidden">
-                    {menu == true? (
+                    {menu == true ? (
                       <IoIosClose className="text-[50px] text-[#000]" />
                     ) : (
                       ""

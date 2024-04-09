@@ -21,6 +21,7 @@ import AllBlog from "../pages/blog/AllBlog";
 import EditBlog from "../pages/blog/EditBlog";
 import Bloogs from "../pages/blog/Bloogs";
 import HomeError from "../components/error/HomeError";
+import AddCategory from "../pages/blog/AddCategory";
 
 const router = createBrowserRouter([
   {
@@ -86,7 +87,7 @@ const router = createBrowserRouter([
       </AdminRoute>
     ),
     children: [
-      { index: true, element: <Navigate to="/blog/blog-post/blog-post" /> },
+      { index: true, element: <Navigate to="/blog/blog-post/all-blog" /> },
       { path: "*", element: <Error /> },
       {
         path: "blog-post",
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: "all-blog",
         element: <AllBlog />,
+      },
+      {
+        path: "add-category",
+        element: <AddCategory />,
       },
       {
         path: "edit-blog/:id",

@@ -9,7 +9,7 @@ import ContactSection from "./ContactSection";
 
 const Home = () => {
   return (
-    <>
+    <div className="h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300">
       <HeroSection />
       <BlockChainTrustSection />
       <FreedomSection />
@@ -19,7 +19,7 @@ const Home = () => {
       <BuildBizSection />
       <LatestBlogSection />
       <ContactSection />
-    </>
+    </div>
   );
 };
 

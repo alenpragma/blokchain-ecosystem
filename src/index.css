@@ -32,6 +32,12 @@
   }
 }
 
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
 
 /*------------------------------- navbar border bottom animation start---------------------------- */
 .btn {
