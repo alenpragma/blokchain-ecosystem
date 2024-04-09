@@ -106,7 +106,8 @@ const NavItem2 = (
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
-  const [isScroll, setIsScroll] = useState(false);
+  // const [isScroll, setIsScroll] = useState(false)
+  // console.log(isScroll);
   useEffect(() => window.scrollTo(0, 10));
   const handleToggleMenu = () => {
     setMenu(!menu);
@@ -116,13 +117,15 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     }
   };
+  const [isScrolled, setIsScrolled] = useState(false);
+  console.log(isScrolled);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScroll(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
-    return window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -131,13 +134,13 @@ const Navbar = () => {
   return (
     <div
       className={`${
-        isScroll == true
-          ? "bg-[#2F76DE] duration-500 "
-          : "transition-all duration-500 py-[5px] bg-[#2F76DE]"
+        isScrolled == true
+          ? "bg-[#2F76DE] duration-500 py-1"
+          : "transition-all duration-500 py-2 bg-[#2F76DE]"
       } w-full fixed top-0 left-0 z-10`}
     >
       <Container>
-        <nav className="w-full flex justify-between items-center py-4 relative px-5">
+        <nav className="w-full flex justify-between items-center relative px-5">
           <div>
             <Link to="/">
               <img className="w-32" src={icon} alt="" />

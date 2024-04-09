@@ -26,7 +26,7 @@ const News = () => {
   const { imageUrl, content, title, date } = loaderData;
   useEffect(() => {
     axios
-      .get("https://biz-server-git-main-remontripuras-projects.vercel.app/category")
+      .get("http://localhost:5000/category-group")
       .then((response) => {
         setCategory(response.data);
         setLoading(false);
@@ -168,7 +168,7 @@ const News = () => {
               </form>
             </div>
           </div>
-          <div className="col-span-3">
+          <div className="md:col-span-3 col-span-12 md:mx-0 mx-3">
             <div className=" bg-[#F3F3F3] p-4 rounded md:h-[500px] h-[300px]">
               <div className="bg-[#fff] rounded p-[10px] w-fit px-5 mb-3">
                 <h3 className="font-bold text-[#2F76DE] text-[20px]">
@@ -181,15 +181,10 @@ const News = () => {
                     key={item._id}
                     className="w-full bg-[#fff] rounded-full pl-3 pr-1 py-1 flex justify-between"
                   >
-                    {item.categoryName}
+                    {item.category}
                     <span className="w-6 h-full bg-[#2F76DE] rounded-full text-center text-[#fff]">
-                      0
+                      {item.count}
                     </span>
-                    {/* {data?.filter(ct => ct.category === item).map(num, i) => (<p key={i}>{num.length}</p>))} */}
-                    {/* {data?.filter((ct) => ct.category === item.categoryName)
-                    .map((filteredItem, i) => (
-                      console.log(filteredItem)
-                    ))} */}
                   </li>
                 ))}
               </ul>
@@ -211,9 +206,14 @@ const News = () => {
                       src={data.imageUrl}
                       alt=""
                     />
-                    <p className="text-[#242424] font-medium text-[14px]">
-                      Cornering the Market on Cryptocurrency Insights
-                    </p>
+                    <div className="flex flex-col justify-between">
+                      <p className="text-[12px] text-[#8B8B8B]">
+                        Biz Ecosystem
+                      </p>
+                      <p className="text-[#242424] font-medium text-[14px]">
+                        Cornering the Market on Cryptocurrency Insights
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
