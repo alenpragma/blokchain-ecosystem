@@ -72,7 +72,7 @@ const News = () => {
 
   return (
     <Container>
-      <div className="grid grid-cols-12 gap-5 mb-10 mt-28">
+      <div className="grid grid-cols-12 gap-5 mb-10 mt-20">
         <div className="flex justify-start items-center py-5 bg-[#FFFFFF] shadow rounded-lg my-5 w-fit px-[14px] gap-5">
           <span className="text-[20px] text-[#7A7A7A]">Home</span>
           <svg
