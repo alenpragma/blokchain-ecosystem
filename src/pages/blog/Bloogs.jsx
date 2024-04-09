@@ -125,24 +125,24 @@ const Bloogs = () => {
             Blog
           </h3>
         </div>
-        <div className="grid grid-cols-12 gap-3 md:mx-0 mx-2">
+        <div className="grid grid-cols-12 gap-5 md:mx-0 mx-2">
           {currentItems.map((dataItem, i) => (
             <Link
               to={`/news/${dataItem._id}`}
               key={i}
-              className="md:col-span-3 col-span-6 duration-300"
+              className="md:col-span-4 col-span-6 duration-300"
             >
               <div className="h-full  border border-blue-800 relative">
                 <div>
                   <img
-                    className="w-full h-[200px] object-cover border-b-4 border-blue-800"
+                    className="w-full h-[300px] object-cover border-b-4 border-blue-800"
                     src="https://i.ibb.co/wR9DdRZ/hand.png"
                     alt=""
                   />
                 </div>
                 <div className="p-2">
                   <h3 className="text-[18px] font-bold ">
-                    {dataItem.title.slice(0, 15) + "..."}
+                    {dataItem.title.slice(0, 30) + "..."}
                   </h3>
                   <div
                     className="mb-12"
@@ -151,7 +151,7 @@ const Bloogs = () => {
                         ? dataItem.content
                             .replace(/(<([^>]+)>)/gi, "")
                             .split(" ")
-                            .slice(0, 8)
+                            .slice(0, 20)
                             .join(" ")
                         : "",
                     }}

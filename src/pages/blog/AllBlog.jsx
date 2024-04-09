@@ -18,8 +18,8 @@ const AllBlog = () => {
   }
 
   return (
-    <div>
-      <table className=" w-full p3-3 border rounded-full">
+    <div className="mx-3 relative">
+      <table className=" w-full p-3 border rounded-full">
         <thead>
           <tr>
             <th className="text-start">No</th>
@@ -31,7 +31,7 @@ const AllBlog = () => {
         <tbody className="">
           {data?.map((data, i) => (
             <tr key={i} className="border-b-2 px-2 space-x-5">
-              <td className=" text-start w-2/12">{i + 1}</td>
+              <td className=" text-start w-1/12">{i + 1}</td>
               <td className=" text-start w-2/12">
                 <img
                   className="size-14 rounded-full"
@@ -54,7 +54,7 @@ const AllBlog = () => {
                 ></div>
               </td>
               <td className=" text-start w-3/12">
-                <Link to={`/blog/edit-blog/${data._id}`}>
+                <Link to={`/blog/blog-post/edit-blog/${data._id}`}>
                   <button>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -7,35 +7,59 @@ import twitter from "../../assets/icon/pagesicon/twitter.svg";
 import instagram from "../../assets/icon/pagesicon/instagram.svg";
 import reddit from "../../assets/icon/pagesicon/reddit.svg";
 import linkedin from "../../assets/icon/pagesicon/linkedin.svg";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import Lottie from "react-lottie-player";
+import lottieJson from "../../json/loading.json";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
-import { useEffect } from "react";
-
-// Swiper.use([Navigation]);
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const News = () => {
   const loaderData = useLoaderData();
-  const { imageUrl, content, title } = loaderData;
+  const [category, setCategory] = useState([]);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { imageUrl, content, title, date } = loaderData;
   useEffect(() => {
+    axios
+      .get("https://biz-server-git-main-remontripuras-projects.vercel.app/category")
+      .then((response) => {
+        setCategory(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      });
     window.scrollTo(0, 100);
   }, []);
-  const { data, isPending, error } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      fetch(
-        "https://biz-server-git-main-remontripuras-projects.vercel.app/news"
-      ).then((res) => res.json()),
-  });
-  if (isPending) {
+  useEffect(() => {
+    axios
+      .get("https://biz-server-git-main-remontripuras-projects.vercel.app/news")
+      .then((response) => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      });
+    window.scrollTo(0, 100);
+  }, []);
+  if (loading) {
     return (
-      <p className="flex justify-center text-blue-500 text-2xl">
-        Loading.........
-      </p>
+      <div className="h-screen flex justify-center items-center">
+        <Lottie
+          loop
+          animationData={lottieJson}
+          play
+          style={{ width: 300, height: 300 }}
+        />
+      </div>
     );
   }
   const scroll = () => {
@@ -45,81 +69,189 @@ const News = () => {
       behavior: "smooth",
     });
   };
+
   return (
     <Container>
-      <div className="grid grid-cols-12 gap-5 mb-10 mt-24">
-        <div className="lg:col-span-9 col-span-12 px-3">
-          <img
-            className="md:h-[500px] h-[300px] object-cover w-full rounded-3xl"
-            src={imageUrl}
-            alt=""
-          />
-          <p className="flex items-center gap-5 mt-10 mb-[60px]">
-            <img className="size-[30px]" src={timelogo} alt="" />
-            <span className="text-[20px] text-[#787878]">
-              15 January 2024
-            </span>{" "}
-            <span className="font-medium text-[20px] text-[#787878] ml-3">
-              2.18 PM
-            </span>{" "}
-          </p>
-            <h3 className="font-bold text-[48px] text-[#242424] mb-3">{title}</h3>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: content,
-            }}
-          ></div>
-
-          <div className="flex justify-end items-center md:gap-8 gap-3 md:my-[66px] my-[30px]">
-            <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">
-              Share
+      <div className="grid grid-cols-12 gap-5 mb-10 mt-28">
+        <div className="flex justify-start items-center py-5 bg-[#FFFFFF] shadow rounded-lg my-5 w-fit px-[14px] gap-5">
+          <span className="text-[20px] text-[#7A7A7A]">Home</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="#7A7A7A"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+          <span className="text-[20px] text-[#2F76DE] font-medium">Blog</span>
+        </div>
+        <div className="col-span-12 grid grid-cols-12 gap-3">
+          <div className="lg:col-span-9 col-span-12 px-3">
+            <img
+              className="md:h-[500px] h-[300px] object-cover w-full rounded-3xl"
+              src={imageUrl}
+              alt=""
+            />
+            <p className="flex items-center gap-5 mt-10 mb-[60px]">
+              <img className="size-[30px]" src={timelogo} alt="" />
+              <span className="text-[20px] text-[#787878]">
+                {`${date?.date} ${date?.monthName} ${date?.year}  `}
+              </span>{" "}
+              <span className="font-medium text-[20px] text-[#787878] ml-3">
+                2.18 PM
+              </span>{" "}
+            </p>
+            <h3 className="font-bold text-[48px] text-[#242424] mb-3">
+              {title}
             </h3>
-            <img
-              src={facebook}
-              alt=""
-              className="md:size-[50px] size-[24px] cursor-pointer"
-            />
-            <img
-              src={twitter}
-              alt=""
-              className="md:size-[50px] size-[24px] cursor-pointer"
-            />
-            <img
-              src={instagram}
-              alt=""
-              className="md:size-[50px] size-[24px] cursor-pointer"
-            />
-            <img
-              src={reddit}
-              alt=""
-              className="md:size-[50px] size-[24px] cursor-pointer"
-            />
-            <img
-              src={linkedin}
-              alt=""
-              className="md:size-[50px] size-[24px] cursor-pointer"
-            />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: content,
+              }}
+            ></div>
+
+            <div className="flex justify-end items-center md:gap-8 gap-3 md:my-[66px] my-[30px]">
+              <h3 className="md:text-[32px] text-[20px] text-[#494949] font-bold">
+                Share
+              </h3>
+              <img
+                src={facebook}
+                alt=""
+                className="md:size-[50px] size-[24px] cursor-pointer"
+              />
+              <img
+                src={twitter}
+                alt=""
+                className="md:size-[50px] size-[24px] cursor-pointer"
+              />
+              <img
+                src={instagram}
+                alt=""
+                className="md:size-[50px] size-[24px] cursor-pointer"
+              />
+              <img
+                src={reddit}
+                alt=""
+                className="md:size-[50px] size-[24px] cursor-pointer"
+              />
+              <img
+                src={linkedin}
+                alt=""
+                className="md:size-[50px] size-[24px] cursor-pointer"
+              />
+            </div>
+            <div className="md:mt-[84px] mt-[50px] mb-[100px]">
+              <form>
+                <div className="w-full space-y-3">
+                  <input
+                    type="text"
+                    className="w-full md:px-[34px] px-[5px] md:py-[20px] py-[10px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                    placeholder="Name"
+                  />
+                  <textarea
+                    name=""
+                    id=""
+                    rows=""
+                    className="w-full h-[155px] md:px-[34px] px-[5px] md:py-[20px] py-[10px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                    placeholder="Enter Your Text"
+                  ></textarea>
+                  <button className="md:px-[41px] px-[20px] md:py-[16px] py-[8px] rounded-lg bg-[#2F77E0] text-[20px] font-medium text-[#FFFFFF]">
+                    Comment
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div className="md:mt-[84px] mt-[50px] mb-[100px]">
-            <form>
-              <div className="w-full space-y-3">
-                <input
-                  type="text"
-                  className="w-full md:px-[34px] px-[5px] md:py-[20px] py-[10px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
-                  placeholder="Name"
-                />
-                <textarea
-                  name=""
-                  id=""
-                  rows=""
-                  className="w-full h-[155px] md:px-[34px] px-[5px] md:py-[20px] py-[10px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
-                  placeholder="Enter Your Text"
-                ></textarea>
-                <button className="md:px-[41px] px-[20px] md:py-[16px] py-[8px] rounded-lg bg-[#2F77E0] text-[20px] font-medium text-[#FFFFFF]">
-                  Comment
-                </button>
+          <div className="col-span-3">
+            <div className=" bg-[#F3F3F3] p-4 rounded md:h-[500px] h-[300px]">
+              <div className="bg-[#fff] rounded p-[10px] w-fit px-5 mb-3">
+                <h3 className="font-bold text-[#2F76DE] text-[20px]">
+                  Category
+                </h3>
               </div>
-            </form>
+              <ul className="space-y-3 p-1">
+                {category?.map((item) => (
+                  <li
+                    key={item._id}
+                    className="w-full bg-[#fff] rounded-full pl-3 pr-1 py-1 flex justify-between"
+                  >
+                    {item.categoryName}
+                    <span className="w-6 h-full bg-[#2F76DE] rounded-full text-center text-[#fff]">
+                      0
+                    </span>
+                    {/* {data?.filter(ct => ct.category === item).map(num, i) => (<p key={i}>{num.length}</p>))} */}
+                    {/* {data?.filter((ct) => ct.category === item.categoryName)
+                    .map((filteredItem, i) => (
+                      console.log(filteredItem)
+                    ))} */}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-[#F3FAFF] h-fit border p-3 rounded mt-5">
+              <div className="bg-[#fff] rounded p-[10px] w-full text-center">
+                <h3 className="font-bold text-[#2F76DE] text-[20px]">
+                  Populer news
+                </h3>
+              </div>
+              <div className="space-y-2">
+                {data?.slice(0, 6).map((data) => (
+                  <div
+                    key={data._id}
+                    className="flex items-start gap-2 border-b-2 border-b-[#CDCDCD] py-3"
+                  >
+                    <img
+                      className="size-[80px] rounded-md"
+                      src={data.imageUrl}
+                      alt=""
+                    />
+                    <p className="text-[#242424] font-medium text-[14px]">
+                      Cornering the Market on Cryptocurrency Insights
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#F3FAFF] h-fit p-3 rounded mt-5">
+              <div className="bg-[#fff] rounded p-[10px] w-fit text-center px-5">
+                <h3 className="font-bold text-[#2F76DE] text-[20px]">
+                  Follow Us
+                </h3>
+              </div>
+              <div className="flex justify-start items-center  gap-4 md:my-[40px] my-[25px]">
+                <img
+                  src={facebook}
+                  alt=""
+                  className=" size-[25px] cursor-pointer"
+                />
+                <img
+                  src={twitter}
+                  alt=""
+                  className=" size-[25px] cursor-pointer"
+                />
+                <img
+                  src={instagram}
+                  alt=""
+                  className=" size-[25px] cursor-pointer"
+                />
+                <img
+                  src={reddit}
+                  alt=""
+                  className=" size-[25px] cursor-pointer"
+                />
+                <img
+                  src={linkedin}
+                  alt=""
+                  className=" size-[25px] cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="relative col-span-12">

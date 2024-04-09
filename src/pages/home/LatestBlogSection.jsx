@@ -103,7 +103,7 @@ const LatestBlogSection = () => {
           </p>
         </div>
         <Slider {...settings} className="pb-8 ml-3">
-          {reversedData.map((item) => (
+          {reversedData?.map((item) => (
             <div
               key={item._id}
               className={`h-[411px] relative md:mt-0 mt-10 mr-3`}
@@ -117,7 +117,7 @@ const LatestBlogSection = () => {
 
                 <div className="px-[33px] py-[25px] w-[80%] absolute bg-[#FFFFFF]  right-0 left-0 mx-auto -bottom-0 rounded-lg shadow-lg">
                   <h3 className="font-medium text-[20px]">
-                    {item.title.slice(0, 15) + " ..."}
+                    {item?.title?.slice(0, 15) + " ..."}
                   </h3>
                   <p className="text-[#6A6A6A] text-4">20 January 2024</p>
                 </div>

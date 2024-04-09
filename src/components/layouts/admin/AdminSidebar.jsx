@@ -19,8 +19,15 @@ import refresh1 from "../../../assets/icon/dashboard-icon/refresh1.svg";
 import shuffle from "../../../assets/icon/dashboard-icon/shuffle0.svg";
 import shuffle1 from "../../../assets/icon/dashboard-icon/shuffle1.svg";
 import logo from "../../../assets/icon/logo2.svg";
+import { useEffect } from "react";
 
 const menuItem = [
+  {
+    img0: chart0,
+    img1: chart1,
+    title: "All blog",
+    pathname: "all-blog",
+  },
   {
     img0: vector0,
     img1: vector1,
@@ -28,10 +35,10 @@ const menuItem = [
     pathname: "blog-post",
   },
   {
-    img0: chart0,
-    img1: chart1,
-    title: "All blog",
-    pathname: "all-blog",
+    img0: vector0,
+    img1: vector1,
+    title: "Add-Category",
+    pathname: "add-category",
   },
 ];
 
@@ -41,6 +48,9 @@ const Sidebar = ({ toggle, setToggle }) => {
   const handleToggle = () => {
     setToggle(!toggle);
   };
+  useEffect(() => {
+    setToggle(false);
+  }, [location.pathname]);
   return (
     <aside className=" bg-light-gray h-screen col-span-3 md:sticky md:top-0 left-0 overflow-auto w-[243px]">
       <div
