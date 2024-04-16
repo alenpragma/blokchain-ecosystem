@@ -13,6 +13,7 @@ const Blog = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
+    console.log(data);
     const content = draftToHtml(convertToRaw(firstValue.getCurrentContent()));
     const title = data.title;
     const category = data.category;
@@ -26,11 +27,13 @@ const Blog = () => {
         body: formData,
       }
     );
+
     if (!imgBBResponse.ok) {
       throw new Error("Failed to upload image to imgBB");
     }
     const imgBBData = await imgBBResponse.json();
-    const deleteApi = imgBBData.data.delete_url
+    console.log(imgBBData);
+    const deleteApi = imgBBData.data.delete_url;
     const imageUrl = imgBBData.data.url;
     try {
       const response = await fetch(
