@@ -1,85 +1,9 @@
-// import { useQuery } from "@tanstack/react-query";
-// import Container from "../../components/shared/Container";
-// import { Link } from "react-router-dom";
-
-// const Bloogs = () => {
-//   const { data, isPending, error } = useQuery({
-//     queryKey: ["repoData"],
-//     queryFn: () =>
-//       fetch(
-//         "https://biz-server-git-main-remontripuras-projects.vercel.app/news"
-//       ).then((res) => res.json()),
-//   });
-//   if (isPending) {
-//     return (
-//       <div className="h-[80vh] flex justify-center items-center">
-//         <p className="flex justify-center text-blue-500 text-2xl ">
-//           Loading.........
-//         </p>
-//       </div>
-//     );
-//   }
-//   return (
-//     <div className="w-full py-10 mt-14">
-//       <Container>
-//         <div className="flex justify-center mb-5">
-//           <h3 className="text-4xl font-semibold text-center border-b-2 border-b-slate-400 w-fit pb-2">
-//             Blog
-//           </h3>
-//         </div>
-//         <div className="grid grid-cols-12 gap-3 md:mx-0 mx-2">
-//           {data.map((data, i) => (
-//             <Link
-//               to={`/news/${data?._id}`}
-//               key={i}
-//               className="md:col-span-3 col-span-6 duration-300"
-//             >
-//               <div className="h-full  border border-blue-800 relative">
-//                 <div>
-//                   <img
-//                     className="w-full h-[200px] object-cover border-b-4 border-blue-800"
-//                     src="https://i.ibb.co/wR9DdRZ/hand.png"
-//                     alt=""
-//                   />
-//                 </div>
-//                 <div className="p-2">
-//                   <h3 className="text-[18px] font-bold ">
-//                     {data.title.slice(0, 15) + "..."}
-//                   </h3>
-//                   <div
-//                     className="mb-12"
-//                     dangerouslySetInnerHTML={{
-//                       __html: data?.content
-//                         ? data.content
-//                             .replace(/(<([^>]+)>)/gi, "")
-//                             .split(" ")
-//                             .slice(0, 8)
-//                             .join(" ")
-//                         : "",
-//                     }}
-//                   ></div>
-//                   <button className="px-4 py-2 bg-blue-800 rounded text-white mt-3 absolute bottom-2">
-//                     Read More
-//                   </button>
-//                 </div>
-//               </div>
-//             </Link>
-//           ))}
-//         </div>
-//       </Container>
-//     </div>
-//   );
-// };
-
-// export default Bloogs;
-
-
-
-
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Container from "../../components/shared/Container";
 import { Link } from "react-router-dom";
+import Lottie from "react-lottie-player";
+import lottieJson from "../../json/loading.json";
 
 const Bloogs = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -95,10 +19,13 @@ const Bloogs = () => {
 
   if (isPending) {
     return (
-      <div className="h-[80vh] flex justify-center items-center">
-        <p className="flex justify-center text-blue-500 text-2xl ">
-          Loading.........
-        </p>
+      <div className="h-screen flex justify-center items-center">
+        <Lottie
+          loop
+          animationData={lottieJson}
+          play
+          style={{ width: 300, height: 300 }}
+        />
       </div>
     );
   }
@@ -126,7 +53,7 @@ const Bloogs = () => {
           </h3>
         </div>
         <div className="grid grid-cols-12 gap-5 md:mx-0 mx-2">
-          {currentItems.map((dataItem, i) => (
+          {currentItems?.map((dataItem, i) => (
             <Link
               to={`/news/${dataItem._id}`}
               key={i}

@@ -70,6 +70,7 @@ const News = () => {
     });
   };
 
+
   return (
     <Container>
       <div className="grid grid-cols-12 gap-5 mb-10 mt-20">
