@@ -43,14 +43,14 @@ const Sidebar = ({ toggle, setToggle }) => {
       <div className="text-center font-semibold text-[20px] my-12">
         <h3>Biz Token</h3>
       </div>
-      <nav className="flex flex-col gap-3 px-3">
+      <nav className="flex flex-col px-3">
         {menuItem.map((item, i) => (
           <NavLink
             key={i}
             to={item.pathname}
             className={({ isActive }) =>
-              `bg-slate-300 w-full py-3 rounded pl-2 transition-all ${
-                isActive ? "bg-green-500 text-[#fff]" : ""
+              `w-full py-3 pl-2 transition-all border-t-2  ${
+                isActive ? " text-[#4f4cf4] font-semibold" : ""
               }`
             }
           >

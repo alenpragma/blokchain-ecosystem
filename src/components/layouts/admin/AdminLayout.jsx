@@ -156,13 +156,16 @@ const AdminLayout = () => {
 
   const onSubmit = async (data) => {};
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="max-w-[1400px] mx-auto relative">
+      <div className="absolute">
+        <h3 className="md:hidden block">open</h3>
+      </div>
       <div className="grid grid-cols-12">
         <div className="col-span-3">
           <AdminSidebar setToggle={setToggle} toggle={toggle} />
         </div>
         <div className="col-span-9">
-          <div className="py-3 shadow my-2 rounded sticky right-0 left-0">
+          <div className="py-3 shadow my-2 rounded sticky right-0 left-0 dashboard-admin">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">
               <div className="flex justify-between items-center">
                 <div className="flex-1 relative">
