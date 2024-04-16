@@ -39,7 +39,7 @@ const AllBlog = () => {
       confirmButtonText: "Yes, Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/news/${data._id}`, {
+        fetch(`https://biz-server-git-main-remontripuras-projects.vercel.app/news/${data._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

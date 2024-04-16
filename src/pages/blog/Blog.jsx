@@ -34,7 +34,7 @@ const Blog = () => {
     const imageUrl = imgBBData.data.url;
     try {
       const response = await fetch(
-        "http://localhost:5000/news",
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/news",
         {
           method: "POST",
           headers: {
