@@ -62,8 +62,8 @@ const todayYear = today.getFullYear();
           >
             <AdminSidebar setToggle={setToggle} toggle={toggle} />
           </div>
-          <div className="md:col-span-9 col-span-12 mx-2">
-            <div className="py-3 shadow my-2 rounded border-b-2">
+          <div className="md:col-span-9 col-span-12 mx-2 bg-yellow-500">
+            <div className="py-3 shadow my-2 rounded border-b-2 fixed w-[70%]">
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="space-y-5 mx-2"
