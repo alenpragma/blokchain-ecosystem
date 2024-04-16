@@ -126,7 +126,8 @@
 import { useState } from "react";
 import Container from "../../shared/Container";
 import { Outlet } from "react-router-dom";
-
+import AdminSidebar from "./AdminSidebar";
+import { useForm } from "react-hook-form";
 const monthNames = [
   "January",
   "February",
@@ -142,33 +143,36 @@ const monthNames = [
   "December",
 ];
 
-import AdminSidebar from "./AdminSidebar";
-import { useForm } from "react-hook-form";
 const AdminLayout = () => {
   const [toggle, setToggle] = useState(false);
+  const [show, setShow] = useState(false);
   const today = new Date();
   const todayDate = today.getDate();
   const todayMonth = today.getMonth();
   const monthName = monthNames[todayMonth];
   const todayYear = today.getFullYear();
 
-    const { register, handleSubmit } = useForm();
+  const handleToggle = () => {
+    setShow(!show);
+  };
 
+  const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {};
   return (
     <div className="max-w-[1400px] mx-auto relative">
-      <div className="absolute">
-        <h3 className="md:hidden block">open</h3>
-      </div>
-      <div className="grid grid-cols-12">
-        <div className="col-span-3">
-          <AdminSidebar setToggle={setToggle} toggle={toggle} />
-        </div>
-        <div className="col-span-9">
+      <div className="grid grid-cols-12 mx-2">
+        {show == true ? (
+          <div className={`col-span-3 absolute bg-white z-30 px-5`}>
+            <AdminSidebar setToggle={setShow} toggle={show} />
+          </div>
+        ) : (
+          ""
+        )}
+        <div className={`col-span-12 ${show ? "fixed" : ""}`}>
           <div className="py-3 shadow my-2 rounded sticky right-0 left-0 dashboard-admin">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">
               <div className="flex justify-between items-center">
-                <div className="flex-1 relative">
+                {/* <div className="flex-1 relative">
                   <input
                     type="text"
                     className="w-full  px-2 md:py-2 py-1  rounded-full border border-slate-300  focus:outline focus:outline-slate-400"
@@ -190,8 +194,27 @@ const AdminLayout = () => {
                       d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     />
                   </svg>
+                </div> */}
+                <div className="flex-1">
+                  <h3 className="md:block hidden">Dashboard</h3>
+                  <h3 className="md:hidden block" onClick={handleToggle}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                      />
+                    </svg>
+                  </h3>
                 </div>
-                <div className="flex-1 md:text-center text-end">
+                <div className="flex-1 md:text-center text-center">
                   <p className="font-semibold">{`${todayDate} ${monthName} ${todayYear}`}</p>
                 </div>
                 <div className="flex-1 flex justify-end">
@@ -209,7 +232,9 @@ const AdminLayout = () => {
                       d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
                     />
                   </svg>
-                  <button className="bg-red-500 px-6 py-2 rounded font-semibold text-[#fff] ml-5">Logout</button>
+                  <button className="bg-red-500 px-6 py-2 rounded font-semibold text-[#fff] ml-5">
+                    Logout
+                  </button>
                 </div>
               </div>
             </form>
