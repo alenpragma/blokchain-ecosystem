@@ -11,13 +11,7 @@ const Blog = () => {
   const [firstValue, setFirstValue] = useState(() => EditorState.createEmpty());
   const api_key = "d9fbec5bc5650a087316215838a6a574";
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
     const content = draftToHtml(convertToRaw(firstValue.getCurrentContent()));
     const title = data.title;
@@ -36,15 +30,19 @@ const Blog = () => {
       throw new Error("Failed to upload image to imgBB");
     }
     const imgBBData = await imgBBResponse.json();
+    const deleteApi = imgBBData.data.delete_url
     const imageUrl = imgBBData.data.url;
     try {
-      const response = await fetch("https://biz-server-git-main-remontripuras-projects.vercel.app/news", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title, category, content, imageUrl }),
-      });
+      const response = await fetch(
+        "http://localhost:5000/news",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ title, category, content, imageUrl, deleteApi }),
+        }
+      );
       if (response.ok) {
         Swal.fire({
           title: "Blog post successful",
@@ -59,11 +57,12 @@ const Blog = () => {
     }
   };
 
-
   const { data: categoryItem, isPending } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
-      fetch("https://biz-server-git-main-remontripuras-projects.vercel.app/category").then((res) => res.json()),
+      fetch(
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/category"
+      ).then((res) => res.json()),
   });
   return (
     <div>
@@ -74,7 +73,7 @@ const Blog = () => {
           </label>
           <input
             type="file"
-            className="w-full  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+            className="md:w-full w-1/2  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
             placeholder="Image"
             id="imageUrl"
             {...register("imageUrl")}
@@ -164,7 +163,6 @@ const Blog = () => {
         <button
           type="submit"
           className="bg-green-500 px-8 py-2 text-[#fff] font-semibold rounded-md"
-         
         >
           Save blog
         </button>

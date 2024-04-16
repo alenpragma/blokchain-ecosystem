@@ -13,10 +13,8 @@ import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
 
 const EditBlog = () => {
-  const { content, _id, title, category } = useLoaderData();
-
+  const { content, _id, title, category, deleteApi } = useLoaderData();
   const [categoryItem, setCategoryItem] = useState([]);
-
   const initialContent = content;
   const blocksFromHTML = convertFromHTML(initialContent);
   const contentState = ContentState.createFromBlockArray(
@@ -26,16 +24,13 @@ const EditBlog = () => {
   const [firstValue, setFirstValue] = useState(() =>
     EditorState.createWithContent(contentState)
   );
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     const category = data.category;
     const title = data.title;
     const content = draftToHtml(convertToRaw(firstValue.getCurrentContent()));
+
+
     try {
       const response = await fetch(
         `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${_id}`,
@@ -71,6 +66,18 @@ const EditBlog = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="title" className="font-semibold">
+            EditImage
+          </label>
+          <input
+            type="file"
+            className="md:w-full w-1/2  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+            placeholder="Image"
+            id="imageUrl"
+            {...register("imageUrl")}
+          />
+        </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">
             Blog title

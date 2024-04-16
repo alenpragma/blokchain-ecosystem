@@ -11,7 +11,10 @@ const AddCategory = () => {
   const queryClient = useQueryClient();
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("https://biz-server-git-main-remontripuras-projects.vercel.app/category", data);
+      const response = await axios.post(
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/category",
+        data
+      );
       if (response.status === 201) {
         Swal.fire({
           icon: "success",
@@ -38,11 +41,13 @@ const AddCategory = () => {
   const { data, isPending } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
-      fetch("https://biz-server-git-main-remontripuras-projects.vercel.app/category").then((res) => res.json()),
+      fetch(
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/category"
+      ).then((res) => res.json()),
   });
   if (isPending) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className=" flex justify-center items-center">
         <Lottie
           loop
           animationData={lottieJson}
@@ -61,7 +66,7 @@ const AddCategory = () => {
           </label>
           <input
             type="text"
-            className="w-1/2  px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+            className="md:w-1/2 w-full px-2 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
             placeholder="Add Category"
             id="categoryName"
             {...register("categoryName")}
