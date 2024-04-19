@@ -521,7 +521,7 @@ const Navbar = () => {
           <div
             className={`flex flex-col items-center gap-5 bg-[#fff] absolute  right-0 left-0 md:hidden ${
               menu
-                ? "-top-3 py-8 transition-all  duration-300 ease-in h-screen"
+                ? "-top-3 py-8 transition-all  duration-300 ease-in "
                 : "-top-80  transition-all duration-300 ease-in "
             }`}
           >

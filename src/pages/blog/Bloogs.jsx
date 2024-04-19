@@ -48,7 +48,7 @@ const Bloogs = () => {
   
 
   return (
-    <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[50px] pt-[50px] pb-5 mt-14">
+    <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[150px] pt-[100px] pb-5 ">
       <Helmet>
         <title>Biz - Token - Blog</title>
       </Helmet>
