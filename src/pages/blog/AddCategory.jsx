@@ -58,8 +58,8 @@ const AddCategory = () => {
     );
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">
+    <div className="mx-2">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 ">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">
             Category

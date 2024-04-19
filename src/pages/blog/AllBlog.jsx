@@ -8,6 +8,8 @@ import EditBlog from "./EditBlog";
 import { useState } from "react";
 
 const AllBlog = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(5);
   const { data, isPending, refetch } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
@@ -15,7 +17,14 @@ const AllBlog = () => {
         "https://biz-server-git-main-remontripuras-projects.vercel.app/news"
       ).then((res) => res.json()),
   });
-  if (isPending) {
+  const { data: category, isPending: categoryPending } = useQuery({
+    queryKey: ["categoryData"],
+    queryFn: () =>
+      fetch(
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/category"
+      ).then((res) => res.json()),
+  });
+  if (isPending || categoryPending) {
     return (
       <div className="h-screen flex justify-center items-center">
         <Lottie
@@ -29,7 +38,6 @@ const AllBlog = () => {
   }
 
   const handleDelete = (data) => {
-    console.log(data);
     Swal.fire({
       title: "Are you sure to Delete?",
       icon: "warning",
@@ -39,9 +47,12 @@ const AllBlog = () => {
       confirmButtonText: "Yes, Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://biz-server-git-main-remontripuras-projects.vercel.app/news/${data._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://biz-server-git-main-remontripuras-projects.vercel.app/news/${data._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -53,23 +64,46 @@ const AllBlog = () => {
     });
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
   return (
-    <div className="relative">
-      <div className="grid grid-cols-12 gap-3 my-4">
+    <div className="relative mx-2 h-[80vh]">
+      <div className="grid grid-cols-12 gap-3">
         <div className="h-24 border col-span-4 flex flex-col justify-center items-center shadow rounded">
-          <h3 className="text-[#656565] text-[20px] font-semibold">Total Blog</h3>
-          <h3 className="text-[28px] font-semibold">24</h3>
+          <h3 className="text-[#656565] text-[20px] font-semibold">
+            Total Blog
+          </h3>
+          <h3 className="text-[28px] font-semibold">{`${
+            data.length < 10 ? 0 : ""
+          }${data.length}`}</h3>
         </div>
         <div className="h-24 border col-span-4 flex flex-col justify-center items-center shadow rounded">
-          <h3 className="text-[#656565] text-[20px] font-semibold">Total Category</h3>
-          <h3 className="text-[28px] font-semibold">24</h3>
+          <h3 className="text-[#656565] text-[20px] font-semibold">
+            Total Category
+          </h3>
+          <h3 className="text-[28px] font-semibold">{`${
+            category?.length < 10 ? 0 : ""
+          }${category?.length}`}</h3>
         </div>
         <div className="h-24 border col-span-4 flex flex-col justify-center items-center shadow rounded">
-          <h3 className="text-[#656565] text-[20px] font-semibold">Total User</h3>
+          <h3 className="text-[#656565] text-[20px] font-semibold">
+            Total User
+          </h3>
           <h3 className="text-[28px] font-semibold">24</h3>
         </div>
       </div>
-      <table className=" w-full border rounded-full">
+      <table className=" w-full border rounded-full mt-3">
         <thead className="border-b-2">
           <tr className="p-2">
             <th className="text-start p-2">No</th>
@@ -79,19 +113,22 @@ const AllBlog = () => {
           </tr>
         </thead>
         <tbody className="">
-          {data?.map((data, i) => (
+          {currentItems?.map((data, i) => (
             <tr key={i} className="border-b-2 px-2 space-x-5">
               <td className=" text-start w-1/12 p-2">{i + 1}</td>
               <td className=" text-start w-2/12 p-2">
                 <img
                   className="size-14 rounded-full"
-                  src={data.imageUrl}
+                  src={data?.imageUrl}
                   alt=""
                 />
               </td>
               <td className=" text-start w-4/12 p-2">
                 {" "}
-                <div
+                {`${data?.title?.slice(0, 20)}${
+                  data?.title?.length > 20 ? "..." : ""
+                }`}
+                {/* <div
                   dangerouslySetInnerHTML={{
                     __html: data?.content
                       ? data.content
@@ -101,7 +138,7 @@ const AllBlog = () => {
                           .join(" ")
                       : "",
                   }}
-                ></div>
+                ></div> */}
               </td>
               <td className=" text-center w-3/12 space-x-3 p-2">
                 <Link to={`/blog/blog-post/edit-blog/${data._id}`}>
@@ -144,6 +181,33 @@ const AllBlog = () => {
           ))}
         </tbody>
       </table>
+      <div className="flex justify-center mt-4 absolute -bottom-10 right-0 left-0 ">
+        <button
+          className="mx-1 px-3 py-1 bg-gray-200 cursor-pointer"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        {[...Array(Math.ceil(data.length / itemsPerPage)).keys()].map(
+          (pageNumber) => (
+            <button
+              key={pageNumber}
+              className="mx-1 px-3 py-1 bg-gray-200"
+              onClick={() => paginate(pageNumber + 1)}
+            >
+              {pageNumber + 1}
+            </button>
+          )
+        )}
+        <button
+          className="mx-1 px-3 py-1 bg-gray-200 cursor-pointer"
+          onClick={handleNextPage}
+          disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
