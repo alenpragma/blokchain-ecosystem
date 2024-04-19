@@ -43,7 +43,7 @@ const LatestBlogSection = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className="absolute bottom-2 z-10 left-[40%] cursor-pointer"
+        className="absolute bottom-2  left-[40%] cursor-pointer"
         onClick={onClick}
       >
         {active < 1 ? <img src={left} alt="" /> : <img src={left} alt="" />}
@@ -117,9 +117,11 @@ const LatestBlogSection = () => {
 
                 <div className="px-[33px] py-[25px] w-[80%] absolute bg-[#FFFFFF]  right-0 left-0 mx-auto -bottom-0 rounded-lg shadow-lg">
                   <h3 className="font-medium text-[20px]">
-                    {item?.title?.slice(0, 15) + " ..."}
+                    {item?.title?.slice(0, 30) + " ..."}
                   </h3>
-                  <p className="text-[#6A6A6A] text-4">20 January 2024</p>
+                  <p className="text-[#6A6A6A] text-4">
+                    {`${item?.date?.date} ${item?.date?.monthName} ${item?.date?.year}`}
+                  </p>
                 </div>
               </Link>
             </div>

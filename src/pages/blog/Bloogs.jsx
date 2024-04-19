@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Container from "../../components/shared/Container";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../json/loading.json";
+import { Helmet } from "react-helmet";
 
 const Bloogs = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(8);
+  const [itemsPerPage] = useState(6);
+  const location = useLocation();
 
   const { data, isPending, error } = useQuery({
     queryKey: ["repoData"],
@@ -43,14 +45,19 @@ const Bloogs = () => {
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
+  
 
   return (
-    <div className="w-full py-10 mt-14">
+    <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[50px] pt-[50px] pb-5 mt-14">
+      <Helmet>
+        <title>Biz - Token - Blog</title>
+      </Helmet>
       <Container>
-        <div className="flex justify-center mb-5">
-          <h3 className="text-4xl font-semibold text-center border-b-2 border-b-slate-400 w-fit pb-2">
+        <div className="text-center md:mb-[80px] mb-10">
+          <h3 className="md:text-[64px] text-[44px] font-bold text-[#323232]">
             Blog
           </h3>
+          <p><span className="font-semibole text-[18px] font-bold">Home</span>{location.pathname}</p>
         </div>
         <div className="grid grid-cols-12 gap-5 md:mx-0 mx-2">
           {currentItems?.map((dataItem, i) => (
@@ -93,32 +100,33 @@ const Bloogs = () => {
         </div>
         {/* Pagination */}
         <div className="flex justify-center mt-4">
-          <button
-            className="mx-1 px-3 py-1 bg-gray-200"
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          {[...Array(Math.ceil(data.length / itemsPerPage)).keys()].map(
-            (pageNumber) => (
-              <button
-                key={pageNumber}
-                className="mx-1 px-3 py-1 bg-gray-200"
-                onClick={() => paginate(pageNumber + 1)}
-              >
-                {pageNumber + 1}
-              </button>
-            )
-          )}
-          <button
-            className="mx-1 px-3 py-1 bg-gray-200"
-            onClick={handleNextPage}
-            disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
-          >
-            Next
-          </button>
-        </div>
+  <button
+    className="mx-1 px-3 py-1 bg-gray-200"
+    onClick={handlePrevPage}
+    disabled={currentPage === 1}
+  >
+    Previous
+  </button>
+  {[...Array(Math.ceil(data.length / itemsPerPage)).keys()].map(
+    (pageNumber) => (
+      <button
+        key={pageNumber}
+        className={`mx-1 px-3 py-1 ${currentPage === pageNumber + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+        onClick={() => paginate(pageNumber + 1)}
+      >
+        {pageNumber + 1}
+      </button>
+    )
+  )}
+  <button
+    className="mx-1 px-3 py-1 bg-gray-200"
+    onClick={handleNextPage}
+    disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
+  >
+    Next
+  </button>
+</div>
+
       </Container>
     </div>
   );

@@ -27,8 +27,6 @@ const EditBlog = () => {
   const { register, handleSubmit } = useForm();
   const api_key = "d9fbec5bc5650a087316215838a6a574";
 
-
-
   const onSubmit = async (data) => {
 
     const formData = new FormData();
@@ -88,7 +86,7 @@ const EditBlog = () => {
       .then((data) => setCategoryItem(data));
   }, []);
   return (
-    <div className="mt-20">
+    <div className="my-20 mx-2">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">
@@ -188,7 +186,7 @@ const EditBlog = () => {
           type="submit"
           className="bg-green-500 px-8 py-2 text-[#fff] font-semibold rounded-md"
         >
-          Save blog
+          Update blog
         </button>
       </form>
     </div>

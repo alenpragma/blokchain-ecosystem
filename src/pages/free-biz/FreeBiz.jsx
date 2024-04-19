@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Container from "../../components/shared/Container";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import {Helmet} from "react-helmet";
 
 const faqData = [
   {
@@ -38,7 +39,10 @@ const FreeBiz = () => {
     setToggle((prev) => (prev === i ? null : i));
   };
   return (
-    <div className="bg-[#e3f3ff] md:pb-[80px] pt-[150px] pb-5">
+    <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[50px] pt-[50px] pb-5 mt-14">
+      <Helmet>
+        <title>Biz - Token - Free Biz</title>
+    </Helmet>
       <Container className="">
         <div className="text-center md:mb-[80px] mb-10">
           <h3 className="md:text-[64px] text-[44px] font-bold text-[#323232] uppercase">
@@ -93,7 +97,6 @@ const FreeBiz = () => {
                   </div>
                   {toggle == i ? <FaMinus /> : <FaPlus />}
                 </div>
-                {/* {isOpen == i && <p className="mt-10">{data.answer}</p>} */}
               </div>
             ))}
           </div>
