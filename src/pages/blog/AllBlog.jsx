@@ -104,7 +104,7 @@ const AllBlog = () => {
         </div>
       </div>
       <table className=" w-full border rounded-full mt-3">
-        <thead className="border-b-2">
+        <thead className="border-b-2 bg-slate-300">
           <tr className="p-2">
             <th className="text-start p-2">No</th>
             <th className="text-start p-2">Image</th>

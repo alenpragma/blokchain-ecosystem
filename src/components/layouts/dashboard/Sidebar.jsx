@@ -82,7 +82,7 @@ const Sidebar = ({ show }) => {
   const location = useLocation();
 
   return (
-    <aside className="bg-light-gray h-screen col-span-3 md:sticky md:top-0 left-0 overflow-auto w-[243px]">
+    <aside className="bg-light-gray h-screen col-span-3 md:sticky md:top-0 left-0 overflow-auto">
       <div className="flex justify-end pr-5 pt-3 lg:hidden ">
         {show ? (
           <svg
