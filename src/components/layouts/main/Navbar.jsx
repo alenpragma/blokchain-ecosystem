@@ -509,8 +509,8 @@ const Navbar = () => {
     <div
       className={`${
         isScrolled == true
-          ? "bg-[#2F76DE] duration-500 py-1"
-          : "transition-all duration-500 py-2 bg-[#2F76DE]"
+          ? "bg-[#2F76DE] duration-500 py-2"
+          : "transition-all duration-500 py-3 bg-[#2F76DE]"
       } w-full fixed z-[999]`}
     >
       <Container>
@@ -550,7 +550,7 @@ const Navbar = () => {
             </button>
           </div>
           <div className="md:block hidden">
-            <div className="my-4 flex justify-center">
+            <div className=" flex justify-center">
               <Link to="/dashboard/dashboard-home">
                 <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
                   Start Building

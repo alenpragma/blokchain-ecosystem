@@ -24,9 +24,9 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/blog/blog-post";
   return (
     <Container>
-    <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[150px] pt-[100px] pb-5 ">
+    <div className=" md:pb-[80px] md:pt-[100px] pt-[100px] pb-5 w-2/4 mx-auto">
         <div className="flex justify-center items-center my-3">
-          <h3 className="font-semibold text-2xl">Login</h3>
+          <h3 className="font-semibold text-2xl  ">Login</h3>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
