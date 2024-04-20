@@ -70,7 +70,7 @@ const Bloogs = () => {
                 <div>
                   <img
                     className="w-full h-[300px] object-cover border-b-4 border-blue-800"
-                    src="https://i.ibb.co/wR9DdRZ/hand.png"
+                    src={dataItem.imageUrl}
                     alt=""
                   />
                 </div>
