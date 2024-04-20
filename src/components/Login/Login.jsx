@@ -21,12 +21,12 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/blog/blog-post";
   return (
     <Container>
-      <div className="max-w-md mx-auto   mb-20 mt-32">
+    <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[150px] pt-[100px] pb-5 ">
         <div className="flex justify-center items-center my-3">
-          <h3 className="font-semibold text-2xl  ">Login</h3>
+          <h3 className="font-semibold text-2xl">Login</h3>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
