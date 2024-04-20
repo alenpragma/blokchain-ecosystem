@@ -37,7 +37,7 @@ const Sidebar = ({ show, setShow }) => {
     setShow(false);
   }, [location.pathname]);
   return (
-    <aside className={`bg-[#aaaaaa] h-screen  col-span-3 top-0 overflow-auto`}>
+    <aside className={`bg-slate-300 h-screen  col-span-3 top-0 overflow-auto`}>
       <div className="flex justify-end">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +68,8 @@ const Sidebar = ({ show, setShow }) => {
             key={i}
             to={item.pathname}
             className={({ isActive }) =>
-              `w-full py-3 pl-2 transition-all border-t-2 pr-5 ${
-                isActive ? " text-[#4f4cf4] font-semibold" : ""
+              `w-full py-3 pl-2 transition-all border-t-2 pr-5  ${
+                isActive ? " text-[#4f4cf4] font-semibold" : "text-white"
               }`
             }
           >
