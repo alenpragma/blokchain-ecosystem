@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Container from "../../shared/Container";
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import { useForm } from "react-hook-form";
 const monthNames = [
@@ -30,15 +29,12 @@ const AdminLayout = () => {
   const handleToggle = () => {
     setShow(!show);
   };
-
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {};
   const handleLogout = () => {
     localStorage.clear();
     window.location.href = "/login";
   };
-
-  
   return (
     <div className="max-w-[1400px] mx-auto relative">
       <div className="grid grid-cols-12 overflow-hidden ">
@@ -56,7 +52,7 @@ const AdminLayout = () => {
         </div>
 
         <div
-          className={`md:col-span-9 col-span-12 md:block top-0 right-0 left-0`}
+          className={`md:col-span-9 col-span-12 md:sticky overflow-y-auto `}
         >
           <div className="py-3 shadow my-2 rounded sticky right-0 left-0">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">

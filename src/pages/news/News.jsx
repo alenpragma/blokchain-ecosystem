@@ -26,7 +26,9 @@ const News = () => {
   const { imageUrl, content, title, date } = loaderData;
   useEffect(() => {
     axios
-      .get("https://biz-server-git-main-remontripuras-projects.vercel.app/category-group")
+      .get(
+        "https://biz-server-git-main-remontripuras-projects.vercel.app/category-group"
+      )
       .then((response) => {
         setCategory(response.data);
         setLoading(false);
@@ -70,10 +72,9 @@ const News = () => {
     });
   };
 
-
   return (
     <Container>
-      <div className="grid grid-cols-12 gap-5 mb-10 mt-20">
+      <div className="md:pb-[80px] md:pt-[100px] pt-[100px] pb-5 ">
         <div className="flex justify-start items-center py-5 bg-[#FFFFFF] shadow rounded-lg my-5 w-fit px-[14px] gap-5">
           <span className="text-[20px] text-[#7A7A7A]">Home</span>
           <svg
@@ -211,9 +212,11 @@ const News = () => {
                       <p className="text-[12px] text-[#8B8B8B]">
                         Biz Ecosystem
                       </p>
-                      <p className="text-[#242424] font-medium text-[14px]">
-                        Cornering the Market on Cryptocurrency Insights
-                      </p>
+                      <Link to={`/news/${data?._id}`}>
+                        <p className="text-[#242424] font-medium text-[14px]">
+                         {data.title}
+                        </p>
+                      </Link>
                     </div>
                   </div>
                 ))}
