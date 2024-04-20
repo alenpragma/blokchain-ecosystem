@@ -25,13 +25,6 @@ const menuItem = [
     title: "Add-Category",
     pathname: "add-category",
   },
-  {
-    img0: vector0,
-    img1: vector1,
-    title: "Home",
-    pathname: "/",
-  },
- 
 ];
 
 const Sidebar = ({ show, setShow }) => {
@@ -44,9 +37,7 @@ const Sidebar = ({ show, setShow }) => {
     setShow(false);
   }, [location.pathname]);
   return (
-    <aside
-      className={`bg-[#aaaaaa] h-screen  col-span-3 top-0 overflow-auto`}
-    >
+    <aside className={`bg-[#aaaaaa] h-screen  col-span-3 top-0 overflow-auto`}>
       <div className="flex justify-end">
         <svg
           xmlns="http://www.w3.org/2000/svg"

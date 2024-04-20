@@ -86,7 +86,7 @@ const EditBlog = () => {
       .then((data) => setCategoryItem(data));
   }, []);
   return (
-    <div className="my-20 mx-2">
+    <div className="my-20 mx-2 overflow-y-auto ">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">

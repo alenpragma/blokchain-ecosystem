@@ -36,7 +36,7 @@ const AdminLayout = () => {
     window.location.href = "/login";
   };
   return (
-    <div className="max-w-[1400px] mx-auto relative">
+    <div className="w-full mx-auto relative">
       <div className="grid grid-cols-12 overflow-hidden ">
         <div className={`col-span-3 md:block hidden bg-white z-30 sticky overflow-y-auto`}>
           <AdminSidebar setShow={setShow} show={show} />
@@ -52,9 +52,9 @@ const AdminLayout = () => {
         </div>
 
         <div
-          className={`md:col-span-9 col-span-12 md:sticky overflow-y-auto `}
+          className={`md:col-span-9 col-span-12 md:sticky top-0 left-0 h-[100vh] overflow-y-auto `}
         >
-          <div className="py-3 shadow my-2 rounded sticky right-0 left-0">
+          <div className="py-3 shadow my-2 rounded">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">
               <div className="flex justify-between items-center">
                 <div className="flex-1">
@@ -114,3 +114,4 @@ const AdminLayout = () => {
 };
 
 export default AdminLayout;
+
