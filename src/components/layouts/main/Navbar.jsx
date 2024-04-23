@@ -511,7 +511,7 @@ const Navbar = () => {
         isScrolled == true
           ? "bg-[#2F76DE] duration-500 py-2"
           : "transition-all duration-500 py-3 bg-[#2F76DE]"
-      } w-full z-[999]  ${menu ? 'block' : 'fixed  ' }`}
+      } w-full z-[999] fixed`}
     >
       <Container>
         <div className="px-3 flex items-center justify-between relative ">
@@ -538,14 +538,12 @@ const Navbar = () => {
               </button>
             </div>
             {NavItem2}
-            <div className="">
             <div className=" flex justify-center">
               <Link to="/dashboard/dashboard-home">
                 <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
                   Start Building
                 </button>
               </Link>
-            </div>
           </div>
           </div>
           <div className="md:flex gap-5 text-[16px] hidden">{NavItem1}</div>
