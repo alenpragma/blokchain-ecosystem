@@ -11,6 +11,7 @@ import draftToHtml from "draftjs-to-html";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const EditBlog = () => {
   const { content, _id, title, category } = useLoaderData();
@@ -87,6 +88,9 @@ const EditBlog = () => {
   }, []);
   return (
     <div className="my-20 mx-2 overflow-y-auto ">
+       <Helmet>
+        <title>Biz - Token - Blog</title>
+      </Helmet>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">

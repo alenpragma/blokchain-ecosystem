@@ -179,7 +179,8 @@ const News = () => {
               </div>
               <ul className="space-y-3 p-1">
                 {category?.map((item) => (
-                  <li
+                  <Link
+                    to={`/category/${item._id}`}
                     key={item._id}
                     className="w-full bg-[#fff] rounded-full pl-3 pr-1 py-1 flex justify-between"
                   >
@@ -187,7 +188,7 @@ const News = () => {
                     <span className="w-6 h-full bg-[#2F76DE] rounded-full text-center text-[#fff]">
                       {item.count}
                     </span>
-                  </li>
+                  </Link>
                 ))}
               </ul>
             </div>
@@ -214,7 +215,7 @@ const News = () => {
                       </p>
                       <Link to={`/news/${data?._id}`}>
                         <p className="text-[#242424] font-medium text-[14px]">
-                         {data.title}
+                          {data.title}
                         </p>
                       </Link>
                     </div>

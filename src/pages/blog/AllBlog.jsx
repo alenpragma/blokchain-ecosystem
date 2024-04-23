@@ -6,6 +6,7 @@ import lottieJson from "../../json/loading.json";
 import Swal from "sweetalert2";
 import EditBlog from "./EditBlog";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AllBlog = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -79,6 +80,9 @@ const AllBlog = () => {
   };
   return (
     <div className="relative mx-2 h-[80vh]">
+         <Helmet>
+        <title>Biz - Token - post</title>
+      </Helmet>
       <div className="grid grid-cols-12 gap-3">
         <div className="h-24 border col-span-4 flex flex-col justify-center items-center shadow rounded">
           <h3 className="text-[#656565] text-[20px] font-semibold">

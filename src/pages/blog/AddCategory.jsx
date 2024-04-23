@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useQuery, useQueryClient } from "@tanstack/react-query"; // Import useQueryClient
 import Lottie from "react-lottie-player";
 import lottieJson from "../../json/loading.json";
+import { Helmet } from "react-helmet";
 
 const AddCategory = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -59,6 +60,9 @@ const AddCategory = () => {
   }
   return (
     <div className="mx-2">
+       <Helmet>
+        <title>Biz - Token - category</title>
+      </Helmet>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 ">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">
