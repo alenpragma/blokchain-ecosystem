@@ -6,6 +6,7 @@ import draftToHtml from "draftjs-to-html";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   const [firstValue, setFirstValue] = useState(() => EditorState.createEmpty());
@@ -43,7 +44,13 @@ const Blog = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ title, category, content, imageUrl, deleteApi }),
+          body: JSON.stringify({
+            title,
+            category,
+            content,
+            imageUrl,
+            deleteApi,
+          }),
         }
       );
       if (response.ok) {
@@ -69,6 +76,9 @@ const Blog = () => {
   });
   return (
     <div>
+      <Helmet>
+        <title>Biz - Token - Blog</title>
+      </Helmet>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mx-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="font-semibold">

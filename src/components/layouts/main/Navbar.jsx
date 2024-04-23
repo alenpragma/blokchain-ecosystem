@@ -511,7 +511,7 @@ const Navbar = () => {
         isScrolled == true
           ? "bg-[#2F76DE] duration-500 py-2"
           : "transition-all duration-500 py-3 bg-[#2F76DE]"
-      } w-full fixed z-[999]`}
+      } w-full z-[999]  ${menu ? 'block' : 'fixed  ' }`}
     >
       <Container>
         <div className="px-3 flex items-center justify-between relative ">
@@ -522,7 +522,7 @@ const Navbar = () => {
             className={`flex flex-col items-center gap-5 bg-[#fff] absolute  right-0 left-0 md:hidden ${
               menu
                 ? "-top-3 py-8 transition-all  duration-300 ease-in "
-                : "-top-80  transition-all duration-300 ease-in "
+                : "-top-96  transition-all duration-300 ease-in "
             }`}
           >
             <div className="w-full flex justify-end">
@@ -538,6 +538,15 @@ const Navbar = () => {
               </button>
             </div>
             {NavItem2}
+            <div className="">
+            <div className=" flex justify-center">
+              <Link to="/dashboard/dashboard-home">
+                <button className="text-[#303030] py-3 px-8 bg-[#F3FAFF] rounded-lg">
+                  Start Building
+                </button>
+              </Link>
+            </div>
+          </div>
           </div>
           <div className="md:flex gap-5 text-[16px] hidden">{NavItem1}</div>
           <div className="md:hidden">

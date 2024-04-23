@@ -37,14 +37,14 @@ const Sidebar = ({ show, setShow }) => {
     setShow(false);
   }, [location.pathname]);
   return (
-    <aside className={`bg-slate-300 h-screen  col-span-3 top-0 overflow-auto`}>
+    <aside className={`bg-[#2F76DE] h-screen  col-span-3 top-0 overflow-auto`}>
       <div className="flex justify-end">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
-          stroke="currentColor"
+          stroke="#fff"
           className="size-8 md:hidden right-0"
           onClick={handleToggle}
         >
@@ -62,14 +62,14 @@ const Sidebar = ({ show, setShow }) => {
           <img src={icon} alt="" />
         </Link>
       </div>
-      <nav className="flex flex-col px-3">
+      <nav className="flex flex-col ">
         {menuItem.map((item, i) => (
           <NavLink
             key={i}
             to={item.pathname}
             className={({ isActive }) =>
-              `w-full py-3 pl-2 transition-all border-t-2 pr-5  ${
-                isActive ? " text-[#4f4cf4] font-semibold" : "text-white"
+              `w-full py-3 pl-2 transition-all border-b pr-5  ${
+                isActive ? " text-[#000] font-semibold bg-white" : "text-white"
               }`
             }
           >

@@ -22,6 +22,8 @@ import EditBlog from "../pages/blog/EditBlog";
 import Bloogs from "../pages/blog/Bloogs";
 import HomeError from "../components/error/HomeError";
 import AddCategory from "../pages/blog/AddCategory";
+import Category from "../pages/category/Category";
+import Categories from "../pages/category/Categories";
 
 const router = createBrowserRouter([
   {
@@ -39,11 +41,20 @@ const router = createBrowserRouter([
         element: <Bloogs />,
       },
       {
+        path: "/category/:category",
+        element: <Category />,
+        // loader: ({ params }) =>
+        //   fetch(
+        //     `http://localhost:5000/${params.category}`
+        //   ),
+      },
+      {
         path: "/login",
         element: <Login />,
       },
     ],
   },
+
   {
     path: "/",
     element: <NewsLayout />,
@@ -58,6 +69,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/",
     element: <FreeBizLayout />,
