@@ -1,7 +1,6 @@
 import Container from "../../components/shared/Container";
 import { Link, useLoaderData } from "react-router-dom";
 import timelogo from "../../assets/icon/time.svg";
-import { useQuery } from "@tanstack/react-query";
 import facebook from "../../assets/icon/pagesicon/facebook.svg";
 import twitter from "../../assets/icon/pagesicon/twitter.svg";
 import instagram from "../../assets/icon/pagesicon/instagram.svg";
@@ -10,13 +9,12 @@ import linkedin from "../../assets/icon/pagesicon/linkedin.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../json/loading.json";
-
-import "swiper/css";
-import "swiper/css/navigation";
-
-import { Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const News = () => {
   const loaderData = useLoaderData();
@@ -52,6 +50,7 @@ const News = () => {
       });
     window.scrollTo(0, 100);
   }, []);
+  const reversedData = data && Array.isArray(data) ? [...data].reverse() : [];
   if (loading) {
     return (
       <div className="h-screen flex justify-center items-center">
@@ -259,28 +258,36 @@ const News = () => {
             </div>
           </div>
         </div>
-        <div className="relative col-span-12">
-          <h3 className="absolute z-[999] top-[16px] left-3 md:text-[48px] text-[32px] font-bold leading-8">
+        <div className="relative col-span-12 mt-5">
+          <h3 className=" md:text-[48px] text-[32px] font-bold">
             Related blog
           </h3>
           <Swiper
-            navigation={true}
-            modules={[Navigation]}
-            className="mySwiper"
+            slidesPerView={1}
+            spaceBetween={10}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             breakpoints={{
-              320: {
-                slidesPerView: 2,
-              },
               640: {
                 slidesPerView: 2,
+                spaceBetween: 20,
               },
               768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1024: {
                 slidesPerView: 4,
+                spaceBetween: 50,
               },
             }}
+            modules={[Navigation]}
+            className="mySwiper"
           >
-            {data?.map((data) => (
-              <SwiperSlide key={data._id} className="w-full ml-3">
+            {reversedData?.map((data) => (
+              <SwiperSlide key={data._id} className="w-full mt-5">
                 <img
                   className="h-[190px] w-full object-cover"
                   src={data.imageUrl}
@@ -294,6 +301,44 @@ const News = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="button-atrrangment absolute top-3 right-0">
+            <div className="button-swiper px-3 flex items-center justify-between w-[150px]">
+              <div className="swiper-button-prev   bg-[#2F76DE] rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="#fff"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5 8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </div>
+              <div className="swiper-pagination"></div>
+              <div className="swiper-button-next bg-[#2F76DE] rounded-full">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="#fff"
+                  className="md:size-8 size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Container>
