@@ -69,7 +69,7 @@
 /*--------------------- navbar border bottom animation end-------------------------- */
 
 /*-------------------------- news section bottom slider swiper start-------------------------------- */
-.swiper {
+/* .swiper {
   padding: 100px 0px 50px 0px !important;
   width: 100% !important;
 }
@@ -121,7 +121,7 @@
 .swiper-size {
   padding: 40px 0px !important;
   width: 100%;
-}
+} */
 /* -------------------------news section bottom slider swiper end ---------------------------*/
 
 /*--------------------------- latest blog section style start-----------------*/
@@ -145,3 +145,50 @@
 /*--------------------------- latest blog section style end-----------------*/
 
 
+.swiper-pagination,
+.swiper-button-next,
+.swiper-button-prev{
+  top: unset !important;
+  bottom: unset !important;
+  left: unset !important;
+  right: unset !important;
+  width:  auto !important;
+  position: unset !important;
+  margin: 0px !important;
+}
+
+.swiper-button-next::after{
+  content: '' !important;
+
+}
+.swiper-button-prev::after{
+  content:  '' !important;
+}
+
+
+.swiper-pagination-bullet {
+  background-color: white !important; /* Light gray */
+  border: 1px solid blue !important; /* Light gray border */
+  width: 18px !important; /* Adjust width */
+  height: 18px !important; /* Adjust height */
+  border-radius: 50%; /* Round corners */
+  position: relative !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #333333; /* Dark gray for active */
+}
+
+.swiper-pagination-bullet::after{
+  content: '';
+  position: absolute !important;
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+  margin: auto;
+  border-radius: 50%;
+}

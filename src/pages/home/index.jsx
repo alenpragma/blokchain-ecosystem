@@ -16,9 +16,9 @@ const Home = () => {
     </Helmet>
       <HeroSection />
       <BlockChainTrustSection />
-      <FreedomSection />
+      <FreedomSection /> 
       {/* <InvolvedSection /> */}
-      <WhyChooseUsSection />
+       <WhyChooseUsSection />
       <FacilitiesSection />
       <BuildBizSection />
       <LatestBlogSection />
