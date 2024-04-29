@@ -2,7 +2,7 @@ import Container from "../../components/shared/Container";
 import innovation from "../../assets/icon/freedom/innovation.svg";
 import globe from "../../assets/icon/freedom/globe.svg";
 import bitcoin from "../../assets/icon/freedom/bitcoin.svg";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const FreedomData = [
@@ -76,36 +76,3 @@ const FreedomSection = () => {
 };
 
 export default FreedomSection;
-
-// <div className="w-full">
-//           <div className="lg:pt-[80px] pb-10">
-//             <h2 className="text-[#242424] font-bold lg:text-[48px] md:text-[32px] text-[28px]">
-//               Unlocking freedom with
-//               <br /> Decentralized Finance
-//             </h2>
-//           </div>
-//           <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
-//             {FreedomData.map((data, i) => (
-//               <div
-//                 key={i}
-//                 className=" bg-[#FFFFFF] p-7 gap-3 rounded-md"
-//                 style={{
-//                   boxShadow: "rgba(17, 17, 26, 0.1) 0px 0px 16px",
-//                 }}
-//               >
-//                 <div className=" flex-[1]">
-//                   <div className="w-[40px] h-[40px] bg-[#2F77E0] p-2 rounded-full mt-1">
-//                     <img className="" src={data.img} alt="" />
-//                   </div>
-//                 </div>
-//                 <div className="flex flex-col gap-3 flex-[8]">
-//                   <h4>{data.title}</h4>
-//                   <p className="text-style1">{data.description}</p>
-//                   <div className="size-10 bg-[#2F76DE] p-3 rounded-full">
-//                     <img className="w-full" src={rightArrow} alt="" />
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
