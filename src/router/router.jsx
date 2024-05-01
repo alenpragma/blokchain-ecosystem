@@ -24,6 +24,7 @@ import HomeError from "../components/error/HomeError";
 import AddCategory from "../pages/blog/AddCategory";
 import Category from "../pages/category/Category";
 import Categories from "../pages/category/Categories";
+import TermsAndConditions from "../pages/termsAndConditon/TermsAndCondition";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Bloogs />,
+      },
+      {
+        path: "/terms-and-condition",
+        element: <TermsAndConditions />,
       },
       {
         path: "/category/:category",

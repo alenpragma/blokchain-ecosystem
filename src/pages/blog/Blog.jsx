@@ -67,7 +67,7 @@ const Blog = () => {
     }
   };
 
-  const { data: categoryItem, isPending } = useQuery({
+  const { data: categoryItem } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
       fetch(
