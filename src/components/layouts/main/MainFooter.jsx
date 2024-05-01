@@ -41,7 +41,7 @@ const MainFooter = () => {
               </h3>
               <ul className="flex flex-col gap-[10px] mt-3">
                 <li>
-                  <Link to="/" className="text-[#fff] text-[16px] font-medium">
+                  <Link to="/terms-and-condition" className="text-[#fff] text-[16px] font-medium">
                     Terms & Conditions
                   </Link>
                 </li>
