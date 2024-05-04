@@ -31,10 +31,10 @@ const Bloogs = () => {
       </div>
     );
   }
-
+  const reversedData = data && Array.isArray(data) ? [...data].reverse() : [];
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = reversedData.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -45,7 +45,6 @@ const Bloogs = () => {
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
-  
 
   return (
     <div className="bg-[#e3f3ff] md:pb-[80px] md:pt-[150px] pt-[100px] pb-5 ">
@@ -57,7 +56,10 @@ const Bloogs = () => {
           <h3 className="md:text-[64px] text-[44px] font-bold text-[#323232]">
             Blog
           </h3>
-          <p><span className="font-semibole text-[18px] font-bold">Home</span>{location.pathname}</p>
+          <p>
+            <span className="font-semibole text-[18px] font-bold">Home</span>
+            {location.pathname}
+          </p>
         </div>
         <div className="grid grid-cols-12 gap-5 md:mx-0 mx-2">
           {currentItems?.map((dataItem, i) => (
@@ -100,33 +102,36 @@ const Bloogs = () => {
         </div>
         {/* Pagination */}
         <div className="flex justify-center mt-4">
-  <button
-    className="mx-1 px-3 py-1 bg-gray-200"
-    onClick={handlePrevPage}
-    disabled={currentPage === 1}
-  >
-    Previous
-  </button>
-  {[...Array(Math.ceil(data.length / itemsPerPage)).keys()].map(
-    (pageNumber) => (
-      <button
-        key={pageNumber}
-        className={`mx-1 px-3 py-1 ${currentPage === pageNumber + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        onClick={() => paginate(pageNumber + 1)}
-      >
-        {pageNumber + 1}
-      </button>
-    )
-  )}
-  <button
-    className="mx-1 px-3 py-1 bg-gray-200"
-    onClick={handleNextPage}
-    disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
-  >
-    Next
-  </button>
-</div>
-
+          <button
+            className="mx-1 px-3 py-1 bg-gray-200"
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          {[...Array(Math.ceil(data.length / itemsPerPage)).keys()].map(
+            (pageNumber) => (
+              <button
+                key={pageNumber}
+                className={`mx-1 px-3 py-1 ${
+                  currentPage === pageNumber + 1
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-200"
+                }`}
+                onClick={() => paginate(pageNumber + 1)}
+              >
+                {pageNumber + 1}
+              </button>
+            )
+          )}
+          <button
+            className="mx-1 px-3 py-1 bg-gray-200"
+            onClick={handleNextPage}
+            disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
+          >
+            Next
+          </button>
+        </div>
       </Container>
     </div>
   );

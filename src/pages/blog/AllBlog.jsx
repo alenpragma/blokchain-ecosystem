@@ -64,10 +64,10 @@ const AllBlog = () => {
       }
     });
   };
-
+  const reversedData = data && Array.isArray(data) ? [...data].reverse() : [];
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = reversedData.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -80,7 +80,7 @@ const AllBlog = () => {
   };
   return (
     <div className="relative mx-2 h-[80vh]">
-         <Helmet>
+      <Helmet>
         <title>Biz - Token - post</title>
       </Helmet>
       <div className="grid grid-cols-12 gap-3">
