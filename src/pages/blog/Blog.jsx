@@ -33,7 +33,6 @@ const Blog = () => {
       throw new Error("Failed to upload image to imgBB");
     }
     const imgBBData = await imgBBResponse.json();
-    console.log(imgBBData);
     const deleteApi = imgBBData.data.delete_url;
     const imageUrl = imgBBData.data.url;
     try {
