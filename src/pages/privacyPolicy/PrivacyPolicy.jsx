@@ -4,7 +4,7 @@ const TermsAndConditions = () => {
   return (
     <>
       <Container>
-        <div className="mx-auto pb-6 px-5 py-10 w-3/4 ">
+        <div className="mx-auto pb-6 px-3 py-10 md:w-3/4 w-full">
           <h2 className="font-semibold pt-20 pb-16 md:text-4xl text-2xl text-center">
             Privacy Policy
           </h2>
