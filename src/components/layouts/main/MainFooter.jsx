@@ -46,8 +46,8 @@ const MainFooter = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-[#fff] text-[16px] font-medium">
-                    Privecy-Policy
+                  <Link to="/privacy-policy" className="text-[#fff] text-[16px] font-medium">
+                    Privacy-Policy
                   </Link>
                 </li>
                 <li>
