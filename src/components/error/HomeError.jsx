@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HomeError = () => {
   return (
-    <div className="w-[500px] mx-auto flex justify-center  h-[80vh]">
+    <div className="md:w-[500px] w-full mx-auto flex justify-center  h-[80vh]">
       <div>
         <img
           className="w-full mt-20"
