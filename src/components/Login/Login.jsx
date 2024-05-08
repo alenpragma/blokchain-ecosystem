@@ -1,7 +1,5 @@
 import { useForm } from "react-hook-form";
 import Container from "../shared/Container";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../hooks/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {

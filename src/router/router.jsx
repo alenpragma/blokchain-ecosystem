@@ -25,6 +25,8 @@ import AddCategory from "../pages/blog/AddCategory";
 import Category from "../pages/category/Category";
 import Categories from "../pages/category/Categories";
 import TermsAndConditions from "../pages/termsAndConditon/TermsAndCondition";
+import Contact from "../pages/contact/Contact";
+import PrivacyPolicy from "../pages/privacyPolicy/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -42,8 +44,16 @@ const router = createBrowserRouter([
         element: <Bloogs />,
       },
       {
+        path: "/contact-us",
+        element: <Contact />,
+      },
+      {
         path: "/terms-and-condition",
         element: <TermsAndConditions />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
       {
         path: "/category/:category",

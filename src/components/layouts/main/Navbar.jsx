@@ -43,7 +43,7 @@ const NavItem1 = (
       Ecosystem
     </NavLink>
     <NavLink
-      to="/commiunity"
+      to="/contact-us"
       className={({ isActive }) =>
         `${
           isActive
@@ -52,7 +52,7 @@ const NavItem1 = (
         } btn`
       }
     >
-      Community
+      Contact Us
     </NavLink>
     <NavLink
       to="/blog"
