@@ -91,6 +91,9 @@ const NavItem2 = (
     <NavLink to="/ecosystem" className="text-[#000] hover:text-blue-600 ">
       Ecosystem
     </NavLink>
+    <NavLink to="/contact-us" className="text-[#000] hover:text-blue-600 ">
+      Contact us
+    </NavLink>
     <NavLink to="/commiunity" className="text-[#000] hover:text-blue-600 ">
       Community
     </NavLink>
